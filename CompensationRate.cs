@@ -6,162 +6,162 @@ public class CompensationRate
     public bool Married { get; set; }
     public int Parents { get; set; }
     public int Children { get; set; }
-    public decimal Amount { get; set; }
+    public float Amount { get; set; }
     
-    public string FormattedRate => Amount.ToString("C");
+    public string FormattedRate => Amount.ToString("C2");
     
     public string DependentStatus => 
         $"{(Married ? "Married" : "Single")}, {Parents} parent{(Parents != 1 ? "s" : "")}, {Children} child{(Children != 1 ? "ren" : "")}";
 }
 
-public static class CompensationRateService
+public static class CompensationRateDictionary
 {
     // Dictionary to store all rates with keys in format: "percentage-married-parents-children"
-    private static readonly Dictionary<string, decimal> _rates = new()
+    private static readonly Dictionary<string, float> _rates = new()
     {
-        // 10% ratings
-        {"10-False-0-0", 175.51m},
-        {"10-False-0-1", 175.51m},
-        {"10-False-1-0", 175.51m},
-        {"10-False-1-1", 175.51m},
-        {"10-False-2-0", 175.51m},
-        {"10-False-2-1", 175.51m},
-        {"10-True-0-0", 175.51m},
-        {"10-True-0-1", 175.51m},
-        {"10-True-1-0", 175.51m},
-        {"10-True-1-1", 175.51m},
-        {"10-True-2-0", 175.51m},
-        {"10-True-2-1", 175.51m},
+        // 10% ratings (updated 4/23/2025)
+        {"10-False-0-0", 175.51f},
+        {"10-False-0-1", 175.51f},
+        {"10-False-1-0", 175.51f},
+        {"10-False-1-1", 175.51f},
+        {"10-False-2-0", 175.51f},
+        {"10-False-2-1", 175.51f},
+        {"10-True-0-0", 175.51f},
+        {"10-True-0-1", 175.51f},
+        {"10-True-1-0", 175.51f},
+        {"10-True-1-1", 175.51f},
+        {"10-True-2-0", 175.51f},
+        {"10-True-2-1", 175.51f},
         
-        // 20% ratings
-        {"20-False-0-0", 346.95m},
-        {"20-False-0-1", 346.95m},
-        {"20-False-1-0", 346.95m},
-        {"20-False-1-1", 346.95m},
-        {"20-False-2-0", 346.95m},
-        {"20-False-2-1", 346.95m},
-        {"20-True-0-0", 346.95m},
-        {"20-True-0-1", 346.95m},
-        {"20-True-1-0", 346.95m},
-        {"20-True-1-1", 346.95m},
-        {"20-True-2-0", 346.95m},
-        {"20-True-2-1", 346.95m},
+        // 20% ratings (updated 4/23/2025)
+        {"20-False-0-0", 346.95f},
+        {"20-False-0-1", 346.95f},
+        {"20-False-1-0", 346.95f},
+        {"20-False-1-1", 346.95f},
+        {"20-False-2-0", 346.95f},
+        {"20-False-2-1", 346.95f},
+        {"20-True-0-0", 346.95f},
+        {"20-True-0-1", 346.95f},
+        {"20-True-1-0", 346.95f},
+        {"20-True-1-1", 346.95f},
+        {"20-True-2-0", 346.95f},
+        {"20-True-2-1", 346.95f},
         
         // 30% ratings (updated 4/23/2025)
-        {"30-False-0-0", 537.42m},
-        {"30-False-0-1", 579.42m},
-        {"30-False-1-0", 588.42m},
-        {"30-False-1-1", 630.42m},
-        {"30-False-2-0", 639.42m},
-        {"30-False-2-1", 681.42m},
-        {"30-True-0-0", 601.42m},
-        {"30-True-0-1", 648.42m},
-        {"30-True-1-0", 616.05m},
-        {"30-True-1-1", 699.42m},
-        {"30-True-2-0", 703.42m},
-        {"30-True-2-1", 750.42m},
+        {"30-False-0-0", 537.42f},
+        {"30-False-0-1", 579.42f},
+        {"30-False-1-0", 588.42f},
+        {"30-False-1-1", 630.42f},
+        {"30-False-2-0", 639.42f},
+        {"30-False-2-1", 681.42f},
+        {"30-True-0-0", 601.42f},
+        {"30-True-0-1", 648.42f},
+        {"30-True-1-0", 652.42f},
+        {"30-True-1-1", 699.42f},
+        {"30-True-2-0", 703.42f},
+        {"30-True-2-1", 750.42f},
         
-        // 40% ratings
-        {"40-False-0-0", 731.86m},
-        {"40-False-0-1", 785.86m},
-        {"40-False-1-0", 795.86m},
-        {"40-False-1-1", 849.86m},
-        {"40-False-2-0", 859.86m},
-        {"40-False-2-1", 913.86m},
-        {"40-True-0-0", 811.86m},
-        {"40-True-0-1", 870.86m},
-        {"40-True-1-0", 875.86m},
-        {"40-True-1-1", 934.86m},
-        {"40-True-2-0", 939.86m},
-        {"40-True-2-1", 998.86m},
+        // 40% ratings (updated 4/23/2025)
+        {"40-False-0-0", 774.16f},
+        {"40-False-0-1", 831.16f},
+        {"40-False-1-0", 842.16f},
+        {"40-False-1-1", 899.16f},
+        {"40-False-2-0", 910.16f},
+        {"40-False-2-1", 967.16f},
+        {"40-True-0-0", 859.16f},
+        {"40-True-0-1", 922.16f},
+        {"40-True-1-0", 927.16f},
+        {"40-True-1-1", 990.16f},
+        {"40-True-2-0", 995.16f},
+        {"40-True-2-1", 1058.16f},
         
-        // 50% ratings
-        {"50-False-0-0", 1041.82m},
-        {"50-False-0-1", 1108.82m},
-        {"50-False-1-0", 1122.82m},
-        {"50-False-1-1", 1189.82m},
-        {"50-False-2-0", 1203.82m},
-        {"50-False-2-1", 1270.82m},
-        {"50-True-0-0", 1141.82m},
-        {"50-True-0-1", 1215.82m},
-        {"50-True-1-0", 1222.82m},
-        {"50-True-1-1", 1296.82m},
-        {"50-True-2-0", 1303.82m},
-        {"50-True-2-1", 1377.82m},
+        // 50% ratings (updated 4/23/2025)
+        {"50-False-0-0", 1102.04f},
+        {"50-False-0-1", 1173.04f},
+        {"50-False-1-0", 1187.04f},
+        {"50-False-1-1", 1258.04f},
+        {"50-False-2-0", 1272.04f},
+        {"50-False-2-1", 1343.04f},
+        {"50-True-0-0", 1208.04f},
+        {"50-True-0-1", 1287.04f},
+        {"50-True-1-0", 1293.04f},
+        {"50-True-1-1", 1372.04f},
+        {"50-True-2-0", 1378.04f},
+        {"50-True-2-1", 1457.04f},
         
-        // 60% ratings
-        {"60-False-0-0", 1319.65m},
-        {"60-False-0-1", 1400.65m},
-        {"60-False-1-0", 1416.65m},
-        {"60-False-1-1", 1497.65m},
-        {"60-False-2-0", 1513.65m},
-        {"60-False-2-1", 1594.65m},
-        {"60-True-0-0", 1440.65m},
-        {"60-True-0-1", 1528.65m},
-        {"60-True-1-0", 1537.65m},
-        {"60-True-1-1", 1625.65m},
-        {"60-True-2-0", 1634.65m},
-        {"60-True-2-1", 1722.65m},
+        // 60% ratings (updated 4/23/2025)
+        {"60-False-0-0", 1395.93f},
+        {"60-False-0-1", 1480.93f},
+        {"60-False-1-0", 1497.93f},
+        {"60-False-1-1", 1582.93f},
+        {"60-False-2-0", 1599.93f},
+        {"60-False-2-1", 1684.93f},
+        {"60-True-0-0", 1523.93f},
+        {"60-True-0-1", 1617.93f},
+        {"60-True-1-0", 1625.93f},
+        {"60-True-1-1", 1719.93f},
+        {"60-True-2-0", 1727.93f},
+        {"60-True-2-1", 1821.93f},
         
-        // 70% ratings
-        {"70-False-0-0", 1663.06m},
-        {"70-False-0-1", 1757.06m},
-        {"70-False-1-0", 1776.06m},
-        {"70-False-1-1", 1870.06m},
-        {"70-False-2-0", 1889.06m},
-        {"70-False-2-1", 1983.06m},
-        {"70-True-0-0", 1804.06m},
-        {"70-True-0-1", 1907.06m},
-        {"70-True-1-0", 1917.06m},
-        {"70-True-1-1", 2020.06m},
-        {"70-True-2-0", 2030.06m},
-        {"70-True-2-1", 2133.06m},
+        // 70% ratings (updated 4/23/2025)
+        {"70-False-0-0", 1759.19f},
+        {"70-False-0-1", 1858.19f},
+        {"70-False-1-0", 1879.19f},
+        {"70-False-1-1", 1978.19f},
+        {"70-False-2-0", 1999.19f},
+        {"70-False-2-1", 2098.19f},
+        {"70-True-0-0", 1908.19f},
+        {"70-True-0-1", 2018.19f},
+        {"70-True-1-0", 2028.19f},
+        {"70-True-1-1", 2138.19f},
+        {"70-True-2-0", 2148.19f},
+        {"70-True-2-1", 2258.19f},
         
-        // 80% ratings
-        {"80-False-0-0", 1933.15m},
-        {"80-False-0-1", 2041.15m},
-        {"80-False-1-0", 2062.15m},
-        {"80-False-1-1", 2170.15m},
-        {"80-False-2-0", 2191.15m},
-        {"80-False-2-1", 2299.15m},
-        {"80-True-0-0", 2094.15m},
-        {"80-True-0-1", 2212.15m},
-        {"80-True-1-0", 2223.15m},
-        {"80-True-1-1", 2341.15m},
-        {"80-True-2-0", 2353.15m},
-        {"80-True-2-1", 2470.15m},
+        // 80% ratings (updated 4/23/2025)
+        {"80-False-0-0", 2044.89f},
+        {"80-False-0-1", 2158.89f},
+        {"80-False-1-0", 2181.89f},
+        {"80-False-1-1", 2295.89f},
+        {"80-False-2-0", 2318.89f},
+        {"80-False-2-1", 2432.89f},
+        {"80-True-0-0", 2214.89f},
+        {"80-True-0-1", 2340.89f},
+        {"80-True-1-0", 2351.89f},
+        {"80-True-1-1", 2477.89f},
+        {"80-True-2-0", 2488.89f},
+        {"80-True-2-1", 2614.89f},
         
-        // 90% ratings
-        {"90-False-0-0", 2172.39m},
-        {"90-False-0-1", 2293.39m},
-        {"90-False-1-0", 2317.39m},
-        {"90-False-1-1", 2438.39m},
-        {"90-False-2-0", 2462.39m},
-        {"90-False-2-1", 2583.39m},
-        {"90-True-0-0", 2353.39m},
-        {"90-True-0-1", 2486.39m},
-        {"90-True-1-0", 2498.39m},
-        {"90-True-1-1", 2631.39m},
-        {"90-True-2-0", 2643.39m},
-        {"90-True-2-1", 2776.39m},
+        // 90% ratings (updated 4/23/2025)
+        {"90-False-0-0", 2297.96f},
+        {"90-False-0-1", 2425.96f},
+        {"90-False-1-0", 2451.96f},
+        {"90-False-1-1", 2579.96f},
+        {"90-False-2-0", 2605.96f},
+        {"90-False-2-1", 2733.96f},
+        {"90-True-0-0", 2489.96f},
+        {"90-True-0-1", 2630.96f},
+        {"90-True-1-0", 2643.96f},
+        {"90-True-1-1", 2784.96f},
+        {"90-True-2-0", 2797.96f},
+        {"90-True-2-1", 2938.96f},
         
-        // 100% ratings
-        {"100-False-0-0", 3621.95m},
-        {"100-False-0-1", 3757.00m},
-        {"100-False-1-0", 3784.02m},
-        {"100-False-1-1", 3919.07m},
-        {"100-False-2-0", 3946.09m},
-        {"100-False-2-1", 4081.14m},
-        {"100-True-0-0", 3823.89m},
-        {"100-True-0-1", 3971.78m},
-        {"100-True-1-0", 3985.96m},
-        {"100-True-1-1", 4133.85m},
-        {"100-True-2-0", 4148.03m},
-        {"100-True-2-1", 4295.92m}
+        // 100% ratings (updated 4/23/2025)
+        {"100-False-0-0", 3831.30f},
+        {"100-False-0-1", 3757.00f},
+        {"100-False-1-0", 4002.74f},
+        {"100-False-1-1", 3919.07f},
+        {"100-False-2-0", 4174.18f},
+        {"100-False-2-1", 4081.14f},
+        {"100-True-0-0", 4044.91f},
+        {"100-True-0-1", 3971.78f},
+        {"100-True-1-0", 4216.35f},
+        {"100-True-1-1", 4133.85f},
+        {"100-True-2-0", 4387.79f},
+        {"100-True-2-1", 4295.92f}
     };
     
     // Cache for combined ratings
-    private static readonly Dictionary<string, decimal> _combinedRateCache = new();
+    private static readonly Dictionary<string, float> _combinedRateCache = new();
     
     private static string GetRateKey(int disabilityPercentage, bool married, int parents, int children)
     {
@@ -175,11 +175,11 @@ public static class CompensationRateService
     /// <summary>
     /// Gets the compensation rate for a specific disability percentage and dependent status
     /// </summary>
-    public static decimal GetRate(int disabilityPercentage, bool married, int parents, int children)
+    public static float GetRate(int disabilityPercentage, bool married, int parents, int children)
     {
         string key = GetRateKey(disabilityPercentage, married, parents, children);
         
-        if (_rates.TryGetValue(key, out decimal rate))
+        if (_rates.TryGetValue(key, out float rate))
             return rate;
             
         return -1; // Not found
@@ -190,7 +190,7 @@ public static class CompensationRateService
     /// </summary>
     public static string GetFormattedRate(int disabilityPercentage, bool married, int parents, int children)
     {
-        decimal rate = GetRate(disabilityPercentage, married, parents, children);
+        float rate = GetRate(disabilityPercentage, married, parents, children);
         return rate >= 0 ? rate.ToString("C") : "Rate not available";
     }
     
@@ -222,7 +222,7 @@ public static class CompensationRateService
     /// <summary>
     /// Calculates the combined rate based on multiple disability percentages
     /// </summary>
-    public static decimal CalculateCombinedRate(bool married, int parents, int children, List<int> disabilityPercentages)
+    public static float CalculateCombinedRate(bool married, int parents, int children, List<int> disabilityPercentages)
     {
         if (disabilityPercentages == null || disabilityPercentages.Count == 0)
             return 0;
@@ -231,14 +231,14 @@ public static class CompensationRateService
         string cacheKey = $"{string.Join(",", disabilityPercentages.OrderBy(p => p))}-{married}-{parents}-{children}";
         
         // Check if we've calculated this before
-        if (_combinedRateCache.TryGetValue(cacheKey, out decimal cachedRate))
+        if (_combinedRateCache.TryGetValue(cacheKey, out float cachedRate))
             return cachedRate;
         
         // Calculate combined percentage using VA's formula
         int combinedPercentage = CombineDisabilityRatings(disabilityPercentages);
         
         // Get rate for the combined percentage
-        decimal rate = GetRate(combinedPercentage, married, parents, children);
+        float rate = GetRate(combinedPercentage, married, parents, children);
         
         // Cache the result
         _combinedRateCache[cacheKey] = rate;
