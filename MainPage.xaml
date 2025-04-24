@@ -19,7 +19,7 @@
                     
                     <!-- Married Toggle -->
                     <HorizontalStackLayout Spacing="15">
-                        <Label Text="Married:" VerticalOptions="Center" WidthRequest="100"/>
+                        <Label Text="Married:" VerticalOptions="Center" WidthRequest="200"/>
                         <Switch x:Name="MarriedSwitch" 
                                 OnColor="#0078D7"
                                 Toggled="MarriedSwitch_Toggled"/>
@@ -27,9 +27,8 @@
                     
                     <!-- Parents Dropdown -->
                     <HorizontalStackLayout Spacing="15">
-                        <Label Text="Parents:" VerticalOptions="Center" WidthRequest="100"/>
+                        <Label Text="Parents:" VerticalOptions="Center" WidthRequest="200"/>
                         <Picker x:Name="ParentsPicker"
-                                Title="Select"
                                 WidthRequest="150"
                                 SelectedIndexChanged="DependentPicker_Changed">
                             <Picker.Items>
@@ -42,9 +41,8 @@
                     
                     <!-- Children Under 18 Dropdown -->
                     <HorizontalStackLayout Spacing="15">
-                        <Label Text="Children Under 18:" VerticalOptions="Center" WidthRequest="150"/>
+                        <Label Text="Children Under 18:" VerticalOptions="Center" WidthRequest="200"/>
                         <Picker x:Name="ChildrenUnder18Picker"
-                                Title="Select"
                                 WidthRequest="150"
                                 SelectedIndexChanged="DependentPicker_Changed">
                             <Picker.Items>
@@ -66,7 +64,7 @@
                     <HorizontalStackLayout Spacing="15">
                         <Label Text="Children Over 18 in School:" VerticalOptions="Center" WidthRequest="200"/>
                         <Picker x:Name="ChildrenOver18Picker"
-                                Title="Select"
+                                
                                 WidthRequest="150"
                                 SelectedIndexChanged="DependentPicker_Changed">
                             <Picker.Items>
@@ -104,6 +102,9 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="10"
                                 BackgroundColor="#0078D7"
+                                FontAttributes="Bold"
+                                BorderColor="WhiteSmoke"
+                                BorderWidth="2"
                                 CornerRadius="8"/>
                                 
                         <Button Text="20%" 
@@ -111,6 +112,9 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="20"
                                 BackgroundColor="#0078D7"
+                                FontAttributes="Bold"
+                                BorderColor="WhiteSmoke"
+                                BorderWidth="2"
                                 CornerRadius="8"/>
                                 
                         <Button Text="30%" 
@@ -118,6 +122,9 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="30"
                                 BackgroundColor="#0078D7"
+                                FontAttributes="Bold"
+                                BorderColor="WhiteSmoke"
+                                BorderWidth="2"
                                 CornerRadius="8"/>
                                 
                         <Button Text="40%" 
@@ -125,6 +132,9 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="40"
                                 BackgroundColor="#0078D7"
+                                FontAttributes="Bold"
+                                BorderColor="WhiteSmoke"
+                                BorderWidth="2"
                                 CornerRadius="8"/>
                                 
                         <Button Text="50%" 
@@ -132,6 +142,9 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="50"
                                 BackgroundColor="#0078D7"
+                                FontAttributes="Bold"
+                                BorderColor="WhiteSmoke"
+                                BorderWidth="2"
                                 CornerRadius="8"/>
                                 
                         <!-- Second row: 60-100% -->
@@ -140,6 +153,9 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="60"
                                 BackgroundColor="#0078D7"
+                                FontAttributes="Bold"
+                                BorderColor="WhiteSmoke"
+                                BorderWidth="2"
                                 CornerRadius="8"/>
                                 
                         <Button Text="70%" 
@@ -147,6 +163,9 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="70"
                                 BackgroundColor="#0078D7"
+                                FontAttributes="Bold"
+                                BorderColor="WhiteSmoke"
+                                BorderWidth="2"
                                 CornerRadius="8"/>
                                 
                         <Button Text="80%" 
@@ -154,6 +173,9 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="80"
                                 BackgroundColor="#0078D7"
+                                FontAttributes="Bold"
+                                BorderColor="WhiteSmoke"
+                                BorderWidth="2"
                                 CornerRadius="8"/>
                                 
                         <Button Text="90%" 
@@ -161,6 +183,9 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="90"
                                 BackgroundColor="#0078D7"
+                                FontAttributes="Bold"
+                                BorderColor="WhiteSmoke"
+                                BorderWidth="2"
                                 CornerRadius="8"/>
                                 
                         <Button Text="100%" 
@@ -168,6 +193,9 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="100"
                                 BackgroundColor="#0078D7"
+                                FontAttributes="Bold"
+                                BorderColor="WhiteSmoke"
+                                BorderWidth="2"
                                 CornerRadius="8"/>
                     </Grid>
                     
@@ -187,18 +215,22 @@
                                            CornerRadius="5" 
                                            BorderColor="#0078D7">
                                         <HorizontalStackLayout>
-                                            <Label Text="{Binding StringFormat='{0}%'}" VerticalOptions="Center"/>
-                                            <Button Text="×" 
+                                            <Label Text="{Binding StringFormat='{0}%'}" 
                                                    FontSize="16"
-                                                   BackgroundColor="Transparent"
-                                                   TextColor="#0078D7"
-                                                   BorderColor="Transparent"
-                                                   Margin="5,0,0,0"
-                                                   Clicked="RemovePercentage_Clicked"
-                                                   CommandParameter="{Binding}"
-                                                   HeightRequest="30"
-                                                   WidthRequest="30"
-                                                   CornerRadius="15"/>
+                                                   TextColor="Black"
+                                                   FontAttributes="Bold"
+                                                   VerticalOptions="Center"/>
+                                            <Button Text="×" 
+                                                    FontSize="16"
+                                                    BackgroundColor="Transparent"
+                                                    TextColor="#0078D7"
+                                                    BorderColor="Transparent"
+                                                    Margin="5,0,0,0"
+                                                    Clicked="RemovePercentage_Clicked"
+                                                    CommandParameter="{Binding}"
+                                                    HeightRequest="30"
+                                                    WidthRequest="30"
+                                                    CornerRadius="15"/>
                                         </HorizontalStackLayout>
                                     </Frame>
                                 </DataTemplate>
