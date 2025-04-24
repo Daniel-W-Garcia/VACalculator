@@ -135,17 +135,17 @@ public static class CompensationRateDictionary
         
         // 100% ratings (updated 4/23/2025)
         {"100-False-0-0", 3831.30f},
-        {"100-False-0-1", 3757.00f},
+        {"100-False-0-1", 3974.15f},
         {"100-False-1-0", 4002.74f},
-        {"100-False-1-1", 3919.07f},
+        {"100-False-1-1", 4145.59f},
         {"100-False-2-0", 4174.18f},
-        {"100-False-2-1", 4081.14f},
+        {"100-False-2-1", 4317.03f},
         {"100-True-0-0", 4044.91f},
-        {"100-True-0-1", 3971.78f},
+        {"100-True-0-1", 4201.35f},
         {"100-True-1-0", 4216.35f},
-        {"100-True-1-1", 4133.85f},
+        {"100-True-1-1", 4372.79f},
         {"100-True-2-0", 4387.79f},
-        {"100-True-2-1", 4295.92f}
+        {"100-True-2-1", 4544.23f}
     };
     
     // Dictionary to store all rates with keys in format: "percentage-amount per additional dependent"
