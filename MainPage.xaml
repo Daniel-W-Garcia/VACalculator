@@ -23,6 +23,7 @@
                         <Switch x:Name="MarriedSwitch" 
                                 OnColor="#0078D7"
                                 Toggled="MarriedSwitch_Toggled"/>
+
                     </HorizontalStackLayout>
                     
                     <!-- Parents Dropdown -->
@@ -64,7 +65,6 @@
                     <HorizontalStackLayout Spacing="15">
                         <Label Text="Children Over 18 in School:" VerticalOptions="Center" WidthRequest="200"/>
                         <Picker x:Name="ChildrenOver18Picker"
-                                
                                 WidthRequest="150"
                                 SelectedIndexChanged="DependentPicker_Changed">
                             <Picker.Items>
@@ -81,6 +81,12 @@
                             </Picker.Items>
                         </Picker>
                     </HorizontalStackLayout>
+                    <Button Text="Clear Dependent Information" 
+                            Clicked="ClearDependents_Clicked"
+                            BackgroundColor="#FF5252"
+                            TextColor="White"
+                            CornerRadius="8"
+                            Margin="0,10,0,0"/>
                 </VerticalStackLayout>
             </Frame>
             
@@ -102,6 +108,7 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="10"
                                 BackgroundColor="#0078D7"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 BorderColor="WhiteSmoke"
                                 BorderWidth="2"
@@ -112,6 +119,7 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="20"
                                 BackgroundColor="#0078D7"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 BorderColor="WhiteSmoke"
                                 BorderWidth="2"
@@ -122,6 +130,7 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="30"
                                 BackgroundColor="#0078D7"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 BorderColor="WhiteSmoke"
                                 BorderWidth="2"
@@ -132,6 +141,7 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="40"
                                 BackgroundColor="#0078D7"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 BorderColor="WhiteSmoke"
                                 BorderWidth="2"
@@ -142,6 +152,7 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="50"
                                 BackgroundColor="#0078D7"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 BorderColor="WhiteSmoke"
                                 BorderWidth="2"
@@ -153,6 +164,7 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="60"
                                 BackgroundColor="#0078D7"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 BorderColor="WhiteSmoke"
                                 BorderWidth="2"
@@ -163,6 +175,7 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="70"
                                 BackgroundColor="#0078D7"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 BorderColor="WhiteSmoke"
                                 BorderWidth="2"
@@ -173,6 +186,7 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="80"
                                 BackgroundColor="#0078D7"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 BorderColor="WhiteSmoke"
                                 BorderWidth="2"
@@ -183,6 +197,7 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="90"
                                 BackgroundColor="#0078D7"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 BorderColor="WhiteSmoke"
                                 BorderWidth="2"
@@ -193,6 +208,7 @@
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="100"
                                 BackgroundColor="#0078D7"
+                                FontSize="16"
                                 FontAttributes="Bold"
                                 BorderColor="WhiteSmoke"
                                 BorderWidth="2"
@@ -201,41 +217,20 @@
                     
                     <!-- Selected Percentages Display -->
                     <VerticalStackLayout Spacing="10" Margin="0,15,0,0">
-                        <Label Text="Selected Ratings:" FontSize="16" FontAttributes="Bold"/>
-                        <CollectionView x:Name="SelectedPercentagesView" 
-                                       EmptyView="No percentages added yet"
-                                       SelectionMode="None">
-                            <CollectionView.ItemsLayout>
-                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="8"/>
-                            </CollectionView.ItemsLayout>
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <Frame BackgroundColor="#E6F2FF" 
-                                           Padding="10,5" 
-                                           CornerRadius="5" 
-                                           BorderColor="#0078D7">
-                                        <HorizontalStackLayout>
-                                            <Label Text="{Binding StringFormat='{0}%'}" 
-                                                   FontSize="16"
-                                                   TextColor="Black"
-                                                   FontAttributes="Bold"
-                                                   VerticalOptions="Center"/>
-                                            <Button Text="×" 
-                                                    FontSize="16"
-                                                    BackgroundColor="Transparent"
-                                                    TextColor="#0078D7"
-                                                    BorderColor="Transparent"
-                                                    Margin="5,0,0,0"
-                                                    Clicked="RemovePercentage_Clicked"
-                                                    CommandParameter="{Binding}"
-                                                    HeightRequest="30"
-                                                    WidthRequest="30"
-                                                    CornerRadius="15"/>
-                                        </HorizontalStackLayout>
-                                    </Frame>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
+                        <Label Text="Selected Ratings:" 
+                               FontSize="16" 
+                               TextColor= "Black"
+                               FontAttributes="Bold"/>
+                        <FlexLayout x:Name="SelectedPercentagesContainer"
+                                    Wrap="Wrap"
+                                    JustifyContent="Start"
+                                    AlignItems="Center"
+                                    Margin="0,5,0,0">
+                            <!-- Empty by default, items will be added programmatically -->
+                        </FlexLayout>
+                        <Label x:Name="EmptyPercentagesLabel" 
+                               Text="No percentages added yet"
+                               IsVisible="True"/>
                     </VerticalStackLayout>
                     
                     <!-- Clear All Button -->
@@ -264,7 +259,7 @@
                                Grid.Row="0" Grid.Column="1"
                                FontSize="20"
                                FontAttributes="Bold"
-                               TextColor="#0078D7"
+                               TextColor= "Chartreuse"
                                VerticalOptions="Center"/>
                                
                         <!-- Compensation Amount -->
@@ -277,7 +272,7 @@
                                Grid.Row="1" Grid.Column="1"
                                FontSize="20"
                                FontAttributes="Bold"
-                               TextColor="#0078D7"
+                               TextColor = "Chartreuse"
                                VerticalOptions="Center"/>
                     </Grid>
                 </VerticalStackLayout>

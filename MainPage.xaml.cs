@@ -4,27 +4,78 @@ namespace VACalculatorApp;
 
 public partial class MainPage : ContentPage
 {
-    private ObservableCollection<int> _selectedPercentages = new ObservableCollection<int>();
-    private bool _isMarried = false;
-    private int _parents = 0;
-    private int _childrenUnder18 = 0;
-    private int _childrenOver18 = 0;
+    private ObservableCollection<int> _selectedPercentages = new ();
+    private bool _isMarried;
+    private int _parents;
+    private int _childrenUnder18;
+    private int _childrenOver18;
     
     public MainPage()
     {
         InitializeComponent();
         
-        // Set initial picker values
         ParentsPicker.SelectedIndex = 0;
         ChildrenUnder18Picker.SelectedIndex = 0;
         ChildrenOver18Picker.SelectedIndex = 0;
+        UpdateSelectedPercentagesDisplay();
         
-        // Set the collection view source
-        SelectedPercentagesView.ItemsSource = _selectedPercentages;
-        
-        // Update the UI initially
         UpdateCalculation();
     }
+    private void UpdateSelectedPercentagesDisplay()
+    {
+        SelectedPercentagesContainer.Children.Clear();
+        EmptyPercentagesLabel.IsVisible = _selectedPercentages.Count == 0;
+    
+        foreach (var percentage in _selectedPercentages)
+        {
+            var frame = new Frame
+            {
+                BackgroundColor = Color.FromArgb("#E6F2FF"),
+                Padding = new Thickness(10, 5),
+                CornerRadius = 5,
+                BorderColor = Color.FromArgb("#0078D7"),
+                Margin = new Thickness(0, 0, 8, 8)
+            };
+        
+            var layout = new HorizontalStackLayout();
+        
+            var label = new Label
+            {
+                Text = $"{percentage}%",
+                FontSize = 16,
+                TextColor = Colors.Black,
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center
+            };
+        
+            var button = new Button
+            {
+                Text = "×",
+                FontSize = 14,
+                FontAttributes = FontAttributes.Bold,
+                BackgroundColor = Color.FromArgb("#FF5252"),
+                TextColor = Colors.White,
+                Margin = new Thickness(5, 0, 0, 0),
+                HeightRequest = 20,
+                WidthRequest = 20,
+                CornerRadius = 10,
+                Padding = new Thickness(0),  
+                LineBreakMode = LineBreakMode.NoWrap,  
+                VerticalOptions = LayoutOptions.Center, 
+                HorizontalOptions = LayoutOptions.Center, 
+                CommandParameter = percentage
+
+            };
+            button.Clicked += RemovePercentage_Clicked;
+        
+            layout.Children.Add(label);
+            layout.Children.Add(button);
+            frame.Content = layout;
+        
+            SelectedPercentagesContainer.Children.Add(frame);
+        }
+    }
+
 
     private void PercentageButton_Clicked(object sender, EventArgs e)
     {
@@ -32,10 +83,8 @@ public partial class MainPage : ContentPage
         {
             if (int.TryParse(percentageStr, out int percentage))
             {
-                // Add the percentage to our list
                 _selectedPercentages.Add(percentage);
-                
-                // Update the calculation
+                UpdateSelectedPercentagesDisplay();
                 UpdateCalculation();
             }
         }
@@ -46,6 +95,7 @@ public partial class MainPage : ContentPage
         if (sender is Button button && button.CommandParameter is int percentage)
         {
             _selectedPercentages.Remove(percentage);
+            UpdateSelectedPercentagesDisplay();
             UpdateCalculation();
         }
     }
@@ -53,6 +103,7 @@ public partial class MainPage : ContentPage
     private void ClearPercentages_Clicked(object sender, EventArgs e)
     {
         _selectedPercentages.Clear();
+        UpdateSelectedPercentagesDisplay();
         UpdateCalculation();
     }
 
@@ -76,6 +127,24 @@ public partial class MainPage : ContentPage
         
         UpdateCalculation();
     }
+    
+    private void ClearDependents_Clicked(object sender, EventArgs e)
+    {
+        // Reset dependent information
+        MarriedSwitch.IsToggled = false;
+        ParentsPicker.SelectedIndex = 0;
+        ChildrenUnder18Picker.SelectedIndex = 0;
+        ChildrenOver18Picker.SelectedIndex = 0;
+    
+        // Update internal values
+        _isMarried = false;
+        _parents = 0;
+        _childrenUnder18 = 0;
+        _childrenOver18 = 0;
+    
+        UpdateCalculation();
+    }
+
 
     private void UpdateCalculation()
     {
@@ -85,8 +154,6 @@ public partial class MainPage : ContentPage
             List<int> percentages = _selectedPercentages.ToList();
             int combinedRating = CalculateRate.CombineDisabilityRatings(percentages);
             
-            // Calculate total compensation - note we use _childrenUnder18 and _childrenOver18 separately
-            // First determine the basic dependent situation (has children or not)
             int childrenBasic = _childrenUnder18 > 0 || _childrenOver18 > 0 ? 1 : 0;
             
             // Calculate additional children (beyond the first one)
