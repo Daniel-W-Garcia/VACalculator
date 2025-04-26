@@ -13,6 +13,16 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        var test = new List<int> { 50, 30 };
+        int result = CalculateRate.CombineDisabilityRatings(test);
+        System.Diagnostics.Debug.WriteLine("======= TEST CALCULATION =======");
+        System.Diagnostics.Debug.WriteLine($"50% + 30% = {result}%");
+    
+        // Check what happens if the percentages are ordered differently
+        var test2 = new List<int> { 30, 50 };
+        int result2 = CalculateRate.CombineDisabilityRatings(test2);
+        System.Diagnostics.Debug.WriteLine($"30% + 50% = {result2}%");
+        System.Diagnostics.Debug.WriteLine("================================");
         
         ParentsPicker.SelectedIndex = 0;
         ChildrenUnder18Picker.SelectedIndex = 0;

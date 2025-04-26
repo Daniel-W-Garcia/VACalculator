@@ -91,9 +91,11 @@ public class CalculateRate
             efficiency = (100.0 - combined) / 100.0 * 100.0;
         }
         
-        int roundedCombined = (int)Math.Round(combined / 10.0) * 10;
+        
+        int roundedCombined = (int)Math.Round(combined / 10.0, MidpointRounding.AwayFromZero) * 10; // this was not easy to find. I couldn't figure out why my percentages were wrong! C# uses bankers rounding!
         
         return Math.Min(roundedCombined, 100);
+        
     }
     
     public static float CalculateTotalCompensation(int disabilityPercentage, bool married, int parents, int children, 
