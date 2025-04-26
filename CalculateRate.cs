@@ -8,67 +8,22 @@ public class CalculateRate
     {
         // Normalize inputs
         parents = Math.Clamp(parents, 0, 2);
-        children = children > 0 ? 1 : 0; // Data only distinguishes between 0 or 1+
+        children = children > 0 ? 1 : 0; // Data only distinguishes between 0 or 1 in the VA table. we account for more children later
         
         return $"{disabilityPercentage}-{married}-{parents}-{children}";
     }
     
-    // Gets compensation rate for disability percentage and dependents
-    public static float GetRate(int disabilityPercentage, bool married, int parents, int children)
+    // Gets compensation rate from dictionary
+    public static float GetTableRate(int disabilityPercentage, bool married, int parents, int children)
     {
         string key = GetRateKey(disabilityPercentage, married, parents, children);
         
-        // Use the CompensationRateDictionary.GetRates() method to access the rates
-        var rates = CompensationRateDictionary.GetRates();
+        // Use the CompensationRateDictionary.GetRateFromDictionary() method to access the rates
+        var rates = CompensationRateDictionary.GetRateFromDictionary();
         if (rates.TryGetValue(key, out float rate))
             return rate;
             
         return -1; 
-    }
-    
-    public static string GetFormattedRate(int disabilityPercentage, bool married, int parents, int children)
-    {
-        float rate = GetRate(disabilityPercentage, married, parents, children);
-        return rate >= 0 ? rate.ToString("C") : "Rate not available";
-    }
-    
-    public static List<CompensationRate> GetAllRates()
-    {
-        var result = new List<CompensationRate>();
-        
-        foreach (var entry in CompensationRateDictionary.GetRates())
-        {
-            string[] parts = entry.Key.Split('-');
-            
-            result.Add(new CompensationRate
-            {
-                DisabilityPercentage = int.Parse(parts[0]),
-                Married = bool.Parse(parts[1]),
-                Parents = int.Parse(parts[2]),
-                Children = int.Parse(parts[3]),
-                Amount = entry.Value
-            });
-        }
-        return result;
-    }
-    
-    public static float CalculateCombinedRate(bool married, int parents, int children, List<int> disabilityPercentages)
-    {
-        if (disabilityPercentages == null || disabilityPercentages.Count == 0)
-            return 0;
-            
-        string cacheKey = $"{string.Join(",", disabilityPercentages.OrderBy(p => p))}-{married}-{parents}-{children}";
-        
-        if (_combinedRateCache.TryGetValue(cacheKey, out float cachedRate))
-            return cachedRate;
-        
-        int combinedPercentage = CombineDisabilityRatings(disabilityPercentages);
-        
-        float rate = GetRate(combinedPercentage, married, parents, children);
-        
-        _combinedRateCache[cacheKey] = rate;
-        
-        return rate;
     }
     
     public static int CombineDisabilityRatings(List<int> ratings)
@@ -91,17 +46,16 @@ public class CalculateRate
             efficiency = (100.0 - combined) / 100.0 * 100.0;
         }
         
-        
         int roundedCombined = (int)Math.Round(combined / 10.0, MidpointRounding.AwayFromZero) * 10; // this was not easy to find. I couldn't figure out why my percentages were wrong! C# uses bankers rounding!
         
         return Math.Min(roundedCombined, 100);
         
     }
     
-    public static float CalculateTotalCompensation(int disabilityPercentage, bool married, int parents, int children, 
+    public static float CalculateTotalCompensation(int disabilityPercentage, bool married, int parents, int children, // these params are ridiculous. might refactor into puting a method or delegate here later.
         int childrenOver18InSchool, int additionalChildrenUnder18 = 0, bool spouseReceivingAidAndAttendance = false)
     {
-        float baseRate = GetRate(disabilityPercentage, married, parents, children);
+        float baseRate = GetTableRate(disabilityPercentage, married, parents, children);
 
         if (baseRate < 0)
         {
@@ -125,7 +79,7 @@ public class CalculateRate
                 baseRate += childrenOver18InSchool * childBonusOver18InSchool;
             }
         
-            // Add for spouse Aid and Attendance (only applies to 70%+ ratings)
+            // Add for spouse Aid and Attendance (only applies to 70%+ ratings) I don't have this in my app right now
             if (married && spouseReceivingAidAndAttendance && disabilityPercentage >= 70)
             {
                 float aidAndAttendanceBonus = CompensationRateDictionary.GetSpouseAidAttendanceRate(disabilityPercentage);
@@ -133,18 +87,5 @@ public class CalculateRate
             }
         }
         return baseRate;
-    }
-    
-    public static CompensationRate FindClosestRate(int disabilityPercentage, bool married, int parents, int children)
-    {
-        // Get all rates
-        var rates = GetAllRates();
-    
-        // Find the closest match by disability percentage, then by other factors
-        return rates.OrderBy(rate => Math.Abs(rate.DisabilityPercentage - disabilityPercentage))
-            .ThenBy(rate => Math.Abs((rate.Married ? 1 : 0) - (married ? 1 : 0)))
-            .ThenBy(rate => Math.Abs(rate.Parents - parents))
-            .ThenBy(rate => Math.Abs(rate.Children - children))
-            .FirstOrDefault();
     }
 }

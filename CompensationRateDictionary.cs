@@ -179,24 +179,9 @@ public static class CompensationRateDictionary
         {90, 176.00f},
         {100, 195.92f}
     };
-    public static Dictionary<string, float> GetRates()
+    public static Dictionary<string, float> GetRateFromDictionary()
     {
         return new Dictionary<string, float>(_rates);
-    }
-    
-    public static Dictionary<int, float> GetChildUnder18Rates()
-    {
-        return new Dictionary<int, float>(_childUnder18Rates);
-    }
-    
-    public static Dictionary<int, float> GetChildOver18SchoolRates()
-    {
-        return new Dictionary<int, float>(_childOver18SchoolRates);
-    }
-    
-    public static Dictionary<int, float> GetSpouseAidAttendanceRates()
-    {
-        return new Dictionary<int, float>(_spouseAidAttendanceRates);
     }
     
     public static int GetRateKey(int percentage)
@@ -208,7 +193,7 @@ public static class CompensationRateDictionary
         return (percentage / 10) * 10;
     }
     
-    // Convenient methods to directly get a rate for a specific percentage
+    // get a rate for a specific percentage and dependent type
     public static float GetChildUnder18Rate(int disabilityPercentage)
     {
         int key = GetRateKey(disabilityPercentage);
@@ -221,7 +206,7 @@ public static class CompensationRateDictionary
         return _childOver18SchoolRates.TryGetValue(key, out float rate) ? rate : 0;
     }
     
-    public static float GetSpouseAidAttendanceRate(int disabilityPercentage)
+    public static float GetSpouseAidAttendanceRate(int disabilityPercentage) //not in use currently in app
     {
         int key = GetRateKey(disabilityPercentage);
         return _spouseAidAttendanceRates.TryGetValue(key, out float rate) ? rate : 0;

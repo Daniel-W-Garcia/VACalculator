@@ -13,16 +13,6 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-        var test = new List<int> { 50, 30 };
-        int result = CalculateRate.CombineDisabilityRatings(test);
-        System.Diagnostics.Debug.WriteLine("======= TEST CALCULATION =======");
-        System.Diagnostics.Debug.WriteLine($"50% + 30% = {result}%");
-    
-        // Check what happens if the percentages are ordered differently
-        var test2 = new List<int> { 30, 50 };
-        int result2 = CalculateRate.CombineDisabilityRatings(test2);
-        System.Diagnostics.Debug.WriteLine($"30% + 50% = {result2}%");
-        System.Diagnostics.Debug.WriteLine("================================");
         
         ParentsPicker.SelectedIndex = 0;
         ChildrenUnder18Picker.SelectedIndex = 0;
@@ -38,7 +28,7 @@ public partial class MainPage : ContentPage
     
         foreach (var percentage in _selectedPercentages)
         {
-            var frame = new Frame
+            var percentFrame = new Frame
             {
                 BackgroundColor = Color.FromArgb("#E6F2FF"),
                 Padding = new Thickness(10, 5),
@@ -49,7 +39,7 @@ public partial class MainPage : ContentPage
         
             var layout = new HorizontalStackLayout();
         
-            var label = new Label
+            var labelPercent = new Label
             {
                 Text = $"{percentage}%",
                 FontSize = 16,
@@ -58,7 +48,7 @@ public partial class MainPage : ContentPage
                 VerticalOptions = LayoutOptions.Center
             };
         
-            var button = new Button
+            var percentSelectedButton = new Button
             {
                 Text = "×",
                 FontSize = 14,
@@ -76,13 +66,13 @@ public partial class MainPage : ContentPage
                 CommandParameter = percentage
 
             };
-            button.Clicked += RemovePercentage_Clicked;
+            percentSelectedButton.Clicked += RemovePercentage_Clicked;
         
-            layout.Children.Add(label);
-            layout.Children.Add(button);
-            frame.Content = layout;
+            layout.Children.Add(labelPercent);
+            layout.Children.Add(percentSelectedButton);
+            percentFrame.Content = layout;
         
-            SelectedPercentagesContainer.Children.Add(frame);
+            SelectedPercentagesContainer.Children.Add(percentFrame);
         }
     }
 
@@ -155,8 +145,7 @@ public partial class MainPage : ContentPage
         UpdateCalculation();
     }
 
-
-    private void UpdateCalculation()
+    private void UpdateCalculation() //might need to refactor this into smaller chunks and call the chunks here instead. this is too spaghetti
     {
         if (_selectedPercentages.Count > 0)
         {
