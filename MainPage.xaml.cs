@@ -145,31 +145,37 @@ public partial class MainPage : ContentPage
         UpdateCalculation();
     }
 
-    private void UpdateCalculation() //might need to refactor this into smaller chunks and call the chunks here instead. this is too spaghetti
+    private void UpdateCalculation()
     {
         if (_selectedPercentages.Count > 0)
         {
             // Calculate combined rating
             List<int> percentages = _selectedPercentages.ToList();
             int combinedRating = CalculateRate.CombineDisabilityRatings(percentages);
-            
+
             int childrenBasic = _childrenUnder18 > 0 || _childrenOver18 > 0 ? 1 : 0;
-            
+
             // Calculate additional children (beyond the first one)
             int additionalChildrenUnder18 = childrenBasic > 0 ? _childrenUnder18 - 1 : 0;
             if (additionalChildrenUnder18 < 0) additionalChildrenUnder18 = 0;
+
             
-            float compensation = CalculateRate.CalculateTotalCompensation(
-                combinedRating, 
-                _isMarried, 
-                _parents, 
-                childrenBasic, 
-                _childrenOver18,
-                additionalChildrenUnder18);
-            
+            var veteran = new Veteran
+            {
+                DisabilityPercentage = combinedRating,
+                IsMarried = _isMarried,
+                ParentCount = _parents,
+                ChildrenUnder18Count = childrenBasic,
+                ChildrenOver18InSchoolCount = _childrenOver18,
+                AdditionalChildrenUnder18Count = additionalChildrenUnder18,
+                SpouseReceivingAidAndAttendance = false 
+            };
+
+            float compensation = CalculateRate.CalculateTotalCompensation(veteran);
+
             // Update UI
             CombinedRatingLabel.Text = $"{combinedRating}%";
-            
+
             if (compensation >= 0)
                 CompensationLabel.Text = compensation.ToString("C");
             else

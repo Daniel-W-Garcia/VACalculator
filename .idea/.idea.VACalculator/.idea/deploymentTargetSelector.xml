@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="VACalculatorApp">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-04-25T17:12:37.721753100Z">
+        <DropdownSelection timestamp="2025-04-27T16:21:56.743180200Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\itodo\.android\avd\pixel_5_-_api_33.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\itodo\.android\avd\Pixel_Tablet.avd" />
             </handle>
           </Target>
         </DropdownSelection>

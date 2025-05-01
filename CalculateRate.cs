@@ -7,10 +7,10 @@ public class CalculateRate
     private static string GetRateKey(int disabilityPercentage, bool married, int parents, int children)
     {
         // Normalize inputs
-        parents = Math.Clamp(parents, 0, 2);
-        children = children > 0 ? 1 : 0; // Data only distinguishes between 0 or 1 in the VA table. we account for more children later
+        parents = Math.Clamp(parents, 0, 2); // 2 parents max on VA site
+        children = children > 0 ? 1 : 0; // Data only distinguishes between 0 or 1 on the VA table. We account for more children later
         
-        return $"{disabilityPercentage}-{married}-{parents}-{children}";
+        return $"{disabilityPercentage}-{married}-{parents}-{children}"; //this is the string we use for the dictionary
     }
     
     // Gets compensation rate from dictionary
@@ -20,8 +20,8 @@ public class CalculateRate
         
         // Use the CompensationRateDictionary.GetRateFromDictionary() method to access the rates
         var rates = CompensationRateDictionary.GetRateFromDictionary();
-        if (rates.TryGetValue(key, out float rate))
-            return rate;
+        if (rates.TryGetValue(key, out float tableRate))
+            return tableRate;
             
         return -1; 
     }
@@ -34,58 +34,59 @@ public class CalculateRate
         if (ratings.Count == 1)
             return ratings[0];
             
-        var sortedRatings = ratings.OrderByDescending(r => r).ToList();
+        var sortedRatings = ratings.OrderByDescending(r => r).ToList(); //sort the ratings highest to lowest to comply with how the VA does it
         
-        double efficiency = 100.0;
-        double combined = 0.0;
+        double remainingPercentage = 100.0; //This is part of the wonky way the VA does math. it's a percentage from the percentage.
+        double combinedPercentage = 0.0; //combined percentage starts
         
         foreach (var rating in sortedRatings)
         {
-            combined += (efficiency * rating) / 100.0;
+            // Each new rating only applies to the remaining percentage portion
+
+            combinedPercentage += (remainingPercentage * rating) / 100.0;  //As the combined percentage increases, the remaining percentage decreases and future ratings have less of an impact on combined rating
             
-            efficiency = (100.0 - combined) / 100.0 * 100.0;
+            remainingPercentage = (100.0 - combinedPercentage); // We start with 100 and then subtract the highest remaining rating
         }
         
-        int roundedCombined = (int)Math.Round(combined / 10.0, MidpointRounding.AwayFromZero) * 10; // this was not easy to find. I couldn't figure out why my percentages were wrong! C# uses bankers rounding!
+        int roundedCombined = (int)Math.Round(combinedPercentage / 10.0, MidpointRounding.AwayFromZero) * 10; // this was not easy to find. I couldn't figure out why my percentages were wrong! C# uses bankers rounding!
         
-        return Math.Min(roundedCombined, 100);
-        
+        return Math.Min(roundedCombined, 100); //cap at 100
     }
     
-    public static float CalculateTotalCompensation(int disabilityPercentage, bool married, int parents, int children, // these params are ridiculous. might refactor into puting a method or delegate here later.
-        int childrenOver18InSchool, int additionalChildrenUnder18 = 0, bool spouseReceivingAidAndAttendance = false)
+    public static float CalculateTotalCompensation(Veteran veteran)
     {
-        float baseRate = GetTableRate(disabilityPercentage, married, parents, children);
+        float rate = GetTableRate(veteran.DisabilityPercentage, veteran.IsMarried, veteran.ParentCount, veteran.ChildrenUnder18Count);
+        //start with a base table rate
 
-        if (baseRate < 0)
+        if (rate < 0)
         {
-            return baseRate; // Rate not found
+            return rate; // Rate not found
         }
         
         // Additional benefits only apply for 30%+ ratings
-        if (disabilityPercentage >= 30)
+        if (veteran.DisabilityPercentage >= 30)
         {
             // Add for additional children under 18
-            if (additionalChildrenUnder18 > 0)
+            if (veteran.AdditionalChildrenUnder18Count > 0)
             {
-                float childBonusUnder18 = CompensationRateDictionary.GetChildUnder18Rate(disabilityPercentage);
-                baseRate += additionalChildrenUnder18 * childBonusUnder18;
+                float childBonusUnder18 = CompensationRateDictionary.GetChildUnder18Rate(veteran.DisabilityPercentage); //get the amount per child from the dictionary
+                rate += veteran.AdditionalChildrenUnder18Count * childBonusUnder18; //add the amount per child to the total rate
             }
         
             // Add for children over 18 in school
-            if (childrenOver18InSchool > 0)
+            if (veteran.ChildrenOver18InSchoolCount > 0)
             {
-                float childBonusOver18InSchool = CompensationRateDictionary.GetChildOver18SchoolRate(disabilityPercentage);
-                baseRate += childrenOver18InSchool * childBonusOver18InSchool;
+                float childBonusOver18InSchool = CompensationRateDictionary.GetChildOver18SchoolRate(veteran.DisabilityPercentage);
+                rate += veteran.ChildrenOver18InSchoolCount * childBonusOver18InSchool;
             }
         
             // Add for spouse Aid and Attendance (only applies to 70%+ ratings) I don't have this in my app right now
-            if (married && spouseReceivingAidAndAttendance && disabilityPercentage >= 70)
+            if (veteran.IsMarried && veteran.SpouseReceivingAidAndAttendance && veteran.DisabilityPercentage >= 70)
             {
-                float aidAndAttendanceBonus = CompensationRateDictionary.GetSpouseAidAttendanceRate(disabilityPercentage);
-                baseRate += aidAndAttendanceBonus;
+                float aidAndAttendanceBonus = CompensationRateDictionary.GetSpouseAidAttendanceRate(veteran.DisabilityPercentage);
+                rate += aidAndAttendanceBonus;
             }
         }
-        return baseRate;
+        return rate;
     }
 }
