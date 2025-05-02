@@ -1,10 +1,11 @@
 ﻿using System.Collections.ObjectModel;
+using Syncfusion.Maui.Toolkit.Themes;
 
 namespace VACalculatorApp;
 
 public partial class MainPage : ContentPage
 {
-    private ObservableCollection<int> _selectedPercentages = new ();
+    private ObservableCollection<int> _selectedPercentages = new (); //super cool collection type that updates in real time when changes are made using an event
     private bool _isMarried;
     private int _parents;
     private int _childrenUnder18;
