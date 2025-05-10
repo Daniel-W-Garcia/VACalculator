@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15da1041-fea0-43b8-ba90-0dac4366ca4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator/.idea/libraries/androidx_collection_collection_jvm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator/.idea/libraries/androidx_lifecycle_lifecycle_common_jvm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator/.idea/libraries/androidx_lifecycle_lifecycle_runtime_android.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator/.idea/libraries/androidx_lifecycle_lifecycle_runtime_ktx_android.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator/.idea/libraries/androidx_lifecycle_lifecycle_viewmodel_android.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BoardRows.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KnightsTour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KnightsTourPage.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppShell.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AppShell.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppShell.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AppShell.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

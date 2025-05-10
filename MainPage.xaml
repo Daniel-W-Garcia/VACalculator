@@ -17,6 +17,7 @@
                 <VerticalStackLayout Spacing="15">
                     <Label Text="Dependent Information" FontSize="20" FontAttributes="Bold"/>
                     
+                    <!-- TODO Change to SfPicker -->
                     <!-- Married Toggle -->
                     <HorizontalStackLayout Spacing="15">
                         <Label Text="Married:" VerticalOptions="Center" WidthRequest="200"/>
@@ -26,6 +27,7 @@
 
                     </HorizontalStackLayout>
                     
+                    <!-- TODO Change to SfPicker -->
                     <!-- Parents Dropdown -->
                     <HorizontalStackLayout Spacing="15">
                         <Label Text="Parents:" VerticalOptions="Center" WidthRequest="200"/>
@@ -40,6 +42,7 @@
                         </Picker>
                     </HorizontalStackLayout>
                     
+                    <!-- TODO Change to SfPicker -->
                     <!-- Children Under 18 Dropdown -->
                     <HorizontalStackLayout Spacing="15">
                         <Label Text="Children Under 18:" VerticalOptions="Center" WidthRequest="200"/>
@@ -61,6 +64,7 @@
                         </Picker>
                     </HorizontalStackLayout>
                     
+                    <!-- TODO Change to SfPicker -->
                     <!-- Children Over 18 in School Dropdown -->
                     <HorizontalStackLayout Spacing="15">
                         <Label Text="Children Over 18 in School:" VerticalOptions="Center" WidthRequest="200"/>
@@ -89,7 +93,7 @@
                             Margin="0,10,0,0"/>
                 </VerticalStackLayout>
             </Frame>
-            
+            <!-- TODO Add an SfLinearGauge -->
             <!-- Disability Percentage Buttons -->
             <Frame BorderColor="LightGray" CornerRadius="8" Padding="15" HasShadow="True">
                 <VerticalStackLayout Spacing="15">
@@ -277,6 +281,13 @@
                     </Grid>
                 </VerticalStackLayout>
             </Frame>
+            <Button Text="Knight's Tour Game" 
+                    Clicked="NavigateToKnightTour_Clicked"
+                    BackgroundColor="#0078D7"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Margin="0,20,0,0"/>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

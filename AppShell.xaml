@@ -11,5 +11,10 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+        
+    <ShellContent
+        Title="Knight's Tour"
+        ContentTemplate="{DataTemplate local:KnightTourPage}"
+        Route="knighttour" />
 
 </Shell>

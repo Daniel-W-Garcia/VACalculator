@@ -22,6 +22,10 @@ public partial class MainPage : ContentPage
         
         UpdateCalculation();
     }
+    private async void NavigateToKnightTour_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//knighttour");
+    }
     private void UpdateSelectedPercentagesDisplay()
     {
         SelectedPercentagesContainer.Children.Clear();
