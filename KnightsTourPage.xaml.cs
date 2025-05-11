@@ -1,126 +1,211 @@
-﻿namespace VACalculatorApp
+﻿using Microsoft.Maui.Controls.Shapes;
+using Syncfusion.Maui.Picker;
+
+namespace VACalculatorApp;
+
+public partial class KnightTourPage
 {
-    public partial class KnightTourPage : ContentPage
+    private KnightsTourGame _game;
+    private Button[,] _buttonGrid;
+    private int _currentBoardSize = 8; //default size
+
+    public KnightTourPage()
     {
-        private KnightsTourGame _game;
-        private Button[,] _cellButtons;
+        InitializeComponent();
+        _game = new KnightsTourGame(_currentBoardSize);
+        _buttonGrid = new Button[_currentBoardSize, _currentBoardSize];
+        SetupChessboard();
+    }
+    private void OnBoardSizeButton_OnClicked(object sender, PickerSelectionChangedEventArgs pickerArgs)
+    {
+        if (ChessboardGrid == null) return; // Prevent event from running too early
 
-        public KnightTourPage()
+        var gameConfiguration = BindingContext as GameBoardConfiguration;
+        if (gameConfiguration?.BoardSizes == null || gameConfiguration.BoardSizes.Count == 0)
         {
-            InitializeComponent();
-            _game = new KnightsTourGame();
-            _cellButtons = new Button[8, 8]; // TODO 8x8 chessboard for now, but may add option later for user input to choose size
-            SetupChessboard();
+            return; // Or fallback to a default size
         }
 
-        private void SetupChessboard()
+        var sizeOptions = gameConfiguration.BoardSizes;
+        if (pickerArgs.NewValue < 0 || pickerArgs.NewValue >= sizeOptions.Count) //NewValue is a property of the PickerSelectionChangedEventArgs class from Sf
         {
-            // Clear existing children
-            ChessboardGrid.Children.Clear();
-            
-            // Create cell buttons for the chessboard
-            for (int row = 0; row < 8; row++)
+            return;
+        }
+
+        string sizeString = sizeOptions[pickerArgs.NewValue];
+        int newSize = ParseBoardSize(sizeString);
+        RecreateChessboard(newSize);
+    }
+
+
+    private void RecreateChessboard(int boardSize)
+    {
+        if (ChessboardGrid == null) return;
+        _currentBoardSize = boardSize; // store current board size
+
+        _game = new KnightsTourGame(boardSize);
+        _buttonGrid = new Button[boardSize, boardSize];
+
+        ChessboardGrid.RowDefinitions.Clear();
+        for (int i = 0; i < boardSize; i++)
+        {
+            ChessboardGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+        }
+
+        ChessboardGrid.ColumnDefinitions.Clear();
+        for (int i = 0; i < boardSize; i++)
+        {
+            ChessboardGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+        }
+        SetupChessboard();
+    }
+
+
+    private int ParseBoardSize(string pickerValue) //getting input from the SfPicker and converting it to an int for the board size
+    {
+        if (pickerValue == null) return 8; // fallback to default size
+        
+        var boardSizeParts = pickerValue.Split('x', '×');
+        
+        if (boardSizeParts.Length == 2 && int.TryParse(boardSizeParts[0].Trim(), out int parsedSize))
+        {
+            return parsedSize; //only need 1 int since the board is square, so return the first one
+        }
+        return 8; //fall through to default size just in case
+    }
+
+
+    private void SetupChessboard()
+    {
+        if (ChessboardGrid == null) return;
+        ChessboardGrid.Children.Clear();
+
+        for (int row = 0; row < _currentBoardSize; row++)
+        {
+            for (int col = 0; col < _currentBoardSize; col++)
             {
-                for (int col = 0; col < 8; col++)
+                var cellButton = new Button
                 {
-                    var cellButton = new Button
-                    {
-                        BackgroundColor = (row + col) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue,
-                        CornerRadius = 0,
-                        Margin = 1,
-                        Padding = 0
-                    };
-                    
-                    // Store row/col for later use in event handler
-                    int r = row;
-                    int c = col;
-                    
-                    cellButton.Clicked += (sender, args) => CellButton_Clicked(r, c);
-                    
-                    ChessboardGrid.Add(cellButton, col, row);
-                    _cellButtons[row, col] = cellButton;
-                }
+                    BackgroundColor = (row + col) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue,
+                    CornerRadius = 0,
+                    Margin = 1,
+                    Padding = 0
+                };
+                int r = row, c = col;
+                cellButton.Clicked += (sender, args) => CellButton_Clicked(r, c);
+                ChessboardGrid.Add(cellButton, col, row);
+                _buttonGrid[row, col] = cellButton;
             }
         }
+    }
 
-        private void CellButton_Clicked(int row, int col)
+    private void CellButton_Clicked(int row, int col)//TODO need to add win and lose conditions
+    {
+        if (_game.Move(row, col))
         {
-            if (_game.Move(row, col))
-            {
-                // Update UI to show the knight's position
-                UpdateBoard();
-                ResultLabel.Text = $"Knight moved to Row {row+1}, Column {col+1}";
+            // Update UI to show the knight's position
+            UpdateBoard();
+            ResultLabel.Text = $"Knight moved to Row {row+1}, Column {col+1}";
                 
-                if (_game.IsCompleted())//TODO need to add win and lose conditions
-                {
-                    ResultLabel.Text = "Tour completed!";
-                }
-            }
-            else
+            if (_game.IsCompleted())//TODO check if knight can move to any other cell
             {
-                ResultLabel.Text = "Invalid move!";
+                ResultLabel.Text = "Tour completed!";//TODO if all cells visited then it's a win, else it's a loss
             }
         }
-
-        private void UpdateBoard()
+        else
         {
-            // 1) Reset every cell to its “base” chess‐board color and clear text
-            /*for (int boardRow = 0; boardRow < 8; boardRow++)
-            {
-                for (int currentColumn = 0; currentColumn < 8; currentColumn++)
-                {
-                    _cellButtons[boardRow, currentColumn].Text = "";
-                    _cellButtons[boardRow, currentColumn].BackgroundColor = (boardRow + currentColumn) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue;
-                }
-            }*/
-
-            // 2) Mark all previously visited cells
-            var visited = _game.GetBoard();
-            for (int rowIndex = 0; rowIndex < 8; rowIndex++)
-            {
-                for (int colIndex = 0; colIndex < 8; colIndex++)
-                {
-                    if (visited[rowIndex, colIndex])
-                    {
-                        _cellButtons[rowIndex, colIndex].Text = "♘";
-                        _cellButtons[rowIndex, colIndex].BackgroundColor = Colors.DarkSlateGray;
-                    }
-                }
-            }
-
-            // 3) Place the knight
-            var kx = _game.CurrentX;
-            var ky = _game.CurrentY;
-            if (kx >= 0 && ky >= 0)
-            {
-                var btn = _cellButtons[kx, ky];
-                btn.Text = "♘";
-                btn.FontSize = 24;
-                btn.TextColor = Colors.Black;
-            }
-
-            // 4) Highlight all legal moves
-            var moves = _game.GetLegalMoves(kx, ky);
-            foreach (var (r, c) in moves)
-            {
-                _cellButtons[r, c].BackgroundColor = Colors.LightGoldenrodYellow;
-            }
+            ResultLabel.Text = "Invalid move!";
         }
+    }
 
-        private void OnRestartClicked(object sender, EventArgs e)
-        {
-            _game.Reset();
+    private void UpdateBoard()
+    {
+        int size = _currentBoardSize;
+
+        // Remove any old dots
+        var oldDots = ChessboardGrid.Children
+            .Where(v => v is Ellipse)
+            .Cast<Ellipse>()
+            .ToList();
             
-            // Reset button visuals
-            for (int row = 0; row < 8; row++)
-            {
-                for (int col = 0; col < 8; col++)
-                {
-                    _cellButtons[row, col].Text = "";
-                    _cellButtons[row, col].BackgroundColor = (row + col) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue;
-                }
-            }
-            ResultLabel.Text = "Board reset. Select a starting position.";
+        foreach (var dot in oldDots)
+        {
+            ChessboardGrid.Children.Remove(dot);
         }
+
+        // Reset every cell
+        for (int rowIndex = 0; rowIndex < size; rowIndex++)
+        {
+            for (int colIndex = 0; colIndex < size; colIndex++)
+            {
+                var btn = _buttonGrid[rowIndex, colIndex];
+                btn.Text        = "";
+                btn.FontSize    = 14;
+                btn.TextColor   = Colors.Black;
+                btn.BackgroundColor = (rowIndex + colIndex) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue;
+            }
+        }
+
+        // Visited cells get a dark slate background + knight char
+        var visited = _game.GetBoard();
+        for (int row = 0; row < size; row++)
+        {
+            for (int col = 0; col < size; col++)
+            {
+                if (visited[row, col])
+                {
+                    var cellButton = _buttonGrid[row, col];
+                    cellButton.BackgroundColor = Colors.OrangeRed;
+                    cellButton.Text = "♘";
+                }
+            }   
+        }
+
+        // Current knight (in case visited painting overwrote it)
+        int kx = _game.CurrentX, ky = _game.CurrentY;
+        if (kx >= 0 && ky >= 0)
+        {
+            var current = _buttonGrid[kx, ky];
+            current.BackgroundColor = Colors.DarkSlateGray;
+            current.Text            = "♘";
+            current.FontSize        = 24;
+        }
+
+        // Add one semi-transparent circle per legal move
+        foreach (var (legalMoveRow, legalMoveColumn) in _game.GetLegalMoves(kx, ky))
+        {
+            var moveIndicator = new Ellipse
+            {
+                Fill              = Colors.Gray.WithAlpha(0.5f).AsPaint(),
+                WidthRequest      = 24,
+                HeightRequest     = 24,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions   = LayoutOptions.Center
+            };
+            ChessboardGrid.Add(moveIndicator, legalMoveColumn, legalMoveRow);
+        }
+    }
+
+
+    private void OnRestartClicked(object sender, EventArgs e)
+    {
+        _game.Reset();
+        for (int row = 0; row < _currentBoardSize; row++)
+        for (int col = 0; col < _currentBoardSize; col++)
+        {
+            _buttonGrid[row, col].Text = "";
+            _buttonGrid[row, col].BackgroundColor = (row + col) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue;
+        }
+        ResultLabel.Text = "Board reset. Select a starting position.";
+    }
+
+    private void BoardSizePickerButton_OnClicked(object? sender, EventArgs buttonEventArgs)
+    {
+        BoardSizePicker.IsOpen = true;
+    }
+
+    private void BoardSizePicker_OnCancelButtonClicked(object? sender, EventArgs footerEventArgs)
+    {
+        BoardSizePicker.IsOpen = false;
     }
 }

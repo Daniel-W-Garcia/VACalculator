@@ -1,15 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
+             xmlns:vaCalculatorApp="clr-namespace:VACalculatorApp"
              x:Class="VACalculatorApp.KnightTourPage"
              Title="Knight's Tour">
-    <!-- TODO Revisit this layout for something that can adjust with screen size -->
+    <ContentPage.BindingContext>
+        <vaCalculatorApp:GameBoardConfiguration/>
+    </ContentPage.BindingContext>
+    
     <VerticalStackLayout Padding="20" Spacing="20">
         <Label Text="Complete The Knight's Tour" FontSize="24" HorizontalOptions="Center" />
         
-        <!-- Grid representation using a simple Grid layout. -->
+        <!-- SfPicker for a drop down board selection size -->
+        <picker:SfPicker x:Name="BoardSizePicker" 
+                         Mode="RelativeDialog" 
+                         RelativePosition="AlignBottom" 
+                         Width="150"  
+                         RelativeView="{x:Reference BoardSizePickerButton}"
+                         SelectionChanged="OnBoardSizeButton_OnClicked"
+                         CancelButtonClicked="BoardSizePicker_OnCancelButtonClicked"
+                         TextDisplayMode="Fade"
+                         HorizontalOptions="Center">
+            <picker:SfPicker.Columns>
+                <picker:PickerColumn ItemsSource="{Binding BoardSizes }" 
+                                     SelectedIndex = "4">
+                </picker:PickerColumn>
+            </picker:SfPicker.Columns>
+            <picker:SfPicker.HeaderView>
+                <picker:PickerHeaderView Text="Select A Board Size" Height="40"
+                                         Background="#bdbdbdfa"/>
+            </picker:SfPicker.HeaderView>
+            <picker:SfPicker.FooterView>
+                <picker:PickerFooterView Height="40" Background="#bdbdbdfa"
+                                         ShowOkButton="False"
+                                         CancelButtonText="Exit"/>
+            </picker:SfPicker.FooterView>
+        </picker:SfPicker>
+        <Button Text="Pick Board Size"
+                x:Name="BoardSizePickerButton"
+                Clicked="BoardSizePickerButton_OnClicked"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="50"
+                WidthRequest="225"
+                BackgroundColor="Chocolate"
+                FontAttributes="Bold"
+                FontSize="18">
+        </Button>
+        
+        <!-- Grid representation using a simple Grid layout. All rows and col split the remaining space -->
         <Grid x:Name="ChessboardGrid"
-              RowDefinitions="*,*,*,*,*,*,*,*"
+              RowDefinitions="*,*,*,*,*,*,*,*" 
               ColumnDefinitions="*,*,*,*,*,*,*,*"
               WidthRequest="300"
               HeightRequest="300"
@@ -20,10 +62,13 @@
         </Grid>
         <!-- TODO Update this button to look better -->
         <Button Text="Restart" Clicked="OnRestartClicked" 
-                BackgroundColor="#0078D7"
-                TextColor="White"
-                WidthRequest="200"
-                HorizontalOptions="Center"/>
+                BackgroundColor="Chocolate"
+                TextColor="Black"
+                FontAttributes="Bold"
+                WidthRequest="225"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                FontSize="18"/>
         
         <Label x:Name="ResultLabel" FontSize="18" HorizontalOptions="Center"/>
     </VerticalStackLayout>
