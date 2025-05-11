@@ -6,7 +6,7 @@
     public int CurrentY { get; private set; } = -1;
     public int MovesMade { get; private set; } = 0;
 
-    public KnightsTourGame(int size = 8) // TODO default size is 8x8 for now, may add option later for user input to choose size
+    public KnightsTourGame(int size = 8)
     {
         _size = size;
         _visitedPositions = new bool[size, size];

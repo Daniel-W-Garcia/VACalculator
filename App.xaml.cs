@@ -6,7 +6,6 @@ namespace VACalculatorApp;
 
 public partial class App : Application
 {
-    //TODO: figure out how to not upload this to github
     public App()
     {
         InitializeComponent();

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
              xmlns:vaCalculatorApp="clr-namespace:VACalculatorApp"
+             xmlns:bottomSheet="http://schemas.syncfusion.com/maui/toolkit"
              x:Class="VACalculatorApp.KnightTourPage"
              Title="Knight's Tour">
     <ContentPage.BindingContext>
@@ -45,10 +46,12 @@
                 HeightRequest="50"
                 WidthRequest="225"
                 BackgroundColor="Chocolate"
+                TextColor="WhiteSmoke"
                 FontAttributes="Bold"
                 FontSize="18">
         </Button>
         
+        <!-- TODO add rules of the game maybe in an info button popup -->
         <!-- Grid representation using a simple Grid layout. All rows and col split the remaining space -->
         <Grid x:Name="ChessboardGrid"
               RowDefinitions="*,*,*,*,*,*,*,*" 
@@ -60,10 +63,9 @@
               HorizontalOptions="Center">
             <!-- Grid cells will be added programmatically -->
         </Grid>
-        <!-- TODO Update this button to look better -->
         <Button Text="Restart" Clicked="OnRestartClicked" 
                 BackgroundColor="Chocolate"
-                TextColor="Black"
+                TextColor="WhiteSmoke"
                 FontAttributes="Bold"
                 WidthRequest="225"
                 HeightRequest="50"
@@ -71,5 +73,16 @@
                 FontSize="18"/>
         
         <Label x:Name="ResultLabel" FontSize="18" HorizontalOptions="Center"/>
+        <Button Text="Back To VA Calculator" 
+                Clicked="NavigateToMainPage_OnClicked"
+                BackgroundColor="Chocolate"
+                TextColor="WhiteSmoke"
+                CornerRadius="8"
+                Margin="0,20,0,0"/>
+        <bottomSheet:SfBottomSheet x:Name="BottomSheetKnightsTour">
+            <bottomSheet:SfBottomSheet.BottomSheetContent>
+                <!--Add your content here-->
+            </bottomSheet:SfBottomSheet.BottomSheetContent>
+        </bottomSheet:SfBottomSheet>
     </VerticalStackLayout>
 </ContentPage>

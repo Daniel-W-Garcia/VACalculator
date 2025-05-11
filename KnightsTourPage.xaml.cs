@@ -208,4 +208,9 @@ public partial class KnightTourPage
     {
         BoardSizePicker.IsOpen = false;
     }
+
+    private async void NavigateToMainPage_OnClicked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("mainpage");
+    }
 }

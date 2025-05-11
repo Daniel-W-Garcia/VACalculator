@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Syncfusion.Licensing;
 using Syncfusion.Maui.Core.Hosting;
+using Syncfusion.Maui.Toolkit.Hosting;
 
 namespace VACalculatorApp;
 
@@ -10,6 +11,7 @@ public static class MauiProgram
     {
         var builder = MauiApp.CreateBuilder();
         builder
+            .ConfigureSyncfusionToolkit()
             .ConfigureSyncfusionCore()
             .UseMauiApp<App>()
             .ConfigureFonts(fonts =>

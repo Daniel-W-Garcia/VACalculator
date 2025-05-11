@@ -25,8 +25,9 @@ public partial class MainPage : ContentPage
     }
     private async void NavigateToKnightTour_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//knighttour");
+        await Shell.Current.GoToAsync("knighttour");
     }
+    
     private void UpdateSelectedPercentagesDisplay()
     {
         SelectedPercentagesContainer.Children.Clear();
@@ -85,7 +86,7 @@ public partial class MainPage : ContentPage
 
     private void PercentageButton_Clicked(object sender, EventArgs e)
     {
-        if (sender is Button button && button.CommandParameter is string percentageStr)
+        if (sender is Button percentageButton && percentageButton.CommandParameter is string percentageStr)
         {
             if (int.TryParse(percentageStr, out int percentage))
             {
@@ -98,7 +99,7 @@ public partial class MainPage : ContentPage
 
     private void RemovePercentage_Clicked(object sender, EventArgs e)
     {
-        if (sender is Button button && button.CommandParameter is int percentage)
+        if (sender is Button removeButton && removeButton.CommandParameter is int percentage)
         {
             _selectedPercentages.Remove(percentage);
             UpdateSelectedPercentagesDisplay();
@@ -113,9 +114,9 @@ public partial class MainPage : ContentPage
         UpdateCalculation();
     }
 
-    private void MarriedSwitch_Toggled(object sender, ToggledEventArgs e)
+    private void MarriedSwitch_Toggled(object sender, ToggledEventArgs toggledEventArgs)
     {
-        _isMarried = e.Value;
+        _isMarried = toggledEventArgs.Value;
         UpdateCalculation();
     }
 
@@ -123,13 +124,19 @@ public partial class MainPage : ContentPage
     {
         // Update values from all pickers
         if (ParentsPicker.SelectedIndex >= 0)
+        {
             _parents = int.Parse(ParentsPicker.SelectedItem.ToString());
-            
+        }
+
         if (ChildrenUnder18Picker.SelectedIndex >= 0)
+        {
             _childrenUnder18 = int.Parse(ChildrenUnder18Picker.SelectedItem.ToString());
-            
+        }
+
         if (ChildrenOver18Picker.SelectedIndex >= 0)
+        {
             _childrenOver18 = int.Parse(ChildrenOver18Picker.SelectedItem.ToString());
+        }
         
         UpdateCalculation();
     }
