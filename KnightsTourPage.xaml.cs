@@ -8,7 +8,6 @@ public partial class KnightTourPage
     private KnightsTourGame _game;
     private Button[,] _buttonGrid;
     private int _currentBoardSize = 8; //default size
-
     public KnightTourPage()
     {
         InitializeComponent();
@@ -32,9 +31,9 @@ public partial class KnightTourPage
             return;
         }
 
-        string sizeString = sizeOptions[pickerArgs.NewValue];
-        int newSize = ParseBoardSize(sizeString);
-        RecreateChessboard(newSize);
+        string sizeString = sizeOptions[pickerArgs.NewValue]; //getting the string from the picker
+        int newSize = ParseBoardSize(sizeString); //parsing the string to an int
+        RecreateChessboard(newSize); //calling the function to recreate the chessboard with the new size
     }
 
 
@@ -86,7 +85,7 @@ public partial class KnightTourPage
             {
                 var cellButton = new Button
                 {
-                    BackgroundColor = (row + col) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue,
+                    BackgroundColor = (row + col) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue, //green and white board
                     CornerRadius = 0,
                     Margin = 1,
                     Padding = 0
@@ -99,22 +98,30 @@ public partial class KnightTourPage
         }
     }
 
-    private void CellButton_Clicked(int row, int col)//TODO need to add win and lose conditions
+    private void CellButton_Clicked(int row, int col)//TODO win and loss conditions in here, probably not the best place for them but it works for now. Also, UI isn't great when you win.
     {
         if (_game.Move(row, col))
         {
             // Update UI to show the knight's position
             UpdateBoard();
             ResultLabel.Text = $"Knight moved to Row {row+1}, Column {col+1}";
-                
-            if (_game.IsCompleted())//TODO check if knight can move to any other cell
-            {
-                ResultLabel.Text = "Tour completed!";//TODO if all cells visited then it's a win, else it's a loss
-            }
         }
         else
         {
             ResultLabel.Text = "Invalid move!";
+        }
+
+        if (_game.GetLegalMoves(row, col).Count == 0)
+        {
+            if (!_game.WinConditionMet)
+            {
+                ResultLabel.Text = "No legal moves. Game over!\nPress RESTART to try again";
+            }
+            
+            else if (_game.WinConditionMet)
+            {
+                ResultLabelWin.Text = "Congratulations! You have completed the Knight's Tour!";
+            }
         }
     }
 

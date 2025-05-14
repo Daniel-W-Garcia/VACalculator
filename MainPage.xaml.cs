@@ -1,6 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using Syncfusion.Maui.Picker;
-using Syncfusion.Maui.Toolkit.Themes;
 
 namespace VACalculatorApp;
 

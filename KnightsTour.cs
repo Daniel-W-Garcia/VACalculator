@@ -4,7 +4,9 @@
     private readonly bool[,] _visitedPositions;
     public int CurrentX { get; private set; } = -1;
     public int CurrentY { get; private set; } = -1;
-    public int MovesMade { get; private set; } = 0;
+    public int MovesMade { get; private set; } = 0; //TODO display a counter of moves. Perhaps count down from winning condition.
+    
+    public bool WinConditionMet { get; private set; }
 
     public KnightsTourGame(int size = 8)
     {
@@ -71,16 +73,17 @@
                 return false;
             }
         }
-
         // commit the move
         CurrentX = nextX;
         CurrentY = nextY;
         _visitedPositions[nextX, nextY] = true;
         MovesMade++;
+        if (MovesMade == _size * _size)
+        {
+            WinConditionMet = true;
+        }
         return true;
-
     }
 
-    public bool IsCompleted() => MovesMade == _size * _size; //TODO need to add win and lose conditions
     public bool[,] GetBoard() => (bool[,])_visitedPositions.Clone();
 }
