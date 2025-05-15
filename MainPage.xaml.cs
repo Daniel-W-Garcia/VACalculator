@@ -1,13 +1,10 @@
-﻿using System.Collections.ObjectModel;
-using Syncfusion.Maui.Toolkit.Chips;
-using SelectionChangedEventArgs = Syncfusion.Maui.Toolkit.Chips.SelectionChangedEventArgs;
+﻿using Syncfusion.Maui.Toolkit.Chips;
 
 namespace VACalculatorApp;
 
 public partial class MainPage : ContentPage
 {
-    private ObservableCollection<int> _selectedPercentages = new (); //super cool collection type that updates in real time when changes are made using an event
-    private PercentagesViewModel _viewModel;
+    private readonly PercentagesViewModel _viewModel;
     private bool _isMarried;
     private int _parents;
     private int _childrenUnder18;
@@ -16,12 +13,13 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-        _viewModel = BindingContext as PercentagesViewModel;
+        _viewModel = BindingContext as PercentagesViewModel ?? new PercentagesViewModel();
         
         ParentsPicker.SelectedIndex = 0;
         ChildrenUnder18Picker.SelectedIndex = 0;
         ChildrenOver18Picker.SelectedIndex = 0;
         
+        EmptyPercentagesLabel.IsVisible = true;
         UpdateCalculation();
     }
     private async void NavigateToKnightTour_Clicked(object sender, EventArgs e)
@@ -29,12 +27,6 @@ public partial class MainPage : ContentPage
         await Shell.Current.GoToAsync("knighttour");
     }
     
-    private void UpdateSelectedPercentagesDisplay()
-    {
-        
-    }
-
-
     private void PercentageButton_Clicked(object sender, EventArgs e)
     {
         if (sender is Button percentageButton && percentageButton.CommandParameter is string percentageStr)
@@ -45,16 +37,6 @@ public partial class MainPage : ContentPage
                 EmptyPercentagesLabel.IsVisible = _viewModel.Percents.Count == 0;
                 UpdateCalculation();
             }
-        }
-    }
-
-    private void RemovePercentage_Clicked(object sender, EventArgs e)
-    {
-        if (sender is Button removeButton && removeButton.CommandParameter is int percentage)
-        {
-            _selectedPercentages.Remove(percentage);
-            UpdateSelectedPercentagesDisplay();
-            UpdateCalculation();
         }
     }
 
@@ -115,7 +97,7 @@ public partial class MainPage : ContentPage
         if (_viewModel.Percents.Count > 0)
         {
             // Calculate combined rating
-            List<int> percentages = _selectedPercentages.ToList();
+            List<int> percentages = _viewModel.Percents.Select(percentItem => percentItem.DisabilityPercentage).ToList();
             int combinedRating = CalculateRate.CombineDisabilityRatings(percentages);
 
             int childrenBasic = _childrenUnder18 > 0 || _childrenOver18 > 0 ? 1 : 0;
@@ -154,9 +136,9 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private void SfChipGroupPercentsContainer_OnItemRemoved(object? sender, SelectionChangedEventArgs e)
+    private void SfChip_OnCloseButtonClicked(object? sender, EventArgs e)
     {
-        if (e.RemovedItem is Percents percent)
+        if (sender is SfChip chip && chip.BindingContext is Percents percent)
         {
             _viewModel.RemovePercentage(percent);
             EmptyPercentagesLabel.IsVisible = _viewModel.Percents.Count == 0;

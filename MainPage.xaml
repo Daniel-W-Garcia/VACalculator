@@ -234,19 +234,42 @@
                     </Grid>
                     
                     <!-- Selected Percentages Display -->
+                    <!-- TODO Flex Layout or someting that allows chips to wrap -->
                     <VerticalStackLayout Spacing="10" Margin="0,15,0,0">
                         <Label Text="Selected Ratings:" 
                                FontSize="16" 
                                TextColor= "Black"
                                FontAttributes="Bold"/>
-                        <ChipControl:SfChipGroup 
-                            x:Name="SfChipGroupPercentsContainer"
-                            DisplayMemberPath="Display"
-                            ItemsSource="{Binding Percents}"
-                            ItemRemoved="SfChipGroupPercentsContainer_OnItemRemoved"
-                            ChipType="Filter">
-                        </ChipControl:SfChipGroup>
-                        
+                            <ChipControl:SfChipGroup 
+                                x:Name="SfChipGroupPercentsContainer"
+                                DisplayMemberPath="Display"
+                                ItemsSource="{Binding Percents}"
+                                ChipType="Filter">
+                                <ChipControl:SfChipGroup.ChipLayout>
+                                    <FlexLayout 
+                                        Wrap="Wrap" 
+                                        Direction="Row"
+                                        JustifyContent="Center"
+                                        AlignItems="Start"
+                                        AlignContent="Start">
+                                    </FlexLayout>
+                                </ChipControl:SfChipGroup.ChipLayout>
+                                <ChipControl:SfChipGroup.ItemTemplate>
+                                <DataTemplate>
+                                    <ChipControl:SfChip
+                                        Text="{Binding Display}"
+                                        ShowCloseButton="True"
+                                        CloseButtonColor="Red"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        WidthRequest="85"
+                                        CloseButtonClicked="SfChip_OnCloseButtonClicked">
+                                    </ChipControl:SfChip>
+                                </DataTemplate>
+                                </ChipControl:SfChipGroup.ItemTemplate>
+                                    
+                                
+                            </ChipControl:SfChipGroup>
                         <Label x:Name="EmptyPercentagesLabel" 
                                Text="No percentages added yet"
                                IsVisible="True"/>

@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15da1041-fea0-43b8-ba90-0dac4366ca4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PercentagesViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VACalculator.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculator.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PercentagesViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PercentagesViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
