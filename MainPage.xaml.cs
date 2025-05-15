@@ -1,10 +1,13 @@
 ﻿using System.Collections.ObjectModel;
+using Syncfusion.Maui.Toolkit.Chips;
+using SelectionChangedEventArgs = Syncfusion.Maui.Toolkit.Chips.SelectionChangedEventArgs;
 
 namespace VACalculatorApp;
 
 public partial class MainPage : ContentPage
 {
     private ObservableCollection<int> _selectedPercentages = new (); //super cool collection type that updates in real time when changes are made using an event
+    private PercentagesViewModel _viewModel;
     private bool _isMarried;
     private int _parents;
     private int _childrenUnder18;
@@ -13,11 +16,11 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        _viewModel = BindingContext as PercentagesViewModel;
         
         ParentsPicker.SelectedIndex = 0;
         ChildrenUnder18Picker.SelectedIndex = 0;
         ChildrenOver18Picker.SelectedIndex = 0;
-        UpdateSelectedPercentagesDisplay();
         
         UpdateCalculation();
     }
@@ -28,57 +31,7 @@ public partial class MainPage : ContentPage
     
     private void UpdateSelectedPercentagesDisplay()
     {
-        SelectedPercentagesContainer.Children.Clear();
-        EmptyPercentagesLabel.IsVisible = _selectedPercentages.Count == 0;
-    
-        foreach (var percentage in _selectedPercentages)
-        {
-            var percentFrame = new Frame
-            {
-                BackgroundColor = Color.FromArgb("#E6F2FF"),
-                Padding = new Thickness(10, 5),
-                CornerRadius = 5,
-                BorderColor = Color.FromArgb("#0078D7"),
-                Margin = new Thickness(0, 0, 8, 8)
-            };
         
-            var layout = new HorizontalStackLayout();
-        
-            var labelPercent = new Label
-            {
-                Text = $"{percentage}%",
-                FontSize = 16,
-                TextColor = Colors.Black,
-                FontAttributes = FontAttributes.Bold,
-                VerticalOptions = LayoutOptions.Center
-            };
-        
-            var percentSelectedButton = new Button
-            {
-                Text = "×",
-                FontSize = 14,
-                FontAttributes = FontAttributes.Bold,
-                BackgroundColor = Color.FromArgb("#FF5252"),
-                TextColor = Colors.White,
-                Margin = new Thickness(5, 0, 0, 0),
-                HeightRequest = 20,
-                WidthRequest = 20,
-                CornerRadius = 10,
-                Padding = new Thickness(0),  
-                LineBreakMode = LineBreakMode.NoWrap,  
-                VerticalOptions = LayoutOptions.Center, 
-                HorizontalOptions = LayoutOptions.Center, 
-                CommandParameter = percentage
-
-            };
-            percentSelectedButton.Clicked += RemovePercentage_Clicked;
-        
-            layout.Children.Add(labelPercent);
-            layout.Children.Add(percentSelectedButton);
-            percentFrame.Content = layout;
-        
-            SelectedPercentagesContainer.Children.Add(percentFrame);
-        }
     }
 
 
@@ -88,8 +41,8 @@ public partial class MainPage : ContentPage
         {
             if (int.TryParse(percentageStr, out int percentage))
             {
-                _selectedPercentages.Add(percentage);
-                UpdateSelectedPercentagesDisplay();
+                _viewModel.AddPercentage(percentage);
+                EmptyPercentagesLabel.IsVisible = _viewModel.Percents.Count == 0;
                 UpdateCalculation();
             }
         }
@@ -107,8 +60,8 @@ public partial class MainPage : ContentPage
 
     private void ClearPercentages_Clicked(object sender, EventArgs e)
     {
-        _selectedPercentages.Clear();
-        UpdateSelectedPercentagesDisplay();
+        _viewModel.ClearPercentages();
+        EmptyPercentagesLabel.IsVisible = true;
         UpdateCalculation();
     }
 
@@ -158,7 +111,8 @@ public partial class MainPage : ContentPage
 
     private void UpdateCalculation()
     {
-        if (_selectedPercentages.Count > 0)
+        
+        if (_viewModel.Percents.Count > 0)
         {
             // Calculate combined rating
             List<int> percentages = _selectedPercentages.ToList();
@@ -197,6 +151,16 @@ public partial class MainPage : ContentPage
             // No percentages selected
             CombinedRatingLabel.Text = "--%";
             CompensationLabel.Text = "$0.00";
+        }
+    }
+
+    private void SfChipGroupPercentsContainer_OnItemRemoved(object? sender, SelectionChangedEventArgs e)
+    {
+        if (e.RemovedItem is Percents percent)
+        {
+            _viewModel.RemovePercentage(percent);
+            EmptyPercentagesLabel.IsVisible = _viewModel.Percents.Count == 0;
+            UpdateCalculation();
         }
     }
 }

@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ChipControl="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:local="clr-namespace:VACalculatorApp"
              x:Class="VACalculatorApp.MainPage"
              Title="VA Disability Calculator">
+    <ContentPage.BindingContext>
+        <local:PercentagesViewModel/>
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="20">
@@ -234,13 +239,14 @@
                                FontSize="16" 
                                TextColor= "Black"
                                FontAttributes="Bold"/>
-                        <FlexLayout x:Name="SelectedPercentagesContainer"
-                                    Wrap="Wrap"
-                                    JustifyContent="Start"
-                                    AlignItems="Center"
-                                    Margin="0,5,0,0">
-                            <!-- Empty by default, items will be added programmatically -->
-                        </FlexLayout>
+                        <ChipControl:SfChipGroup 
+                            x:Name="SfChipGroupPercentsContainer"
+                            DisplayMemberPath="Display"
+                            ItemsSource="{Binding Percents}"
+                            ItemRemoved="SfChipGroupPercentsContainer_OnItemRemoved"
+                            ChipType="Filter">
+                        </ChipControl:SfChipGroup>
+                        
                         <Label x:Name="EmptyPercentagesLabel" 
                                Text="No percentages added yet"
                                IsVisible="True"/>
