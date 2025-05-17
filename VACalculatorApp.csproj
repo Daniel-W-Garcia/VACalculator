@@ -43,7 +43,7 @@
         <MauiIcon Include="Resources\AppIcon\appicon.png" ForegroundFile="Resources\AppIcon\appiconfg.png" Color="#512BD4" />
 
         <!-- Splash Screen -->
-        <MauiSplashScreen Include="Resources\Splash\splash.png" Color="Gray" BaseSize="128,128" />
+        <MauiSplashScreen Include="Resources\Images\splash.svg"/>
 
         <!-- Images -->
         <MauiImage Include="Resources\Images\*" />
@@ -54,6 +54,7 @@
 
         <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+        <None Remove="Resources\Splash\splash.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -76,6 +77,14 @@
       <EmbeddedResource Include="secrets.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Resources\Splash\" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
+      <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.15" />
     </ItemGroup>
 
 </Project>

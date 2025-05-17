@@ -145,4 +145,9 @@ public partial class MainPage : ContentPage
             UpdateCalculation();
         }
     }
+
+    private void Infobutton_OnClicked(object? sender, EventArgs e)
+    {
+        VAMathPopup.Show();
+    }
 }

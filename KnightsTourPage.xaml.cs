@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.Controls.Shapes;
 using Syncfusion.Maui.Picker;
+using Syncfusion.Maui.Toolkit.Popup;
 
 namespace VACalculatorApp;
 
@@ -98,7 +99,7 @@ public partial class KnightTourPage
         }
     }
 
-    private void CellButton_Clicked(int row, int col)//TODO win and loss conditions in here, probably not the best place for them but it works for now. Also, UI isn't great when you win.
+    private void CellButton_Clicked(int row, int col)
     {
         if (_game.Move(row, col))
         {
@@ -219,5 +220,11 @@ public partial class KnightTourPage
     private async void NavigateToMainPage_OnClicked(object? sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("mainpage");
+    }
+
+
+    private void GameRules_OnClicked(object? sender, EventArgs e)
+    {
+        KnightsTourRulesPopup.Show();
     }
 }

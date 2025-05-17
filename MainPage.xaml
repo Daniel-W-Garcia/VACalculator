@@ -2,17 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ChipControl="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:SfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:local="clr-namespace:VACalculatorApp"
              x:Class="VACalculatorApp.MainPage"
              Title="VA Disability Calculator">
     <ContentPage.BindingContext>
         <local:PercentagesViewModel/>
     </ContentPage.BindingContext>
-
+    
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="20">
-            
-            <Label Text="VA Disability Calculator" 
+                
+            <Label Text="Enter Your Information:" 
                    FontSize="28" 
                    FontAttributes="Bold"
                    HorizontalOptions="Center" />
@@ -288,7 +290,54 @@
             <!-- Results Section -->
             <Frame BorderColor="LightGray" CornerRadius="8" Padding="15" HasShadow="True">
                 <VerticalStackLayout Spacing="15">
-                    <Label Text="Results" FontSize="20" FontAttributes="Bold"/>
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <Label Grid.Column="0" Text="Results" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <buttons:SfButton Grid.Column="2" x:Name="Infobutton" CornerRadius="20"
+                                          Text="?"
+                                          FontAttributes="Bold"
+                                          FontAutoScalingEnabled="True"
+                                          VerticalOptions="Center"
+                                          Background="DarkGrey"
+                                          HeightRequest="30"
+                                          WidthRequest="30"
+                                          Clicked="Infobutton_OnClicked"/>
+                    </Grid>
+                    <SfPopup:SfPopup x:Name="VAMathPopup" ShowFooter="True" AutoSizeMode="Both" AcceptButtonText="Close">
+                        <SfPopup:SfPopup.HeaderTemplate>
+                            <DataTemplate>
+                                <Label Text="How The VA Calculates Your Percentage" 
+                                       FontAttributes="Bold" TextColor="Black" FontFamily="sans-serif" FontSize="20" BackgroundColor="#8a8a8aa6" 
+                                       HorizontalTextAlignment="Center" 
+                                       Padding="20" VerticalTextAlignment="Center"/>                               
+                            </DataTemplate>
+                        </SfPopup:SfPopup.HeaderTemplate>
+                        <SfPopup:SfPopup.ContentTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Label TextColor="Black" Padding="20,10,0,0" FontSize="17" FontAttributes="Bold" FontFamily="sans-serif" 
+                                           Text='VA ratings are calculated by applying each disability 
+                                                percentage to the remaining "healthy" portion of your health, starting with the highest rating.'/>
+                                    <Label TextColor="Black" Padding="20, 20,0,10" FontSize="18"  FontAttributes="Bold, Italic" FontFamily="sans-serif" 
+                                           Text="Here's How It Works:" />
+                                    <Label TextColor="Black" Padding="20, 10" FontSize="16" FontAttributes="Bold" FontFamily="sans-serif"
+                                           Text='Sort: Ratings are ordered from highest to lowest.'/>
+                                    <Label TextColor="Black" HorizontalTextAlignment="Justify" FontSize="12" Padding="40,0"
+                                           Text="ex:  50%, 30%, 20%, 20%, 10%, 10%, 10%"  />
+                                    <Label TextColor="Black" Padding="20, 20,20,10" FontSize="14"  HorizontalTextAlignment="Justify" FontAttributes="Bold" FontFamily="sans-serif"
+                                           Text='Apply Sequentially: Each rating is a percentage of the remaining healthy percentage.'/>
+                                    <Label TextColor="Black" Padding="40,0" HorizontalTextAlignment="Justify" FontSize="12"
+                                           Text='ex: A 50% rating leaves 50% "healthy". A second 50% rating would apply to the remaining 50%, adding 25% (total 75%).' />
+                                    <Label TextColor="Black" Padding="20, 20,20,10" FontSize="14" FontAttributes="Bold" FontFamily="sans-serif"
+                                           Text='Rounded and Cappped: The total is rounded up to the nearest 10% and capped at 100%.'/>
+                                    <Label TextColor="Black" Padding="40,0" HorizontalTextAlignment="Justify" FontSize="12"
+                                           Text='Values are rounded up at the midpoint ie... 75% would become 80%. You cannot exceed a 100% Combined rating' />
+                                    <Label TextColor="Black" Padding="20,40,20,0" FontSize="16" FontAttributes="Bold" FontFamily="sans-serif"
+                                           Text='This method ensures higher ratings impact the total more, while lower ratings progressively affect less of the remaining "healthy" portion.'/>
+                                    
+                                </StackLayout>
+                            </DataTemplate>
+                        </SfPopup:SfPopup.ContentTemplate>
+                    </SfPopup:SfPopup>
                     
                     <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto" ColumnSpacing="15" RowSpacing="15">
                         <!-- Combined Rating -->
