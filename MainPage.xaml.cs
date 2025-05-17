@@ -1,4 +1,5 @@
-﻿using Syncfusion.Maui.Toolkit.Chips;
+﻿using Syncfusion.Maui.Buttons;
+using Syncfusion.Maui.Toolkit.Chips;
 
 namespace VACalculatorApp;
 
@@ -22,14 +23,9 @@ public partial class MainPage : ContentPage
         EmptyPercentagesLabel.IsVisible = true;
         UpdateCalculation();
     }
-    private async void NavigateToKnightTour_Clicked(object sender, EventArgs e)
+    private void PercentageButton_Clicked(object? sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("knighttour");
-    }
-    
-    private void PercentageButton_Clicked(object sender, EventArgs e)
-    {
-        if (sender is Button percentageButton && percentageButton.CommandParameter is string percentageStr)
+        if (sender is SfButton percentageButton && percentageButton.CommandParameter is string percentageStr)
         {
             if (int.TryParse(percentageStr, out int percentage))
             {
@@ -149,5 +145,10 @@ public partial class MainPage : ContentPage
     private void Infobutton_OnClicked(object? sender, EventArgs e)
     {
         VAMathPopup.Show();
+    }
+
+    private async void GoToKnightTour_OnClicked(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("knighttour");
     }
 }

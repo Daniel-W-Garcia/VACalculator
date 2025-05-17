@@ -13,13 +13,25 @@
     </ContentPage.BindingContext>
     
     <VerticalStackLayout Padding="20" Spacing="20">
-        <Label Text="Complete The Knight's Tour" FontSize="24" HorizontalOptions="Center" />
+        <Label Text="Complete The Knight's Tour" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold"/>
         
         <!-- SfPicker for a drop down board selection size -->
+        <buttons:SfButton Text="Pick Board Size"
+                x:Name="BoardSizePickerButton"
+                Clicked="BoardSizePickerButton_OnClicked"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="50"
+                WidthRequest="225"
+                BackgroundColor="Chocolate"
+                TextColor="WhiteSmoke"
+                FontAttributes="Bold"
+                FontSize="18">
+        </buttons:SfButton>
         <picker:SfPicker x:Name="BoardSizePicker" 
                          Mode="RelativeDialog" 
                          RelativePosition="AlignBottom" 
-                         Width="150"  
+                         Width="225"  
                          RelativeView="{x:Reference BoardSizePickerButton}"
                          SelectionChanged="OnBoardSizeButton_OnClicked"
                          CancelButtonClicked="BoardSizePicker_OnCancelButtonClicked"
@@ -40,18 +52,7 @@
                                          CancelButtonText="Exit"/>
             </picker:SfPicker.FooterView>
         </picker:SfPicker>
-        <Button Text="Pick Board Size"
-                x:Name="BoardSizePickerButton"
-                Clicked="BoardSizePickerButton_OnClicked"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="50"
-                WidthRequest="225"
-                BackgroundColor="Chocolate"
-                TextColor="WhiteSmoke"
-                FontAttributes="Bold"
-                FontSize="18">
-        </Button>
+        
         
         <!-- Grid representation using a simple Grid layout. All rows and col split the remaining space -->
         <Grid x:Name="ChessboardGrid"
@@ -62,7 +63,7 @@
               HorizontalOptions="Center">
             <!-- Grid cells will be added programmatically -->
         </Grid>
-        <Button Text="Restart" Clicked="OnRestartClicked" 
+        <buttons:SfButton Text="Restart" Clicked="OnRestartClicked" 
                 BackgroundColor="Chocolate"
                 TextColor="WhiteSmoke"
                 FontAttributes="Bold"
@@ -108,9 +109,9 @@
                                            Text="2 squares in one direction, then 1 square perpendicular (e.g., 2 up + 1 left)."  />
                                     <Label TextColor="Black" HorizontalTextAlignment="Justify" FontSize="12" Padding="40,0"
                                            Text="No diagonal or straight-line moves."  />
-                                    <Label TextColor="Black" Padding="20, 20,20,10" FontSize="14"  HorizontalTextAlignment="Justify" FontAttributes="Bold" FontFamily="sans-serif"
+                                    <Label TextColor="Black" Padding="20, 30,20,10" FontSize="14"  HorizontalTextAlignment="Justify" FontAttributes="Bold" FontFamily="sans-serif"
                                            Text='No Revisits: Once a square is landed on, it cannot be revisited.'/>
-                                    <Label TextColor="Black" Padding="20, 20,20,10" FontSize="14" FontAttributes="Bold" FontFamily="sans-serif"
+                                    <Label TextColor="Black" Padding="20, 10,20,10" FontSize="14" FontAttributes="Bold" FontFamily="sans-serif"
                                            Text='Stay On the Board: The knight cannot move off the chessboard.'/>
                                     <Label TextColor="Black" Padding="20, 20,0,10" FontSize="18"  FontAttributes="Bold, Italic" FontFamily="sans-serif" 
                                            Text="How To Win:" />
@@ -124,7 +125,7 @@
                             </DataTemplate>
                         </SfPopup:SfPopup.ContentTemplate>
                     </SfPopup:SfPopup>
-        <Button Text="Back To VA Calculator" 
+        <buttons:SfButton Text="Back To VA Calculator" 
                 Clicked="NavigateToMainPage_OnClicked"
                 BackgroundColor="Chocolate"
                 TextColor="WhiteSmoke"

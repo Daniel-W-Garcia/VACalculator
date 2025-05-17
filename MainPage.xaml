@@ -88,7 +88,7 @@
                             </Picker.Items>
                         </Picker>
                     </HorizontalStackLayout>
-                    <Button Text="Clear Dependent Information" 
+                    <buttons:SfButton Text="Clear Dependent Information" 
                             Clicked="ClearDependents_Clicked"
                             BackgroundColor="#FF5252"
                             TextColor="White"
@@ -110,117 +110,99 @@
                           RowSpacing="8">
                         
                         <!-- First row: 10-50% -->
-                        <Button Text="10%" 
+                        <buttons:SfButton Text="10%" 
                                 Grid.Row="0" Grid.Column="0"
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="10"
                                 BackgroundColor="#0078D7"
                                 FontSize="16"
                                 FontAttributes="Bold"
-                                BorderColor="WhiteSmoke"
-                                BorderWidth="2"
                                 FontFamily="sans-serif"
                                 CornerRadius="8"/>
                                 
-                        <Button Text="20%" 
+                        <buttons:SfButton Text="20%" 
                                 Grid.Row="0" Grid.Column="1"
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="20"
                                 BackgroundColor="#0078D7"
                                 FontSize="16"
                                 FontAttributes="Bold"
-                                BorderColor="WhiteSmoke"
-                                BorderWidth="2"
                                 FontFamily="sans-serif"
                                 CornerRadius="8"
                                 />
                                 
-                        <Button Text="30%" 
+                        <buttons:SfButton Text="30%" 
                                 Grid.Row="0" Grid.Column="2"
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="30"
                                 BackgroundColor="#0078D7"
                                 FontSize="16"
                                 FontAttributes="Bold"
-                                BorderColor="WhiteSmoke"
-                                BorderWidth="2"
                                 FontFamily="sans-serif"
                                 CornerRadius="8"/>
                                 
-                        <Button Text="40%" 
+                        <buttons:SfButton Text="40%" 
                                 Grid.Row="0" Grid.Column="3"
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="40"
                                 BackgroundColor="#0078D7"
                                 FontSize="16"
                                 FontAttributes="Bold"
-                                BorderColor="WhiteSmoke"
-                                BorderWidth="2"
                                 FontFamily="sans-serif"
                                 CornerRadius="8"/>
                                 
-                        <Button Text="50%" 
+                        <buttons:SfButton Text="50%" 
                                 Grid.Row="0" Grid.Column="4"
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="50"
                                 BackgroundColor="#0078D7"
                                 FontSize="16"
                                 FontAttributes="Bold"
-                                BorderColor="WhiteSmoke"
-                                BorderWidth="2"
                                 FontFamily="sans-serif"
                                 CornerRadius="8"/>
                                 
                         <!-- Second row: 60-100% -->
-                        <Button Text="60%" 
+                        <buttons:SfButton Text="60%" 
                                 Grid.Row="1" Grid.Column="0"
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="60"
                                 BackgroundColor="#0078D7"
                                 FontSize="16"
                                 FontAttributes="Bold"
-                                BorderColor="WhiteSmoke"
-                                BorderWidth="2"
                                 FontFamily="sans-serif"
                                 CornerRadius="8"/>
                                 
-                        <Button Text="70%" 
+                        <buttons:SfButton Text="70%" 
                                 Grid.Row="1" Grid.Column="1"
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="70"
                                 BackgroundColor="#0078D7"
                                 FontSize="16"
                                 FontAttributes="Bold"
-                                BorderColor="WhiteSmoke"
                                 FontFamily="sans-serif"
-                                BorderWidth="2"
                                 CornerRadius="8"/>
                                 
-                        <Button Text="80%" 
+                        <buttons:SfButton Text="80%" 
                                 Grid.Row="1" Grid.Column="2"
                                 Clicked="PercentageButton_Clicked"
-                                CommandParameter="80"
+                                CommandParameter="90"
                                 BackgroundColor="#0078D7"
                                 FontSize="16"
                                 FontAttributes="Bold"
-                                BorderColor="WhiteSmoke"
-                                BorderWidth="2"
-                                FontFamily="sans-serif"
-                                CornerRadius="8"/>
+                                CornerRadius="8"
+                                FontFamily="sans-serif"/>
                                 
-                        <Button Text="90%" 
+                        <buttons:SfButton Text="90%" 
                                 Grid.Row="1" Grid.Column="3"
                                 Clicked="PercentageButton_Clicked"
                                 CommandParameter="90"
                                 BackgroundColor="#0078D7"
                                 FontSize="16"
                                 FontAttributes="Bold"
-                                BorderColor="WhiteSmoke"
-                                BorderWidth="2"
                                 CornerRadius="8"
                                 FontFamily="sans-serif"/>
                                 
-                        <Button Text="100%" 
+                        <buttons:SfButton Text="100%" 
                                 Grid.Row="1" Grid.Column="4"
                                 Clicked="PercentageButton_Clicked"
                                 HorizontalOptions="Fill"
@@ -228,15 +210,12 @@
                                 BackgroundColor="#0078D7"
                                 FontSize="16"
                                 FontAttributes="Bold"
-                                BorderColor="WhiteSmoke"
-                                BorderWidth="2"
                                 Padding="0"
                                 CornerRadius="8"
                                 FontFamily="sans-serif"/>
                     </Grid>
                     
                     <!-- Selected Percentages Display -->
-                    <!-- TODO Flex Layout or someting that allows chips to wrap -->
                     <VerticalStackLayout Spacing="10" Margin="0,15,0,0">
                         <Label Text="Selected Ratings:" 
                                FontSize="16" 
@@ -278,7 +257,7 @@
                     </VerticalStackLayout>
                     
                     <!-- Clear All Button -->
-                    <Button Text="Clear All Percentages" 
+                    <buttons:SfButton Text="Clear All Percentages" 
                             Clicked="ClearPercentages_Clicked"
                             BackgroundColor="#FF5252"
                             TextColor="White"
@@ -291,7 +270,7 @@
             <Frame BorderColor="LightGray" CornerRadius="8" Padding="15" HasShadow="True">
                 <VerticalStackLayout Spacing="15">
                     <Grid ColumnDefinitions="Auto,*,Auto">
-                        <Label Grid.Column="0" Text="Results" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <Label Grid.Column="0" Text="Totals" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
                         <buttons:SfButton Grid.Column="2" x:Name="Infobutton" CornerRadius="20"
                                           Text="?"
                                           FontAttributes="Bold"
@@ -368,8 +347,8 @@
                     </Grid>
                 </VerticalStackLayout>
             </Frame>
-            <Button Text="Knight's Tour Game" 
-                    Clicked="NavigateToKnightTour_Clicked"
+            <buttons:SfButton Text="Knight's Tour Game" 
+                    Clicked="GoToKnightTour_OnClicked"
                     BackgroundColor="Chocolate"
                     TextColor="WhiteSmoke"
                     CornerRadius="8"
