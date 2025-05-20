@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
@@ -9,51 +10,47 @@
              x:Class="VACalculatorApp.KnightTourPage"
              Title="Knight's Tour">
     <ContentPage.BindingContext>
-        <vaCalculatorApp:GameBoardConfiguration/>
+        <vaCalculatorApp:GameBoardConfiguration />
     </ContentPage.BindingContext>
-    
-    <VerticalStackLayout Padding="20" Spacing="20">
-        <Label Text="Complete The Knight's Tour" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold"/>
-        
-        <!-- SfPicker for a drop down board selection size -->
-        <buttons:SfButton Text="Pick Board Size"
-                x:Name="BoardSizePickerButton"
-                Clicked="BoardSizePickerButton_OnClicked"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                HeightRequest="50"
-                WidthRequest="225"
-                BackgroundColor="Chocolate"
-                TextColor="WhiteSmoke"
-                FontAttributes="Bold"
-                FontSize="18">
-        </buttons:SfButton>
-        <picker:SfPicker x:Name="BoardSizePicker" 
-                         Mode="RelativeDialog" 
-                         RelativePosition="AlignBottom" 
-                         Width="225"  
-                         RelativeView="{x:Reference BoardSizePickerButton}"
+
+    <VerticalStackLayout Spacing="20" Padding="20, 0">
+        <Label Text="Complete The Knight's Tour" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold" />
+
+        <picker:SfPicker x:Name="BoardSizePicker"
+                         Mode="Dialog"
                          SelectionChanged="OnBoardSizeButton_OnClicked"
                          CancelButtonClicked="BoardSizePicker_OnCancelButtonClicked"
-                         TextDisplayMode="Fade"
-                         HorizontalOptions="Center">
-            <picker:SfPicker.Columns>
-                <picker:PickerColumn ItemsSource="{Binding BoardSizes }" 
-                                     SelectedIndex = "3">
-                </picker:PickerColumn>
-            </picker:SfPicker.Columns>
+                         TextDisplayMode="FadeAndShrink">
             <picker:SfPicker.HeaderView>
-                <picker:PickerHeaderView Text="Select A Board Size" Height="40"
-                                         Background="#bdbdbdfa"/>
+                <picker:PickerHeaderView Text="Select A Board Size" Height="40" Background="#bdbdbdfa" />
             </picker:SfPicker.HeaderView>
+
+            <picker:SfPicker.Columns>
+                <picker:PickerColumn HeaderText="Sizes:" ItemsSource="{Binding BoardSizes }" SelectedIndex="2" />
+            </picker:SfPicker.Columns>
+
+            <picker:SfPicker.ColumnHeaderView>
+                <picker:PickerColumnHeaderView Height="40" />
+            </picker:SfPicker.ColumnHeaderView>
+
             <picker:SfPicker.FooterView>
-                <picker:PickerFooterView Height="40" Background="#bdbdbdfa"
-                                         ShowOkButton="False"
-                                         CancelButtonText="Exit"/>
+                <picker:PickerFooterView Height="40" Background="#bdbdbdfa" ShowOkButton="False"
+                                         CancelButtonText="Exit" />
             </picker:SfPicker.FooterView>
         </picker:SfPicker>
-        
-        
+
+        <!-- SfPicker for a drop down board selection size -->
+        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Pick Board Size"
+                          x:Name="BoardSizePickerButton"
+                          Clicked="BoardSizePickerButton_OnClicked"
+                          VerticalOptions="Center"
+                          HorizontalOptions="Center"
+                          HeightRequest="50"
+                          WidthRequest="180"
+                          FontAttributes="Bold"
+                          FontSize="18" />
+
+
         <!-- Grid representation using a simple Grid layout. All rows and col split the remaining space -->
         <Grid x:Name="ChessboardGrid"
               WidthRequest="300"
@@ -63,74 +60,81 @@
               HorizontalOptions="Center">
             <!-- Grid cells will be added programmatically -->
         </Grid>
-        <buttons:SfButton Text="Restart" Clicked="OnRestartClicked" 
-                BackgroundColor="Chocolate"
-                TextColor="WhiteSmoke"
-                FontAttributes="Bold"
-                WidthRequest="225"
-                HeightRequest="50"
-                HorizontalOptions="Center"
-                FontSize="18"/>
-        
-        <Label x:Name="ResultLabel" FontSize="18" HorizontalOptions="Center"/>
+        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Restart" Clicked="OnRestartClicked"
+                          FontAttributes="Bold"
+                          WidthRequest="180"
+                          HeightRequest="50"
+                          HorizontalOptions="Center"
+                          FontSize="18" />
+
+        <Label x:Name="ResultLabel" FontSize="18" HorizontalOptions="Center" />
         <Label x:Name="ResultLabelWin" FontSize="20" HorizontalOptions="Center"
                TextColor="LawnGreen"
-               FontFamily="sans-sarif"/>
+               FontFamily="sans-sarif" />
+
         <Grid ColumnDefinitions="Auto,*,Auto">
-                        <buttons:SfButton Grid.Column="2" x:Name="GameRules" CornerRadius="20"
-                                          Text="?"
-                                          FontAttributes="Bold"
-                                          FontAutoScalingEnabled="True"
-                                          VerticalOptions="Center"
-                                          Background="DarkGrey"
-                                          HeightRequest="30"
-                                          WidthRequest="30"
-                                          Clicked="GameRules_OnClicked"/>
-                    </Grid>
-                    <SfPopup:SfPopup x:Name="KnightsTourRulesPopup" ShowFooter="True" AutoSizeMode="Both" AcceptButtonText="Close">
-                        <SfPopup:SfPopup.HeaderTemplate>
-                            <DataTemplate>
-                                <Label Text="How to Play Knight's Tour" 
-                                       FontAttributes="Bold" TextColor="Black" FontFamily="sans-serif" FontSize="20" BackgroundColor="#8a8a8aa6" 
-                                       HorizontalTextAlignment="Center" 
-                                       Padding="20" VerticalTextAlignment="Center"/>                               
-                            </DataTemplate>
-                        </SfPopup:SfPopup.HeaderTemplate>
-                        <SfPopup:SfPopup.ContentTemplate>
-                            <DataTemplate>
-                                <StackLayout>
-                                    <Label TextColor="Black" Padding="20,10,0,0" FontSize="17" FontAttributes="Bold" FontFamily="sans-serif" 
-                                           Text='The Knight’s Tour is a chess puzzle where you move a knight across a chessboard, visiting every square exactly once.'/>
-                                    <Label TextColor="Black" Padding="20, 20,0,10" FontSize="18"  FontAttributes="Bold, Italic" FontFamily="sans-serif" 
-                                           Text="Rules:" />
-                                    <Label TextColor="Black" Padding="20, 10" FontSize="16" FontAttributes="Bold" FontFamily="sans-serif"
-                                           Text='Movement: The knight moves in an "L" shape:'/>
-                                    <Label TextColor="Black" HorizontalTextAlignment="Justify" FontSize="12" Padding="40,0"
-                                           Text="2 squares in one direction, then 1 square perpendicular (e.g., 2 up + 1 left)."  />
-                                    <Label TextColor="Black" HorizontalTextAlignment="Justify" FontSize="12" Padding="40,0"
-                                           Text="No diagonal or straight-line moves."  />
-                                    <Label TextColor="Black" Padding="20, 30,20,10" FontSize="14"  HorizontalTextAlignment="Justify" FontAttributes="Bold" FontFamily="sans-serif"
-                                           Text='No Revisits: Once a square is landed on, it cannot be revisited.'/>
-                                    <Label TextColor="Black" Padding="20, 10,20,10" FontSize="14" FontAttributes="Bold" FontFamily="sans-serif"
-                                           Text='Stay On the Board: The knight cannot move off the chessboard.'/>
-                                    <Label TextColor="Black" Padding="20, 20,0,10" FontSize="18"  FontAttributes="Bold, Italic" FontFamily="sans-serif" 
-                                           Text="How To Win:" />
-                                    <Label TextColor="Black" Padding="40,0,0,20" HorizontalTextAlignment="Justify" FontSize="12"
-                                           Text='Successfully land on all available squares without repeating any.' />
-                                    <Label TextColor="Black" Padding="40,0" HorizontalTextAlignment="Justify" FontSize="12"
-                                           Text='For an extra challenge, complete a closed tour (ending on a square one knight’s move away from the start).' />
-                                    <Label TextColor="Black" Padding="20,40,20,0" FontSize="16" FontAttributes="Bold" FontFamily="sans-serif"
-                                           Text='The puzzle tests strategic planning to avoid trapping the knight before all squares are visited! ♞'/>
-                                </StackLayout>
-                            </DataTemplate>
-                        </SfPopup:SfPopup.ContentTemplate>
-                    </SfPopup:SfPopup>
-        <buttons:SfButton Text="Back To VA Calculator" 
-                Clicked="NavigateToMainPage_OnClicked"
-                BackgroundColor="Chocolate"
-                TextColor="WhiteSmoke"
-                CornerRadius="8"
-                Margin="0,20,0,0"/>
+
+            <buttons:SfButton Style="{StaticResource SfButtonTest}" Grid.Column="2" x:Name="GameRules" CornerRadius="20"
+                              Text="?"
+                              FontAttributes="Bold"
+                              FontAutoScalingEnabled="True"
+                              VerticalOptions="Center"
+                              Background="DarkGrey"
+                              HeightRequest="30"
+                              WidthRequest="30"
+                              Clicked="GameRules_OnClicked" />
+
+        </Grid>
+        <SfPopup:SfPopup x:Name="KnightsTourRulesPopup" ShowFooter="True" AutoSizeMode="Both" AcceptButtonText="Close">
+            <SfPopup:SfPopup.HeaderTemplate>
+                <DataTemplate>
+                    <Label Text="How to Play Knight's Tour"
+                           FontAttributes="Bold" TextColor="Black" FontFamily="sans-serif" FontSize="20"
+                           BackgroundColor="#8a8a8aa6"
+                           HorizontalTextAlignment="Center"
+                           Padding="20" VerticalTextAlignment="Center" />
+                </DataTemplate>
+            </SfPopup:SfPopup.HeaderTemplate>
+            <SfPopup:SfPopup.ContentTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label TextColor="Black" Padding="20,10,0,0" FontSize="17" FontAttributes="Bold"
+                               FontFamily="sans-serif"
+                               Text='The Knight’s Tour is a chess puzzle where you move a knight across a chessboard, visiting every square exactly once.' />
+                        <Label TextColor="Black" Padding="20, 20,0,10" FontSize="18" FontAttributes="Bold, Italic"
+                               FontFamily="sans-serif"
+                               Text="Rules:" />
+                        <Label TextColor="Black" Padding="20, 10" FontSize="16" FontAttributes="Bold"
+                               FontFamily="sans-serif"
+                               Text='Movement: The knight moves in an "L" shape:' />
+                        <Label TextColor="Black" HorizontalTextAlignment="Justify" FontSize="12" Padding="40,0"
+                               Text="2 squares in one direction, then 1 square perpendicular (e.g., 2 up + 1 left)." />
+                        <Label TextColor="Black" HorizontalTextAlignment="Justify" FontSize="12" Padding="40,0"
+                               Text="No diagonal or straight-line moves." />
+                        <Label TextColor="Black" Padding="20, 30,20,10" FontSize="14" HorizontalTextAlignment="Justify"
+                               FontAttributes="Bold" FontFamily="sans-serif"
+                               Text='No Revisits: Once a square is landed on, it cannot be revisited.' />
+                        <Label TextColor="Black" Padding="20, 10,20,10" FontSize="14" FontAttributes="Bold"
+                               FontFamily="sans-serif"
+                               Text='Stay On the Board: The knight cannot move off the chessboard.' />
+                        <Label TextColor="Black" Padding="20, 20,0,10" FontSize="18" FontAttributes="Bold, Italic"
+                               FontFamily="sans-serif"
+                               Text="How To Win:" />
+                        <Label TextColor="Black" Padding="40,0,0,20" HorizontalTextAlignment="Justify" FontSize="12"
+                               Text='Successfully land on all available squares without repeating any.' />
+                        <Label TextColor="Black" Padding="40,0" HorizontalTextAlignment="Justify" FontSize="12"
+                               Text='For an extra challenge, complete a closed tour (ending on a square one knight’s move away from the start).' />
+                        <Label TextColor="Black" Padding="20,40,20,0" FontSize="16" FontAttributes="Bold"
+                               FontFamily="sans-serif"
+                               Text='The puzzle tests strategic planning to avoid trapping the knight before all squares are visited! ♞' />
+                    </StackLayout>
+                </DataTemplate>
+            </SfPopup:SfPopup.ContentTemplate>
+        </SfPopup:SfPopup>
+        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Back To VA Calculator"
+                          Clicked="NavigateToMainPage_OnClicked"
+                          CornerRadius="8"
+                          Margin="0,20,0,0" />
         <bottomSheet:SfBottomSheet x:Name="BottomSheetKnightsTour">
             <bottomSheet:SfBottomSheet.BottomSheetContent>
                 <!--Add your content here-->

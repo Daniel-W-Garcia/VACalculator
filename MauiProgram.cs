@@ -22,6 +22,7 @@ public static class MauiProgram
 
 #if DEBUG
         builder.Logging.AddDebug();
+        builder.Services.AddSingleton<CalculationViewModel>();
 #endif
 
         return builder.Build();

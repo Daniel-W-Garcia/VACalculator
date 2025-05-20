@@ -9,6 +9,8 @@ public partial class KnightTourPage
     private KnightsTourGame _game;
     private Button[,] _buttonGrid;
     private int _currentBoardSize = 8; //default size
+    
+    
     public KnightTourPage()
     {
         InitializeComponent();
@@ -130,31 +132,29 @@ public partial class KnightTourPage
     {
         int size = _currentBoardSize;
 
-        // Remove any old dots
-        var oldDots = ChessboardGrid.Children
-            .Where(v => v is Ellipse)
-            .Cast<Ellipse>()
-            .ToList();
-            
-        foreach (var dot in oldDots)
-        {
-            ChessboardGrid.Children.Remove(dot);
-        }
+        RemoveOldDotsFromBoard();
+        ResetButtonAppearance(size);
+        UpdateVisitedCellAppearance(size);
 
-        // Reset every cell
-        for (int rowIndex = 0; rowIndex < size; rowIndex++)
-        {
-            for (int colIndex = 0; colIndex < size; colIndex++)
-            {
-                var btn = _buttonGrid[rowIndex, colIndex];
-                btn.Text        = "";
-                btn.FontSize    = 14;
-                btn.TextColor   = Colors.Black;
-                btn.BackgroundColor = (rowIndex + colIndex) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue;
-            }
-        }
+        int kx = _game.CurrentX, ky = _game.CurrentY; // get current knight position
+        UpdateKnightPosition(kx, ky);// update the knight's position on the board incase it was over written
 
-        // Visited cells get a dark slate background + knight char
+        AddMoveIndicatorToBoard(kx, ky);
+    }
+
+    private void UpdateKnightPosition(int kx, int ky)
+    {
+        if (kx >= 0 && ky >= 0)
+        {
+            var current = _buttonGrid[kx, ky];
+            current.BackgroundColor = Colors.DarkSlateGray;
+            current.Text            = "♘";
+            current.FontSize        = 24;
+        }
+    }
+
+    private void UpdateVisitedCellAppearance(int size)
+    {
         var visited = _game.GetBoard();
         for (int row = 0; row < size; row++)
         {
@@ -168,18 +168,38 @@ public partial class KnightTourPage
                 }
             }   
         }
+    }
 
-        // Current knight (in case visited painting overwrote it)
-        int kx = _game.CurrentX, ky = _game.CurrentY;
-        if (kx >= 0 && ky >= 0)
+    private void ResetButtonAppearance(int size)
+    {
+        for (int rowIndex = 0; rowIndex < size; rowIndex++)
         {
-            var current = _buttonGrid[kx, ky];
-            current.BackgroundColor = Colors.DarkSlateGray;
-            current.Text            = "♘";
-            current.FontSize        = 24;
+            for (int colIndex = 0; colIndex < size; colIndex++)
+            {
+                var btn = _buttonGrid[rowIndex, colIndex];
+                btn.Text        = "";
+                btn.FontSize    = 14;
+                btn.TextColor   = Colors.Black;
+                btn.BackgroundColor = (rowIndex + colIndex) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue;
+            }
         }
+    }
 
-        // Add one semi-transparent circle per legal move
+    private void RemoveOldDotsFromBoard()
+    {
+        var oldDots = ChessboardGrid.Children
+            .Where(v => v is Ellipse)
+            .Cast<Ellipse>()
+            .ToList();
+
+        foreach (var dot in oldDots)
+        {
+            ChessboardGrid.Children.Remove(dot);
+        }
+    }
+
+    private void AddMoveIndicatorToBoard(int kx, int ky)
+    {
         foreach (var (legalMoveRow, legalMoveColumn) in _game.GetLegalMoves(kx, ky))
         {
             var moveIndicator = new Ellipse
@@ -198,12 +218,19 @@ public partial class KnightTourPage
     private void OnRestartClicked(object sender, EventArgs e)
     {
         _game.Reset();
+        RemoveOldDotsFromBoard();
+        ResetBoardAppearance();
+    }
+
+    private void ResetBoardAppearance()
+    {
         for (int row = 0; row < _currentBoardSize; row++)
         for (int col = 0; col < _currentBoardSize; col++)
         {
             _buttonGrid[row, col].Text = "";
             _buttonGrid[row, col].BackgroundColor = (row + col) % 2 == 0 ? Color.FromArgb("#55d11f") : Colors.AliceBlue;
         }
+
         ResultLabel.Text = "Board reset. Select a starting position.";
     }
 

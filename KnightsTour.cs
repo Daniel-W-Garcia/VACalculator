@@ -1,4 +1,6 @@
-﻿public class KnightsTourGame
+﻿namespace VACalculatorApp;
+
+public class KnightsTourGame
 {
     private readonly int _size;
     private readonly bool[,] _visitedPositions;

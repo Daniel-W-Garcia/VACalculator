@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AndroidLayouts">
     <shared>
       <config />
@@ -16,11 +19,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8761dc37-d06b-424a-b12b-242aa7dd07d7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DependentOption.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Percentages.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Folder.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Folder.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnightsTour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MauiProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MauiProgram.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PercentagesViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Styles/Colors.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Styles/Colors.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Styles/Styles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Styles/Styles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,14 +48,32 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/28f4000d791f414ba8c2892581ffe01e1e3a00/14/aec41cb8/SfVisuals.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/28f4000d791f414ba8c2892581ffe01e1e3a00/81/0a177725/SyncfusionThemeResourceDictionary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/6dbbcc67a3334318abea70c6b76fcef6bb420/92/50676718/HorizontalStackLayoutManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/85f56040e2af448c9099eafe5b31a2e11e3220/82/d0af892f/ResourceDictionary.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/977c0289f60648998397577e0c82037135200/da/3733ae62/SfPicker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/b08c8c71f0724e83b8df31a60d00f5541e3420/06/28e0057e/Shell.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/b43a77ae11e243ba8a676374fbdc51d31ea400/b3/ab8de26d/SfVisuals.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/c9c4354b0aaf49f2abbec6e2c378401d1c8220/56/4d793829/HorizontalStackLayout.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Platforms/Android/MainActivity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/c9c4354b0aaf49f2abbec6e2c378401d1c8220/9a/1c1dfd63/Style.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/f0b5ab47e4a947049d50db52e7be34961e6800/50/e2b6c5ab/SyncfusionThemeResourceDictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/42b658592250e6533d18d682b9bb656c87293b989127f8c29bdeeb08d637927/Android.Views.View.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/4c3f577ada8d1c5641061c8a28d8f6b64427fa/App.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/4f60afa556484ff7ce82f96f676dede791dfcb4998a43287c936ba8db409b37/Android.App.Activity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/7d92efdcd30b132cd9f585e722ba95d657f2b7f/MainPage.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MainPage.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Platforms/Android/MainActivity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/MacCatalyst/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Tizen/Main.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Platforms/Windows/App.xaml.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -49,7 +81,7 @@
     </ignored-facets>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="SWEA" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -59,24 +91,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android.VACalculatorApp.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;UWP.VACalculatorApp.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android.VACalculatorApp.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "UWP.VACalculatorApp.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Android.VACalculatorApp">
     <configuration name="VACalculatorApp" type="UwpProject" factoryName="UWP">
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/VACalculatorApp.csproj" />
@@ -122,7 +154,13 @@
       <workItem from="1747352470799" duration="46000" />
       <workItem from="1747357120162" duration="308000" />
       <workItem from="1747358311427" duration="11409000" />
-      <workItem from="1747406720185" duration="28830000" />
+      <workItem from="1747406720185" duration="56271000" />
+      <workItem from="1747536674466" duration="26663000" />
+      <workItem from="1747604018446" duration="6381000" />
+      <workItem from="1747616300726" duration="21117000" />
+      <workItem from="1747688910765" duration="1328000" />
+      <workItem from="1747690750397" duration="149000" />
+      <workItem from="1747690938096" duration="16183000" />
     </task>
     <servers />
   </component>
@@ -130,6 +168,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
@@ -148,6 +197,97 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Percentages.cs</url>
+          <line>26</line>
+          <properties documentPath="F:\C# Learning\MSSA Course\Assignments\VACalculator\Percentages.cs" containingFunctionPresentation="Property 'Display'">
+            <startOffsets>
+              <option value="596" />
+            </startOffsets>
+            <endOffsets>
+              <option value="604" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/MainPage.xaml.cs</url>
+          <line>73</line>
+          <properties documentPath="F:\C# Learning\MSSA Course\Assignments\VACalculator\MainPage.xaml.cs" containingFunctionPresentation="Method 'UpdateCalculation'">
+            <startOffsets>
+              <option value="2299" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2373" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/MainPage.xaml.cs</url>
+          <line>26</line>
+          <properties documentPath="F:\C# Learning\MSSA Course\Assignments\VACalculator\MainPage.xaml.cs" containingFunctionPresentation="Method 'PercentageButton_Clicked'">
+            <startOffsets>
+              <option value="638" />
+            </startOffsets>
+            <endOffsets>
+              <option value="639" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/MainPage.xaml.cs</url>
+          <line>31</line>
+          <properties documentPath="F:\C# Learning\MSSA Course\Assignments\VACalculator\MainPage.xaml.cs" containingFunctionPresentation="Method 'PercentageButton_Clicked'">
+            <startOffsets>
+              <option value="855" />
+            </startOffsets>
+            <endOffsets>
+              <option value="892" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/MainPage.xaml.cs</url>
+          <line>32</line>
+          <properties documentPath="F:\C# Learning\MSSA Course\Assignments\VACalculator\MainPage.xaml.cs" containingFunctionPresentation="Method 'PercentageButton_Clicked'">
+            <startOffsets>
+              <option value="909" />
+            </startOffsets>
+            <endOffsets>
+              <option value="974" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Percentages.cs</url>
+          <line>12</line>
+          <properties documentPath="F:\C# Learning\MSSA Course\Assignments\VACalculator\Percentages.cs" containingFunctionPresentation="Property 'Value'">
+            <startOffsets>
+              <option value="280" />
+            </startOffsets>
+            <endOffsets>
+              <option value="286" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Percentages.cs</url>
+          <line>18</line>
+          <properties documentPath="F:\C# Learning\MSSA Course\Assignments\VACalculator\Percentages.cs" containingFunctionPresentation="Property 'Value'">
+            <startOffsets>
+              <option value="429" />
+            </startOffsets>
+            <endOffsets>
+              <option value="452" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
