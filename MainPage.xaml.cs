@@ -35,16 +35,15 @@ public partial class MainPage : ContentPage
             }
         }
     }
+    private void MarriedSwitch_OnStateChanged(object? sender, SwitchStateChangedEventArgs e)
+    {
+        UpdateCalculation();
+    }
 
     private void ClearPercentages_Clicked(object sender, EventArgs e)
     {
         _viewModel.ClearPercentages();
         EmptyPercentagesLabel.IsVisible = true;
-        UpdateCalculation();
-    }
-
-    private void MarriedSwitch_Toggled(object sender, ToggledEventArgs toggledEventArgs)
-    {
         UpdateCalculation();
     }
 
@@ -137,4 +136,5 @@ public partial class MainPage : ContentPage
     {
         await Shell.Current.GoToAsync("knighttour");
     }
+
 }

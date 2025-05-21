@@ -7,6 +7,8 @@
              xmlns:bottomSheet="http://schemas.syncfusion.com/maui/toolkit"
              xmlns:SfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             
+             
              x:Class="VACalculatorApp.KnightTourPage"
              Title="Knight's Tour">
     <ContentPage.BindingContext>

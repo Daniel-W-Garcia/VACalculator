@@ -6,6 +6,8 @@
              xmlns:ChipControl="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
              xmlns:SfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:SfCombo="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:SfSwitch="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:DataType="local:CalculationViewModel"
              x:Class="VACalculatorApp.MainPage"
              
@@ -28,47 +30,52 @@
                     <!-- Married Toggle -->
                     <HorizontalStackLayout Spacing="15">
                         <Label Text="Married:" VerticalOptions="Center" WidthRequest="200" />
-                        <Switch IsToggled="{Binding IsMarried}"
-                                Toggled="MarriedSwitch_Toggled"
+                        <SfSwitch:SfSwitch IsOn="{Binding IsMarried}"
+                                           StateChanged="MarriedSwitch_OnStateChanged"
                                 x:Name="MarriedSwitch"/>
                     </HorizontalStackLayout>
 
                     <!-- Parents Picker -->
                     <HorizontalStackLayout Spacing="15">
                         <Label Text="Parents:" VerticalOptions="Center" WidthRequest="200" />
-                        <Picker ItemsSource="{Binding ParentCount}"
-                                ItemDisplayBinding="{Binding Display}"
+                        <SfCombo:SfComboBox ItemsSource="{Binding ParentCount}"
+                                TextMemberPath="{Binding Display}"
                                 SelectedItem="{Binding SelectedNumberOfParents}"
+                                IsEditable="True"
+                                IsFilteringEnabled="True"
                                 x:Name="ParentsPicker"
-                                WidthRequest="150"
-                                SelectedIndexChanged="DependentPicker_Changed">
-                        </Picker>
+                                WidthRequest="130"
+                                SelectionChanged="DependentPicker_Changed">
+                        </SfCombo:SfComboBox>
 
                     </HorizontalStackLayout>
 
                     <!-- Children Under 18 Dropdown -->
                     <HorizontalStackLayout Spacing="15">
                         <Label Text="Children Under 18:" VerticalOptions="Center" WidthRequest="200" />
-                        <Picker ItemsSource="{Binding ChildUnder18Count}"
-                                ItemDisplayBinding="{Binding Display}"
+                        <SfCombo:SfComboBox ItemsSource="{Binding ChildUnder18Count}"
+                                TextMemberPath="{Binding Display}"
                                 SelectedItem="{Binding SelectedNumberOfChildUnder18}"
                                 x:Name="ChildrenUnder18Picker"
-                                WidthRequest="150"
-                                SelectedIndexChanged="DependentPicker_Changed">
-                        </Picker>
+                                IsEditable="True"
+                                WidthRequest="130"
+                                SelectionChanged="DependentPicker_Changed">
+                        </SfCombo:SfComboBox>
 
                     </HorizontalStackLayout>
 
                     <!-- Children Over 18 in School Dropdown -->
                     <HorizontalStackLayout Spacing="15">
                         <Label Text="Children Over 18 in School:" VerticalOptions="Center" WidthRequest="200" />
-                        <Picker ItemsSource="{Binding ChildOver18InSchoolCount}"
-                                ItemDisplayBinding="{Binding Display}"
-                                SelectedItem="{Binding SelectedNumberOfChildrenOver18InSchool}"
-                                x:Name="ChildrenOver18Picker"
-                                WidthRequest="150"
-                                SelectedIndexChanged="DependentPicker_Changed">
-                        </Picker>
+                        <SfCombo:SfComboBox ItemsSource="{Binding ChildOver18InSchoolCount}"
+                                            TextMemberPath="{Binding Display}"
+                                            SelectedItem="{Binding SelectedNumberOfChildrenOver18InSchool}"
+                                            IsEditable="True"
+                                            IsFilteringEnabled="True"
+                                            x:Name="ChildrenOver18Picker"
+                                            WidthRequest="130"
+                                            SelectionChanged="DependentPicker_Changed">
+                        </SfCombo:SfComboBox>
 
                     </HorizontalStackLayout>
                     

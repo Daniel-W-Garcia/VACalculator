@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15da1041-fea0-43b8-ba90-0dac4366ca4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DependentOption.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Percentages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Folder.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Folder.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnightsTour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MauiProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MauiProgram.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PercentagesViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Styles/Colors.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Styles/Colors.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Styles/Styles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Styles/Styles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
