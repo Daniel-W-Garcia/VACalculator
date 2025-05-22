@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Styles/Colors.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Styles/Colors.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

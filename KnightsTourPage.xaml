@@ -7,8 +7,6 @@
              xmlns:bottomSheet="http://schemas.syncfusion.com/maui/toolkit"
              xmlns:SfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
-             
-             
              x:Class="VACalculatorApp.KnightTourPage"
              Title="Knight's Tour">
     <ContentPage.BindingContext>
@@ -53,13 +51,14 @@
                           FontSize="18" />
 
 
-        <!-- Grid representation using a simple Grid layout. All rows and col split the remaining space -->
+        <!-- Simple Grid layout. All rows and col split the remaining space -->
         <Grid x:Name="ChessboardGrid"
               WidthRequest="300"
               HeightRequest="300"
               BackgroundColor="LightSlateGrey"
               Padding="2"
               HorizontalOptions="Center">
+
             <!-- Grid cells will be added programmatically -->
         </Grid>
         <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Restart" Clicked="OnRestartClicked"
@@ -76,7 +75,8 @@
 
         <Grid ColumnDefinitions="Auto,*,Auto">
 
-            <buttons:SfButton Style="{StaticResource SfButtonTest}" Grid.Column="2" x:Name="GameRules" CornerRadius="20"
+            <buttons:SfButton Style="{StaticResource SfButtonTest}" Grid.Column="2" x:Name="GameRules"
+                              CornerRadius="20"
                               Text="?"
                               FontAttributes="Bold"
                               FontAutoScalingEnabled="True"
@@ -137,10 +137,6 @@
                           Clicked="NavigateToMainPage_OnClicked"
                           CornerRadius="8"
                           Margin="0,20,0,0" />
-        <bottomSheet:SfBottomSheet x:Name="BottomSheetKnightsTour">
-            <bottomSheet:SfBottomSheet.BottomSheetContent>
-                <!--Add your content here-->
-            </bottomSheet:SfBottomSheet.BottomSheetContent>
-        </bottomSheet:SfBottomSheet>
+        
     </VerticalStackLayout>
 </ContentPage>

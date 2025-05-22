@@ -10,90 +10,108 @@
              xmlns:SfSwitch="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:DataType="local:CalculationViewModel"
              x:Class="VACalculatorApp.MainPage"
-             
+
              Title="VA Disability Calculator">
 
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="20">
 
-            <Label Text="Enter Your Information:"
-                   FontSize="28"
-                   FontAttributes="Bold"
-                   FontFamily="OpenSansRegular"
-                   HorizontalOptions="Center" />
-
+            
             <!-- Dependent Information -->
-            <Frame BorderColor="LightGray" CornerRadius="8" Padding="15" HasShadow="True">
-                <VerticalStackLayout Spacing="15">
-                    <Label Text="Dependent Information" FontSize="20" FontAttributes="Bold" />
+            <Frame BorderColor="LightGray" CornerRadius="8" Padding="10" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <!-- Grid for input fields -->
+                    <Grid
+                        RowSpacing="10"
+                        ColumnSpacing="16"
+                        Padding="0"
+                        ColumnDefinitions="Auto,*,Auto"
+                        RowDefinitions="Auto,Auto,Auto,Auto,Auto">
 
-                    <!-- Married Toggle -->
-                    <HorizontalStackLayout Spacing="15">
-                        <Label Text="Married:" VerticalOptions="Center" WidthRequest="200" />
-                        <SfSwitch:SfSwitch IsOn="{Binding IsMarried}"
+                        <!-- Section header -->
+                        <Label Grid.Row="0" Grid.ColumnSpan="3"
+                               Text="Dependent Information"
+                               FontSize="20"
+                               FontAttributes="Bold" />
+
+                        <!-- Married Toggle -->
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Text="Married:" VerticalOptions="Center" HorizontalOptions="Start" />
+                        <SfSwitch:SfSwitch Grid.Row="1" Grid.Column="1"
+                                           IsOn="{Binding IsMarried}"
                                            StateChanged="MarriedSwitch_OnStateChanged"
-                                x:Name="MarriedSwitch"/>
-                    </HorizontalStackLayout>
+                                           x:Name="MarriedSwitch"
+                                           HorizontalOptions="Start" />
 
-                    <!-- Parents Picker -->
-                    <HorizontalStackLayout Spacing="15">
-                        <Label Text="Parents:" VerticalOptions="Center" WidthRequest="200" />
-                        <SfCombo:SfComboBox ItemsSource="{Binding ParentCount}"
-                                TextMemberPath="{Binding Display}"
-                                SelectedItem="{Binding SelectedNumberOfParents}"
-                                IsEditable="True"
-                                IsFilteringEnabled="True"
-                                x:Name="ParentsPicker"
-                                WidthRequest="130"
-                                SelectionChanged="DependentPicker_Changed">
-                        </SfCombo:SfComboBox>
+                        <!-- Parents Picker -->
+                        <Label Grid.Row="2" Grid.Column="0"
+                               Text="Parents:" VerticalOptions="Center" HorizontalOptions="Start" />
+                        <SfCombo:SfComboBox Grid.Row="2" Grid.Column="1"
+                                            ItemsSource="{Binding ParentCount}"
+                                            SelectedItem="{Binding SelectedNumberOfParents}"
+                                            Stroke="{AppThemeBinding Dark={StaticResource WhiteSmoke}}"
+                                            DropDownIconColor="{AppThemeBinding Dark={StaticResource WhiteSmoke}, Light={StaticResource Black}}"
+                                            TextColor="{AppThemeBinding Dark={StaticResource WhiteSmoke}}"
+                                            BackgroundColor="Transparent"
+                                            x:Name="ParentsPicker"
+                                            WidthRequest="100"
+                                            DropDownItemHeight="33"
+                                            HorizontalOptions="Start"
+                                            SelectionChanged="DependentPicker_Changed" />
 
-                    </HorizontalStackLayout>
+                        <!-- Children Under 18 Dropdown -->
+                        <Label Grid.Row="3" Grid.Column="0"
+                               Text="Children Under 18:" VerticalOptions="Center" HorizontalOptions="Start" />
+                        <SfCombo:SfComboBox Grid.Row="3" Grid.Column="1"
+                                            ItemsSource="{Binding ChildUnder18Count}"
+                                            SelectedItem="{Binding SelectedNumberOfChildUnder18}"
+                                            x:Name="ChildrenUnder18Picker"
+                                            BackgroundColor="Transparent"
+                                            Stroke="{AppThemeBinding Dark={StaticResource WhiteSmoke}, Light={StaticResource Black}}"
+                                            DropDownIconColor="{AppThemeBinding Dark={StaticResource WhiteSmoke}, Light={StaticResource Black}}"
+                                            TextColor="{AppThemeBinding Dark={StaticResource WhiteSmoke}, Light={StaticResource Black}}"
+                                            WidthRequest="100"
+                                            MaxDropDownHeight="200"
+                                            DropDownItemHeight="33"
+                                            HorizontalOptions="Start"
+                                            SelectionChanged="DependentPicker_Changed" />
 
-                    <!-- Children Under 18 Dropdown -->
-                    <HorizontalStackLayout Spacing="15">
-                        <Label Text="Children Under 18:" VerticalOptions="Center" WidthRequest="200" />
-                        <SfCombo:SfComboBox ItemsSource="{Binding ChildUnder18Count}"
-                                TextMemberPath="{Binding Display}"
-                                SelectedItem="{Binding SelectedNumberOfChildUnder18}"
-                                x:Name="ChildrenUnder18Picker"
-                                IsEditable="True"
-                                WidthRequest="130"
-                                SelectionChanged="DependentPicker_Changed">
-                        </SfCombo:SfComboBox>
-
-                    </HorizontalStackLayout>
-
-                    <!-- Children Over 18 in School Dropdown -->
-                    <HorizontalStackLayout Spacing="15">
-                        <Label Text="Children Over 18 in School:" VerticalOptions="Center" WidthRequest="200" />
-                        <SfCombo:SfComboBox ItemsSource="{Binding ChildOver18InSchoolCount}"
-                                            TextMemberPath="{Binding Display}"
+                        <!-- Children Over 18 in School Dropdown -->
+                        <Label Grid.Row="4" Grid.Column="0"
+                               Text="Children Over 18 in School:" VerticalOptions="Center" HorizontalOptions="End" />
+                        <SfCombo:SfComboBox Grid.Row="4" Grid.Column="1"
+                                            ItemsSource="{Binding ChildOver18InSchoolCount}"
                                             SelectedItem="{Binding SelectedNumberOfChildrenOver18InSchool}"
-                                            IsEditable="True"
-                                            IsFilteringEnabled="True"
+                                            BackgroundColor="Transparent"
+                                            Stroke="{AppThemeBinding Dark={StaticResource WhiteSmoke}, Light={StaticResource Black}}"
+                                            DropDownIconColor="{AppThemeBinding Dark={StaticResource WhiteSmoke}, Light={StaticResource Black}}"
+                                            TextColor="{AppThemeBinding Dark={StaticResource WhiteSmoke}, Light={StaticResource Black}}"
                                             x:Name="ChildrenOver18Picker"
-                                            WidthRequest="130"
-                                            SelectionChanged="DependentPicker_Changed">
-                        </SfCombo:SfComboBox>
+                                            WidthRequest="100"
+                                            MaxDropDownHeight="200"
+                                            DropDownItemHeight="33"
+                                            HorizontalOptions="Start"
+                                            SelectionChanged="DependentPicker_Changed" />
+                    </Grid>
 
-                    </HorizontalStackLayout>
-                    
-                    <!-- Clear Dependents Button -->
-                    <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Clear Dependent Information"
-                                      Clicked="ClearDependents_Clicked"
-                                      CornerRadius="8"
-                                      Margin="0,10,0,0" />
-                    
+                    <!-- Clear Button -->
+                    <buttons:SfButton
+                        Style="{StaticResource SfButtonTest}"
+                        Text="Clear Dependents"
+                        Clicked="ClearDependents_OnClicked"
+                        CornerRadius="8"
+                        Margin="0,10,0,0"
+                        HorizontalOptions="Center" />
+
                 </VerticalStackLayout>
             </Frame>
-            
-            <!-- TODO Add an SfLinearGauge -->
+
             <!-- Disability Percentage Buttons -->
             <Frame BorderColor="LightGray" CornerRadius="8" Padding="15" HasShadow="True">
-                <VerticalStackLayout Spacing="15">
+                <VerticalStackLayout Spacing="10">
                     <Label Text="Add Disability Percentages" FontSize="20" FontAttributes="Bold" />
-                    <Label Text="Tap percentages to add to your calculation" FontSize="14" />
+                    <Label Text="Tap percentages to add to your calculation"  
+                           FontSize="16" Padding="0,0,0,10"/>
 
                     <!-- Buttons Grid for percentages 10-100 -->
                     <Grid ColumnDefinitions="*, *, *, *, *"
@@ -207,7 +225,7 @@
                     </Grid>
 
                     <!-- Selected Percentages Display -->
-                    <VerticalStackLayout Spacing="10" Margin="0,15,0,0">
+                    <VerticalStackLayout Spacing="5" Margin="0,0,0,0">
                         <Label Text="Selected Ratings:"
                                FontSize="16"
                                TextColor="Black"
@@ -245,8 +263,9 @@
                     </VerticalStackLayout>
 
                     <!-- Clear All Button -->
-                    <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Clear All Percentages"
+                    <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Clear Percentages"
                                       Clicked="ClearPercentages_Clicked"
+                                      HorizontalOptions="Center"
                                       CornerRadius="8"
                                       Margin="0,10,0,0" />
                 </VerticalStackLayout>
@@ -256,12 +275,12 @@
             <Frame BorderColor="LightGray" CornerRadius="8" Padding="15" HasShadow="True">
                 <VerticalStackLayout Spacing="15">
                     <Grid ColumnDefinitions="Auto,*,Auto">
-                        
+
                         <!-- Results Label -->
                         <Label Grid.Column="0" Text="Results" FontSize="20" FontAttributes="Bold"
                                VerticalOptions="Center" />
-                        
-                        <!-- Small Info Button -->                        
+
+                        <!-- Small Info Button -->
                         <buttons:SfButton Grid.Column="2" x:Name="Infobutton" CornerRadius="20"
                                           Text="?"
                                           FontAttributes="Bold"
@@ -272,7 +291,7 @@
                                           WidthRequest="30"
                                           Clicked="Infobutton_OnClicked" />
                     </Grid>
-                    
+
                     <!-- Popup message for VA calculations -->
                     <SfPopup:SfPopup x:Name="VaMathPopup" AutoSizeMode="Both" AcceptButtonText="Close"
                                      ShowFooter="True">
@@ -290,8 +309,7 @@
                                 <StackLayout>
                                     <Label TextColor="Black" Padding="20,10,0,0" FontSize="17" FontAttributes="Bold"
                                            FontFamily="OpenSansRegular"
-                                           Text='VA ratings are calculated by applying each disability 
-                                                percentage to the remaining "healthy" portion of your health, starting with the highest rating.' />
+                                           Text='VA ratings are calculated by applying each disability percentage to the remaining "healthy" portion of your health, starting with the highest rating.' />
                                     <Label TextColor="Black" Padding="20, 20,0,10" FontSize="18"
                                            FontAttributes="Bold, Italic" FontFamily="OpenSansRegular"
                                            Text="Here's How It Works:" />
@@ -323,7 +341,7 @@
                     </SfPopup:SfPopup>
 
                     <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto" ColumnSpacing="15" RowSpacing="15">
-                        
+
                         <!-- Combined Rating -->
                         <Label Text="Combined Rating:"
                                Grid.Row="0" Grid.Column="0"
@@ -354,6 +372,7 @@
             </Frame>
             <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Knight's Tour Game"
                               Clicked="GoToKnightTour_OnClicked"
+                              HorizontalOptions="Center"
                               CornerRadius="8"
                               Margin="0,20,0,0" />
 

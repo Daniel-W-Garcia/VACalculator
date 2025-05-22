@@ -52,7 +52,7 @@ public partial class MainPage : ContentPage
         UpdateCalculation();
     }
     
-    private void ClearDependents_Clicked(object sender, EventArgs e)
+    private void ClearDependents_OnClicked(object sender, EventArgs e)
     {
         // Reset dependent information
         _viewModel.IsMarried = false;

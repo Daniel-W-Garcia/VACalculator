@@ -25,6 +25,7 @@
       <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Styles/Colors.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Styles/Colors.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,12 +54,13 @@
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/4f60afa556484ff7ce82f96f676dede791dfcb4998a43287c936ba8db409b37/Android.App.Activity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/7d92efdcd30b132cd9f585e722ba95d657f2b7f/MainPage.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../KTSolver/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AppShell.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MainPage.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Android/MainActivity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Android/MainApplication.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/MacCatalyst/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Tizen/Main.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Platforms/Windows/App.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Platforms/Windows/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -76,24 +78,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android.VACalculatorApp.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;UWP.VACalculatorApp.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android.VACalculatorApp.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "UWP.VACalculatorApp.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Android.VACalculatorApp">
     <configuration name="VACalculatorApp" type="UwpProject" factoryName="UWP">
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/VACalculatorApp.csproj" />
@@ -146,7 +148,9 @@
       <workItem from="1747688910765" duration="1328000" />
       <workItem from="1747690750397" duration="149000" />
       <workItem from="1747690938096" duration="17652000" />
-      <workItem from="1747784082094" duration="7353000" />
+      <workItem from="1747784082094" duration="19602000" />
+      <workItem from="1747874348695" duration="3913000" />
+      <workItem from="1747924454584" duration="755000" />
     </task>
     <servers />
   </component>
@@ -201,10 +205,10 @@
           <line>72</line>
           <properties documentPath="F:\C# Learning\MSSA Course\Assignments\VACalculator\MainPage.xaml.cs" containingFunctionPresentation="Method 'UpdateCalculation'">
             <startOffsets>
-              <option value="2302" />
+              <option value="2304" />
             </startOffsets>
             <endOffsets>
-              <option value="2376" />
+              <option value="2378" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="15" />
