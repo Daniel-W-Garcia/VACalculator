@@ -25,7 +25,7 @@ public class KnightsTourGame
 
     }
 
-    public bool IsPositionAvailable(int posX, int posY)
+    private bool IsPositionAvailable(int posX, int posY)
     {
         if (posX < 0 || posY < 0 || posX >= _size || posY >= _size)
         {
@@ -68,7 +68,7 @@ public class KnightsTourGame
         }
         else
         {
-            // Subsequent moves: must be one of the knight’s legal moves
+            // Further moves must be legal moves
             var legal = GetLegalMoves(CurrentX, CurrentY);
             if (!legal.Contains((nextX, nextY)))
             {

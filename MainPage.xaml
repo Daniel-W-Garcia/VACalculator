@@ -39,7 +39,6 @@
                                Text="Married:" VerticalOptions="Center" HorizontalOptions="Start" />
                         <SfSwitch:SfSwitch Grid.Row="1" Grid.Column="1"
                                            IsOn="{Binding IsMarried}"
-                                           StateChanged="MarriedSwitch_OnStateChanged"
                                            x:Name="MarriedSwitch"
                                            HorizontalOptions="Start" />
 
@@ -56,8 +55,7 @@
                                             x:Name="ParentsPicker"
                                             WidthRequest="100"
                                             DropDownItemHeight="33"
-                                            HorizontalOptions="Start"
-                                            SelectionChanged="DependentPicker_Changed" />
+                                            HorizontalOptions="Start" />
 
                         <!-- Children Under 18 Dropdown -->
                         <Label Grid.Row="3" Grid.Column="0"
@@ -73,8 +71,7 @@
                                             WidthRequest="100"
                                             MaxDropDownHeight="200"
                                             DropDownItemHeight="33"
-                                            HorizontalOptions="Start"
-                                            SelectionChanged="DependentPicker_Changed" />
+                                            HorizontalOptions="Start"/>
 
                         <!-- Children Over 18 in School Dropdown -->
                         <Label Grid.Row="4" Grid.Column="0"
@@ -90,15 +87,14 @@
                                             WidthRequest="100"
                                             MaxDropDownHeight="200"
                                             DropDownItemHeight="33"
-                                            HorizontalOptions="Start"
-                                            SelectionChanged="DependentPicker_Changed" />
+                                            HorizontalOptions="Start"/>
                     </Grid>
 
                     <!-- Clear Button -->
                     <buttons:SfButton
-                        Style="{StaticResource SfButtonTest}"
+                        Style="{StaticResource SfButtonMain}"
                         Text="Clear Dependents"
-                        Clicked="ClearDependents_OnClicked"
+                        Command="{Binding ClearDependentsCommand}"
                         CornerRadius="8"
                         Margin="0,10,0,0"
                         HorizontalOptions="Center" />
@@ -120,9 +116,9 @@
                           RowSpacing="8">
 
                         <!-- First row: 10-50% -->
-                        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="10%"
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="10%"
                                           Grid.Row="0" Grid.Column="0"
-                                          Clicked="PercentageButton_Clicked"
+                                          Command="{Binding AddPercentCommand}"
                                           CommandParameter="10"
                                           BackgroundColor="#0078D7"
                                           FontSize="16"
@@ -130,9 +126,9 @@
                                           FontFamily="OpenSansRegular"
                                           CornerRadius="8" />
 
-                        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="20%"
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="20%"
                                           Grid.Row="0" Grid.Column="1"
-                                          Clicked="PercentageButton_Clicked"
+                                          Command="{Binding AddPercentCommand}"
                                           CommandParameter="20"
                                           BackgroundColor="#0078D7"
                                           FontSize="16"
@@ -140,9 +136,9 @@
                                           FontFamily="OpenSansRegular"
                                           CornerRadius="8" />
 
-                        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="30%"
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="30%"
                                           Grid.Row="0" Grid.Column="2"
-                                          Clicked="PercentageButton_Clicked"
+                                          Command="{Binding AddPercentCommand}"
                                           CommandParameter="30"
                                           BackgroundColor="#0078D7"
                                           FontSize="16"
@@ -150,9 +146,9 @@
                                           FontFamily="OpenSansRegular"
                                           CornerRadius="8" />
 
-                        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="40%"
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="40%"
                                           Grid.Row="0" Grid.Column="3"
-                                          Clicked="PercentageButton_Clicked"
+                                          Command="{Binding AddPercentCommand}"
                                           CommandParameter="40"
                                           BackgroundColor="#0078D7"
                                           FontSize="16"
@@ -160,9 +156,9 @@
                                           FontFamily="OpenSansRegular"
                                           CornerRadius="8" />
 
-                        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="50%"
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="50%"
                                           Grid.Row="0" Grid.Column="4"
-                                          Clicked="PercentageButton_Clicked"
+                                          Command="{Binding AddPercentCommand}"
                                           CommandParameter="50"
                                           BackgroundColor="#0078D7"
                                           FontSize="16"
@@ -171,9 +167,9 @@
                                           CornerRadius="8" />
 
                         <!-- Second row: 60-100% -->
-                        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="60%"
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="60%"
                                           Grid.Row="1" Grid.Column="0"
-                                          Clicked="PercentageButton_Clicked"
+                                          Command="{Binding AddPercentCommand}"
                                           CommandParameter="60"
                                           BackgroundColor="#0078D7"
                                           FontSize="16"
@@ -181,9 +177,9 @@
                                           FontFamily="OpenSansRegular"
                                           CornerRadius="8" />
 
-                        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="70%"
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="70%"
                                           Grid.Row="1" Grid.Column="1"
-                                          Clicked="PercentageButton_Clicked"
+                                          Command="{Binding AddPercentCommand}"
                                           CommandParameter="70"
                                           BackgroundColor="#0078D7"
                                           FontSize="16"
@@ -191,9 +187,9 @@
                                           FontFamily="OpenSansRegular"
                                           CornerRadius="8" />
 
-                        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="80%"
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="80%"
                                           Grid.Row="1" Grid.Column="2"
-                                          Clicked="PercentageButton_Clicked"
+                                          Command="{Binding AddPercentCommand}"
                                           CommandParameter="80"
                                           BackgroundColor="#0078D7"
                                           FontSize="16"
@@ -201,9 +197,9 @@
                                           CornerRadius="8"
                                           FontFamily="OpenSansRegular" />
 
-                        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="90%"
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="90%"
                                           Grid.Row="1" Grid.Column="3"
-                                          Clicked="PercentageButton_Clicked"
+                                          Command="{Binding AddPercentCommand}"
                                           CommandParameter="90"
                                           BackgroundColor="#0078D7"
                                           FontSize="16"
@@ -211,9 +207,9 @@
                                           CornerRadius="8"
                                           FontFamily="OpenSansRegular" />
 
-                        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="100%"
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="100%"
                                           Grid.Row="1" Grid.Column="4"
-                                          Clicked="PercentageButton_Clicked"
+                                          Command="{Binding AddPercentCommand}"
                                           HorizontalOptions="Fill"
                                           CommandParameter="100"
                                           BackgroundColor="#0078D7"
@@ -259,12 +255,12 @@
                         </ChipControl:SfChipGroup>
                         <Label x:Name="EmptyPercentagesLabel"
                                Text="No percentages added yet"
-                               IsVisible="True" />
+                               IsVisible="{Binding HasNoPercentages}" />
                     </VerticalStackLayout>
 
                     <!-- Clear All Button -->
-                    <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Clear Percentages"
-                                      Clicked="ClearPercentages_Clicked"
+                    <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="Clear Percentages"
+                                      Command="{Binding ClearPercentagesCommand}"
                                       HorizontalOptions="Center"
                                       CornerRadius="8"
                                       Margin="0,10,0,0" />
@@ -289,7 +285,7 @@
                                           Background="DarkGrey"
                                           HeightRequest="30"
                                           WidthRequest="30"
-                                          Clicked="Infobutton_OnClicked" />
+                                          Clicked="InfoButton_OnClicked" />
                     </Grid>
 
                     <!-- Popup message for VA calculations -->
@@ -348,7 +344,7 @@
                                FontSize="16"
                                VerticalOptions="Center" />
                         <Label x:Name="CombinedRatingLabel"
-                               Text="--%"
+                               Text="{Binding CombinedRatingText}"
                                Grid.Row="0" Grid.Column="1"
                                FontSize="20"
                                FontAttributes="Bold"
@@ -361,7 +357,7 @@
                                FontSize="16"
                                VerticalOptions="Center" />
                         <Label x:Name="CompensationLabel"
-                               Text="$0.00"
+                               Text="{Binding CompensationText}"
                                Grid.Row="1" Grid.Column="1"
                                FontSize="20"
                                FontAttributes="Bold"
@@ -370,7 +366,7 @@
                     </Grid>
                 </VerticalStackLayout>
             </Frame>
-            <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Knight's Tour Game"
+            <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="Knight's Tour Game"
                               Clicked="GoToKnightTour_OnClicked"
                               HorizontalOptions="Center"
                               CornerRadius="8"

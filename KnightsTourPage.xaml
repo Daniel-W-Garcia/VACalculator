@@ -4,14 +4,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
              xmlns:vaCalculatorApp="clr-namespace:VACalculatorApp"
-             xmlns:bottomSheet="http://schemas.syncfusion.com/maui/toolkit"
              xmlns:SfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             x:DataType="vaCalculatorApp:KnightsTourViewModel"
              x:Class="VACalculatorApp.KnightTourPage"
              Title="Knight's Tour">
-    <ContentPage.BindingContext>
-        <vaCalculatorApp:GameBoardConfiguration />
-    </ContentPage.BindingContext>
 
     <VerticalStackLayout Spacing="20" Padding="20, 0">
         <Label Text="Complete The Knight's Tour" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold" />
@@ -34,13 +31,12 @@
             </picker:SfPicker.ColumnHeaderView>
 
             <picker:SfPicker.FooterView>
-                <picker:PickerFooterView Height="40" Background="#bdbdbdfa" ShowOkButton="False"
-                                         CancelButtonText="Exit" />
+                <picker:PickerFooterView Height="40" Background="#bdbdbdfa" ShowOkButton="False" CancelButtonText="Exit" />
             </picker:SfPicker.FooterView>
         </picker:SfPicker>
 
         <!-- SfPicker for a drop down board selection size -->
-        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Pick Board Size"
+        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="Pick Board Size"
                           x:Name="BoardSizePickerButton"
                           Clicked="BoardSizePickerButton_OnClicked"
                           VerticalOptions="Center"
@@ -61,21 +57,33 @@
 
             <!-- Grid cells will be added programmatically -->
         </Grid>
-        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Restart" Clicked="OnRestartClicked"
+        <buttons:SfButton Style="{StaticResource SfButtonMain}" 
+                          Text="Restart"
+                          Command="{Binding RestartCommand}"
                           FontAttributes="Bold"
                           WidthRequest="180"
                           HeightRequest="50"
                           HorizontalOptions="Center"
                           FontSize="18" />
 
-        <Label x:Name="ResultLabel" FontSize="18" HorizontalOptions="Center" />
-        <Label x:Name="ResultLabelWin" FontSize="20" HorizontalOptions="Center"
+
+        <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto, Auto, Auto, Auto">
+        <Label Text="{Binding StatusChange}" 
+               FontSize="18" 
+               HorizontalOptions="Center" 
+               Grid.ColumnSpan="3" 
+               Grid.Row="0" 
+               Margin="0,0,0,10"/>
+        <Label Text="{Binding WinMessage}" 
+               FontSize="20" 
+               HorizontalOptions="Center"
                TextColor="LawnGreen"
+               Grid.ColumnSpan="3"
+               Grid.Row="1"
+               Margin="0,0,0,30"
                FontFamily="sans-sarif" />
 
-        <Grid ColumnDefinitions="Auto,*,Auto">
-
-            <buttons:SfButton Style="{StaticResource SfButtonTest}" Grid.Column="2" x:Name="GameRules"
+            <buttons:SfButton Style="{StaticResource SfButtonMain}" Grid.Column="2" Grid.Row="3" x:Name="GameRules"
                               CornerRadius="20"
                               Text="?"
                               FontAttributes="Bold"
@@ -84,6 +92,7 @@
                               Background="DarkGrey"
                               HeightRequest="30"
                               WidthRequest="30"
+                              Margin="0,20,0,0"
                               Clicked="GameRules_OnClicked" />
 
         </Grid>
@@ -133,9 +142,9 @@
                 </DataTemplate>
             </SfPopup:SfPopup.ContentTemplate>
         </SfPopup:SfPopup>
-        <buttons:SfButton Style="{StaticResource SfButtonTest}" Text="Back To VA Calculator"
-                          Clicked="NavigateToMainPage_OnClicked"
+        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="Back To VA Calculator"
                           CornerRadius="8"
+                          Command="{Binding NavigateBackCommand}"
                           Margin="0,20,0,0" />
         
     </VerticalStackLayout>

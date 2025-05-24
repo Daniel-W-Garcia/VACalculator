@@ -17,7 +17,7 @@ namespace VACalculatorApp
                 {
                     _value = value;
                     Display = $"{_value}%";
-                    OnPropertyChanged();
+                    OnPropertyChanged("Value");
                 }
             }
         }
@@ -30,7 +30,7 @@ namespace VACalculatorApp
                 if (_display != value)
                 {
                     _display = value;
-                    OnPropertyChanged();
+                    OnPropertyChanged("Display");
                 }
             }
         }

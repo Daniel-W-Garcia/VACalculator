@@ -14,7 +14,7 @@ public class CalculateRate
     }
     
     // Gets compensation rate from dictionary
-    public static float GetTableRate(int disabilityPercentage, bool married, int parents, int children)
+    private static float GetTableRate(int disabilityPercentage, bool married, int parents, int children)
     {
         string key = GetRateKey(disabilityPercentage, married, parents, children);
         

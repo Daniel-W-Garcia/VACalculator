@@ -69,7 +69,7 @@
         </Setter>
     </Style>
     
-    <Style TargetType="buttons:SfButton" x:Key="SfButtonTest">
+    <Style TargetType="buttons:SfButton" x:Key="SfButtonMain">
         <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}"/>
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource WhiteSmoke}, Dark={StaticResource WhiteSmoke}}"/>
         <Setter Property="FontAttributes" Value="Bold"/>

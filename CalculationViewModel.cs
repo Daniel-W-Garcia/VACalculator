@@ -9,14 +9,17 @@ public class CalculationViewModel : INotifyPropertyChanged
 {
     public ICommand RemovePercentCommand { get; set; }
     public ICommand AddPercentCommand { get; set; }
+    public ICommand ClearPercentagesCommand { get; set; }
+    public ICommand ClearDependentsCommand { get; set; }
     public event PropertyChangedEventHandler? PropertyChanged;
     
     public ObservableCollection<DependentOption> ParentCount { get; } = new();
     public ObservableCollection<DependentOption> ChildUnder18Count { get; } = new();
     public ObservableCollection<DependentOption> ChildOver18InSchoolCount { get; } = new();
     
-    
     private ObservableCollection<Percentages> _percents = new();
+    public bool HasNoPercentages => Percents == null || Percents.Count == 0;
+
 
     public ObservableCollection<Percentages> Percents
     {
@@ -25,6 +28,7 @@ public class CalculationViewModel : INotifyPropertyChanged
         {
             _percents = value;
             OnPropertyChanged("Percents");
+            UpdateCalculation();
         }
     }
     
@@ -37,6 +41,7 @@ public class CalculationViewModel : INotifyPropertyChanged
         {
             _selectedNumberOfParents = value;
             OnPropertyChanged("SelectedNumberOfParents");
+            UpdateCalculation();
         }
     }
     private DependentOption _selectedNumberOfChildUnder18;
@@ -47,6 +52,7 @@ public class CalculationViewModel : INotifyPropertyChanged
         {
             _selectedNumberOfChildUnder18 = value;
             OnPropertyChanged("SelectedNumberOfChildUnder18");
+            UpdateCalculation();
         }
     }
     
@@ -58,8 +64,35 @@ public class CalculationViewModel : INotifyPropertyChanged
         {
             _selectedNumberOfChildrenOver18InSchool = value;
             OnPropertyChanged("SelectedNumberOfChildrenOver18InSchool");
+            UpdateCalculation();
         }
     }
+
+    private int? _combinedRating; //nullable IOT use HasValue in text output of CombinedRatingText
+    public int? CombinedRating
+    {
+        get => _combinedRating;
+        set
+        {
+            _combinedRating = value;
+            OnPropertyChanged("CombinedRating");
+            OnPropertyChanged("CombinedRatingText");
+        }
+    }
+    public string CombinedRatingText => CombinedRating.HasValue ? $"{CombinedRating}%" : "--%";
+
+    private float _compensation;
+    public float Compensation
+    {
+        get => _compensation;
+        set
+        {
+            _compensation = value;
+            OnPropertyChanged("Compensation");
+            OnPropertyChanged("CompensationText");
+        }
+    }
+    public string CompensationText => Compensation >= 0 ? Compensation.ToString("C") : "Rate not available";
 
     private bool _isMarried;
     public bool IsMarried
@@ -69,6 +102,7 @@ public class CalculationViewModel : INotifyPropertyChanged
         {
             _isMarried = value;
             OnPropertyChanged("IsMarried");
+            UpdateCalculation();
         }
     }
 
@@ -104,12 +138,20 @@ public class CalculationViewModel : INotifyPropertyChanged
         IsMarried = false;
         
         
-        AddPercentCommand = new Command(HandleAction);
+        AddPercentCommand = new Command<string>(AddPercentageFromString);
         RemovePercentCommand = new Command<Percentages>(RemovePercentage);
+        ClearPercentagesCommand = new Command(ClearPercentages);
+        ClearDependentsCommand = new Command(ClearDependents);
         Percents = new ObservableCollection<Percentages>();
 
     }
-    
+    private void AddPercentageFromString(string percentStr)
+    {
+        if (int.TryParse(percentStr, out int percentage))
+        {
+            AddPercentage(percentage);
+        }
+    }
 
     protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
     {
@@ -123,33 +165,71 @@ public class CalculationViewModel : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-
-    public void HandleAction(object obj)
-    {
-        if (obj is string percentStr && int.TryParse(percentStr.Replace("%", ""), out int percentage))
-        {
-            Result = percentage;
-        }
-    }
-
-    public void AddPercentage(int percentage)
+    private void AddPercentage(int percentage)
     {
         var newPercentage = new Percentages();
         newPercentage.Value = percentage;
         Percents.Add(newPercentage);
         OnPropertyChanged(nameof(Percents));
-    
+        OnPropertyChanged(nameof(HasNoPercentages));
+        UpdateCalculation();
     }
 
     public void RemovePercentage(Percentages percentToRemove)
     {
         Percents.Remove(percentToRemove);
         OnPropertyChanged(nameof(Percents));
+        OnPropertyChanged(nameof(HasNoPercentages)); 
+        UpdateCalculation(); 
     }
 
-    public void ClearPercentages()
+    private void ClearPercentages()
     {
         Percents.Clear();
         OnPropertyChanged(nameof(Percents));
+        OnPropertyChanged(nameof(HasNoPercentages));
+        UpdateCalculation();
+    }
+
+    private void ClearDependents()
+    {
+        IsMarried = false;
+        SelectedNumberOfParents = ParentCount?.FirstOrDefault();
+        SelectedNumberOfChildUnder18 = ChildUnder18Count?.FirstOrDefault();
+        SelectedNumberOfChildrenOver18InSchool = ChildOver18InSchoolCount?.FirstOrDefault();
+    }
+    public void UpdateCalculation()
+    {
+        if (Percents.Count > 0)
+        {
+            List<int> percentages = Percents.Select(p => p.Value).ToList();
+            int combinedRating = CalculateRate.CombineDisabilityRatings(percentages);
+
+            int childrenUnder18 = SelectedNumberOfChildUnder18?.Value ?? 0;
+            int childrenOver18 = SelectedNumberOfChildrenOver18InSchool?.Value ?? 0;
+
+            int childrenBasic = childrenUnder18 > 0 || childrenOver18 > 0 ? 1 : 0;
+            int additionalChildrenUnder18 = childrenBasic > 0 ? childrenUnder18 - 1 : 0;
+            if (additionalChildrenUnder18 < 0) additionalChildrenUnder18 = 0;
+
+            var veteran = new Veteran
+            {
+                DisabilityPercentage = combinedRating,
+                IsMarried = IsMarried,
+                ParentCount = SelectedNumberOfParents?.Value ?? 0,
+                ChildrenUnder18Count = childrenBasic,
+                ChildrenOver18InSchoolCount = childrenOver18,
+                AdditionalChildrenUnder18Count = additionalChildrenUnder18,
+                SpouseReceivingAidAndAttendance = false
+            };
+
+            CombinedRating = combinedRating;
+            Compensation = CalculateRate.CalculateTotalCompensation(veteran);
+        }
+        else
+        {
+            CombinedRating = null;
+            Compensation = 0;
+        }
     }
 }

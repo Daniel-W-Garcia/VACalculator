@@ -5,7 +5,7 @@ public static class CompensationRateDictionary
 {
 
     // Dictionary to store all rates with keys in format: "percentage-married-parents-children"
-    private static readonly Dictionary<string, float> _rates = new()
+    private static readonly Dictionary<string, float> Rates = new()
     {
         // 10% ratings (updated 4/23/2025)
         {"10-False-0-0", 175.51f},
@@ -149,7 +149,7 @@ public static class CompensationRateDictionary
     };
     
     // Dictionary to store all rates with keys in format: "percentage-amount per additional dependent"
-    private static readonly Dictionary<int, float> _childUnder18Rates = new()
+    private static readonly Dictionary<int, float> ChildUnder18Rates = new()
     {
         {30, 31.00f},
         {40, 42.00f},
@@ -160,7 +160,7 @@ public static class CompensationRateDictionary
         {90, 95.00f},
         {100, 106.14f}
     };
-    private static readonly Dictionary<int, float> _childOver18SchoolRates = new()
+    private static readonly Dictionary<int, float> ChildOver18SchoolRates = new()
     {
         {30, 102.00f},
         {40, 137.00f},
@@ -172,7 +172,7 @@ public static class CompensationRateDictionary
         {100, 342.85f}
     };
     
-    private static readonly Dictionary<int, float> _spouseAidAttendanceRates = new()
+    private static readonly Dictionary<int, float> SpouseAidAttendanceRates = new()
     {
         {70, 137.00f},
         {80, 157.00f},
@@ -181,10 +181,10 @@ public static class CompensationRateDictionary
     };
     public static Dictionary<string, float> GetRateFromDictionary()
     {
-        return new Dictionary<string, float>(_rates);
+        return new Dictionary<string, float>(Rates);
     }
-    
-    public static int GetRateKey(int percentage)
+
+    private static int GetRateKey(int percentage)
     {
         // Don't go above 100%
         if (percentage >= 100) return 100;
@@ -197,18 +197,18 @@ public static class CompensationRateDictionary
     public static float GetChildUnder18Rate(int disabilityPercentage)
     {
         int key = GetRateKey(disabilityPercentage);
-        return _childUnder18Rates.TryGetValue(key, out float rate) ? rate : 0;
+        return ChildUnder18Rates.TryGetValue(key, out float rate) ? rate : 0;
     }
     
     public static float GetChildOver18SchoolRate(int disabilityPercentage)
     {
         int key = GetRateKey(disabilityPercentage);
-        return _childOver18SchoolRates.TryGetValue(key, out float rate) ? rate : 0;
+        return ChildOver18SchoolRates.TryGetValue(key, out float rate) ? rate : 0;
     }
     
     public static float GetSpouseAidAttendanceRate(int disabilityPercentage) //not in use currently in app
     {
         int key = GetRateKey(disabilityPercentage);
-        return _spouseAidAttendanceRates.TryGetValue(key, out float rate) ? rate : 0;
+        return SpouseAidAttendanceRates.TryGetValue(key, out float rate) ? rate : 0;
     }
 }

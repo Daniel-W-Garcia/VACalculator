@@ -2,20 +2,10 @@
 
 namespace VACalculatorApp;
 
-public class GameBoardConfiguration
+public static class GameBoardConfiguration
 {
-    private ObservableCollection<string> _boardSizes = new();
-    public ObservableCollection<string> BoardSizes
+    public static ObservableCollection<string> BoardSizes { get; } = new ObservableCollection<string>
     {
-        get => _boardSizes;
-        set => _boardSizes = value;
-    }
-    
-    public GameBoardConfiguration()
-    {
-        BoardSizes = new ObservableCollection<string>
-        {
-            "5 x 5", "6 x 6", "7 x 7", "8 x 8"
-        };
-    }
+        "5 x 5", "6 x 6", "7 x 7", "8 x 8"
+    };
 }
