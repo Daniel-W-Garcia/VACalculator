@@ -12,9 +12,9 @@ public partial class KnightTourPage
     
     public KnightTourPage()
     {
-        InitializeComponent();
         _tourViewModel = new KnightsTourViewModel();
         BindingContext = _tourViewModel;
+        InitializeComponent();
         
         _tourViewModel.BoardUpdated +=(s , e) =>
         {

@@ -19,23 +19,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8761dc37-d06b-424a-b12b-242aa7dd07d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/KnightsTourViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculateRate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculateRate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompensationRateDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompensationRateDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameBoardConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameBoardConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnightsTour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.metadata.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.metadata.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.projects.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.projects.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.strings.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.strings.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Percentages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Percentages.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Styles/Styles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Styles/Styles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Platforms/Windows/Package.appxmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/Platforms/Windows/Package.appxmanifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VACalculator.sln" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculator.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +46,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/.nuget/packages/microsoft.windowsappsdk/1.6.250228001/include/DeploymentManagerAutoInitializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/28f4000d791f414ba8c2892581ffe01e1e3a00/14/aec41cb8/SfVisuals.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/28f4000d791f414ba8c2892581ffe01e1e3a00/81/0a177725/SyncfusionThemeResourceDictionary.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,14 +62,25 @@
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/4f60afa556484ff7ce82f96f676dede791dfcb4998a43287c936ba8db409b37/Android.App.Activity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/7d92efdcd30b132cd9f585e722ba95d657f2b7f/MainPage.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../KTSolver/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AppShell.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AppShell.xaml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/C# Learning/MSSA Course/Assignments/VACalculator/KnightsTourPage.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CalculationViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DependentOption.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameBoardConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/KnightTourSolver.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/KnightsTour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/KnightsTourPage.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/KnightsTourPage.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/KnightsTourViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MainPage.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MainPage.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Percentages.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Android/MainActivity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Android/MainApplication.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/MacCatalyst/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Tizen/Main.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Windows/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Veteran.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -100,10 +102,13 @@
   "keyToString": {
     "Android.VACalculatorApp.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Publish to folder.Publish VACalculatorApp to folder (1).executor": "Run",
     "Publish to folder.Publish VACalculatorApp to folder.executor": "Run",
+    "Publish to folder.Publish VACalculatorApp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "UWP.VACalculatorApp.executor": "Debug",
+    "com.google.cloudcode.ide_session_index": "20250525_0000",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
@@ -111,24 +116,14 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "RiderNuGetOptionsPageId",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RiderProblemsViewState">
+    <option name="proportion" value="0.3062954" />
+  </component>
   <component name="RunManager" selected="Android.VACalculatorApp">
-    <configuration name="Publish VACalculatorApp to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
-      <riderPublish self_contained="true" target_folder="$PROJECT_DIR$/bin/net9.0-android/publish" target_framework="net9.0-android" uuid_high="2980168097876758097" uuid_low="-7365281152208954169">
-        <option name="extraSettings">
-          <map>
-            <entry key="AndroidKeyStore" value="true" />
-            <entry key="AndroidSigningKeyAlias" value="" />
-            <entry key="AndroidSigningKeyStore" value="" />
-            <entry key="RememberPasswords" value="false" />
-          </map>
-        </option>
-      </riderPublish>
-      <method v="2" />
-    </configuration>
     <configuration name="VACalculatorApp" type="UwpProject" factoryName="UWP">
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/VACalculatorApp.csproj" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -162,6 +157,12 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Android.VACalculatorApp" />
+      <item itemvalue="iOS.VACalculatorApp" />
+      <item itemvalue="macOS.VACalculatorApp" />
+      <item itemvalue="UWP.VACalculatorApp" />
+    </list>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -183,7 +184,11 @@
       <workItem from="1747784082094" duration="19602000" />
       <workItem from="1747874348695" duration="3913000" />
       <workItem from="1747924454584" duration="810000" />
-      <workItem from="1747948661410" duration="26858000" />
+      <workItem from="1747948661410" duration="29317000" />
+      <workItem from="1748124601812" duration="176000" />
+      <workItem from="1748124797523" duration="4068000" />
+      <workItem from="1748131295471" duration="5778000" />
+      <workItem from="1748183768256" duration="10041000" />
     </task>
     <servers />
   </component>

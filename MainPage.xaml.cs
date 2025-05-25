@@ -28,7 +28,15 @@ public partial class MainPage : ContentPage
 
     private async void GoToKnightTour_OnClicked(object? sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("knighttour");
+        try
+        {
+            await Shell.Current.GoToAsync("knighttour");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Navigation failed", ex.ToString(), "OK");
+        }
     }
+
 
 }
