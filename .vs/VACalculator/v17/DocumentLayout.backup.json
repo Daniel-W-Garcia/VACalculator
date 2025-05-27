@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|f:\\c# learning\\mssa course\\assignments\\vacalculator\\vacalculatorapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|solutionrelative:vacalculatorapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|f:\\c# learning\\mssa course\\assignments\\vacalculator\\vacalculatorapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|solutionrelative:vacalculatorapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|f:\\c# learning\\mssa course\\assignments\\vacalculator\\vacalculatorapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|solutionrelative:vacalculatorapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VACalculatorApp",
-              "DocumentMoniker": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\VACalculatorApp.csproj",
-              "RelativeDocumentMoniker": "VACalculatorApp.csproj",
-              "ToolTip": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\VACalculatorApp.csproj",
-              "RelativeToolTip": "VACalculatorApp.csproj",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACsAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-25T16:05:30.026Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -60,6 +47,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "VACalculatorApp.csproj",
+              "DocumentMoniker": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\VACalculatorApp.csproj",
+              "RelativeDocumentMoniker": "VACalculatorApp.csproj",
+              "ToolTip": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\VACalculatorApp.csproj*",
+              "RelativeToolTip": "VACalculatorApp.csproj*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACsAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-25T16:05:30.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "VACalculatorApp",
               "DocumentMoniker": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\VACalculatorApp.csproj",
               "RelativeDocumentMoniker": "VACalculatorApp.csproj",

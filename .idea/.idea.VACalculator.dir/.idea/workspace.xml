@@ -21,18 +21,28 @@
     <list default="true" id="8761dc37-d06b-424a-b12b-242aa7dd07d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.metadata.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.metadata.v9.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.projects.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.projects.v9.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.strings.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.strings.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/59db6573-5c89-4fd8-9a5f-c636cc284750.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/9fd62db9-2e40-4489-be77-d3cefda3714c.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/ea44ff7a-5d0a-46ec-ae84-b537ff4df467.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/.futdcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.backup.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Folder.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Folder.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Platforms/Windows/Package.appxmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/Platforms/Windows/Package.appxmanifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VACalculator.sln" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculator.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/AppIcon/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/AppIcon/appiconfg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Images/dotnet_bot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Images/splash.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +56,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/.nuget/packages/microsoft.windowsappsdk/1.6.250228001/include/DeploymentManagerAutoInitializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/28f4000d791f414ba8c2892581ffe01e1e3a00/14/aec41cb8/SfVisuals.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/28f4000d791f414ba8c2892581ffe01e1e3a00/81/0a177725/SyncfusionThemeResourceDictionary.cs" root0="FORCE_HIGHLIGHTING" />
@@ -61,6 +74,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/4c3f577ada8d1c5641061c8a28d8f6b64427fa/App.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/4f60afa556484ff7ce82f96f676dede791dfcb4998a43287c936ba8db409b37/Android.App.Activity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/7d92efdcd30b132cd9f585e722ba95d657f2b7f/MainPage.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/a12169ba5b35f9663fe5e6c71b2367df47ff841/MainPage.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../KTSolver/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AppShell.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AppShell.xaml.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,6 +95,8 @@
     <setting file="file://$PROJECT_DIR$/Platforms/Tizen/Main.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Windows/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Veteran.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/VACalculatorApp.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/VACalculatorApp.GlobalUsings.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -108,7 +124,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "UWP.VACalculatorApp.executor": "Debug",
-    "com.google.cloudcode.ide_session_index": "20250525_0000",
+    "com.google.cloudcode.ide_session_index": "20250527_0002",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
@@ -189,6 +205,10 @@
       <workItem from="1748124797523" duration="4068000" />
       <workItem from="1748131295471" duration="5778000" />
       <workItem from="1748183768256" duration="10041000" />
+      <workItem from="1748205848203" duration="714000" />
+      <workItem from="1748267995497" duration="13160000" />
+      <workItem from="1748358675449" duration="774000" />
+      <workItem from="1748366870601" duration="3167000" />
     </task>
     <servers />
   </component>

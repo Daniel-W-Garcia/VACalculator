@@ -45,7 +45,7 @@
       <DebugSymbols>True</DebugSymbols>
       <AndroidUseAapt2>True</AndroidUseAapt2>
       <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-      <ApplicationVersion>10</ApplicationVersion>
+      <ApplicationVersion>12</ApplicationVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
@@ -53,7 +53,7 @@
       <AndroidUseAapt2>True</AndroidUseAapt2>
       <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
       <AndroidPackageFormat>aab</AndroidPackageFormat>
-      <ApplicationVersion>10</ApplicationVersion>
+      <ApplicationVersion>12</ApplicationVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|x86'">
@@ -61,46 +61,44 @@
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
-      <ApplicationVersion>10</ApplicationVersion>
+      <ApplicationVersion>12</ApplicationVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-maccatalyst|AnyCPU'">
-      <ApplicationVersion>10</ApplicationVersion>
+      <ApplicationVersion>12</ApplicationVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows10.0.19041.0|AnyCPU'">
-      <ApplicationVersion>10</ApplicationVersion>
+      <ApplicationVersion>12</ApplicationVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
-      <ApplicationVersion>10</ApplicationVersion>
+      <ApplicationVersion>12</ApplicationVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-maccatalyst|AnyCPU'">
-      <ApplicationVersion>10</ApplicationVersion>
+      <ApplicationVersion>12</ApplicationVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows10.0.19041.0|AnyCPU'">
-      <ApplicationVersion>10</ApplicationVersion>
+      <ApplicationVersion>12</ApplicationVersion>
     </PropertyGroup>
 
     <ItemGroup>
         <!-- App Icon -->
-        <MauiIcon Include="Resources\AppIcon\appicon.png" ForegroundFile="Resources\AppIcon\appiconfg.png" Color="#512BD4" />
+        <MauiIcon Include="Resources\AppIcon\appicon.svg" BaseSize="128,128" />
 
         <!-- Splash Screen -->
-        <MauiSplashScreen Include="Resources\Images\splash.svg" />
+        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="faf4e4" BaseSize="128,128" />
 
         <!-- Images -->
         <MauiImage Include="Resources\Images\*" />
-        <MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
 
         <!-- Custom Fonts -->
         <MauiFont Include="Resources\Fonts\*" />
 
         <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-        <None Remove="Resources\Splash\splash.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -127,11 +125,15 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resources\Splash\" />
+      <Folder Include="Resources\Images\" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
       <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.15" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Images\appicon.svg" />
     </ItemGroup>
 
 </Project>

@@ -16,7 +16,7 @@
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="20">
 
-            
+
             <!-- Dependent Information -->
             <Frame BorderColor="LightGray" CornerRadius="8" Padding="10" HasShadow="True">
                 <VerticalStackLayout Spacing="10">
@@ -71,7 +71,7 @@
                                             WidthRequest="100"
                                             MaxDropDownHeight="200"
                                             DropDownItemHeight="33"
-                                            HorizontalOptions="Start"/>
+                                            HorizontalOptions="Start" />
 
                         <!-- Children Over 18 in School Dropdown -->
                         <Label Grid.Row="4" Grid.Column="0"
@@ -87,7 +87,7 @@
                                             WidthRequest="100"
                                             MaxDropDownHeight="200"
                                             DropDownItemHeight="33"
-                                            HorizontalOptions="Start"/>
+                                            HorizontalOptions="Start" />
                     </Grid>
 
                     <!-- Clear Button -->
@@ -106,8 +106,8 @@
             <Frame BorderColor="LightGray" CornerRadius="8" Padding="15" HasShadow="True">
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Add Disability Percentages" FontSize="20" FontAttributes="Bold" />
-                    <Label Text="Tap percentages to add to your calculation"  
-                           FontSize="16" Padding="0,0,0,10"/>
+                    <Label Text="Tap percentages to add to your calculation"
+                           FontSize="16" Padding="0,0,0,10" />
 
                     <!-- Buttons Grid for percentages 10-100 -->
                     <Grid ColumnDefinitions="*, *, *, *, *"
@@ -259,29 +259,22 @@
                     </VerticalStackLayout>
 
                     <!-- Clear All Button -->
-                    <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="Clear Percentages"
-                                      Command="{Binding ClearPercentagesCommand}"
-                                      HorizontalOptions="Center"
-                                      CornerRadius="8"
-                                      Margin="0,10,0,0" />
-                </VerticalStackLayout>
-            </Frame>
-
-            <!-- Results Section -->
-            <Frame BorderColor="LightGray" CornerRadius="8" Padding="15" HasShadow="True">
-                <VerticalStackLayout Spacing="15">
-                    <Grid ColumnDefinitions="Auto,*,Auto">
-
-                        <!-- Results Label -->
-                        <Label Grid.Column="0" Text="Results" FontSize="20" FontAttributes="Bold"
-                               VerticalOptions="Center" />
+                    
+                    <Grid ColumnDefinitions="*,*,*">
+                        <buttons:SfButton Style="{StaticResource SfButtonMain}" Text="Clear Percentages"
+                                          Grid.Column="1"
+                                          Command="{Binding ClearPercentagesCommand}"
+                                          HorizontalOptions="Center"
+                                          CornerRadius="8"
+                                          Margin="0,10,0,0" />
 
                         <!-- Small Info Button -->
-                        <buttons:SfButton Grid.Column="2" x:Name="Infobutton" CornerRadius="20"
+                        <buttons:SfButton Grid.Column="2" x:Name="InfoButton" CornerRadius="20"
                                           Text="?"
                                           FontAttributes="Bold"
                                           FontAutoScalingEnabled="True"
-                                          VerticalOptions="Center"
+                                          VerticalOptions="End"
+                                          HorizontalOptions="End"
                                           Background="DarkGrey"
                                           HeightRequest="30"
                                           WidthRequest="30"
@@ -324,13 +317,72 @@
                                            Text='ex: A 50% rating leaves 50% "healthy". A second 50% rating would apply to the remaining 50%, adding 25% (total 75%).' />
                                     <Label TextColor="Black" Padding="20, 20,20,10" FontSize="14" FontAttributes="Bold"
                                            FontFamily="OpenSansRegular"
-                                           Text='Rounded and Cappped: The total is rounded up to the nearest 10% and capped at 100%.' />
+                                           Text='Rounded and Capped: The total is rounded up to the nearest 10% and capped at 100%.' />
                                     <Label TextColor="Black" Padding="40,0" HorizontalTextAlignment="Justify"
                                            FontSize="12"
-                                           Text='Values are rounded up at the midpoint ie... 75% would become 80%. You cannot exceed a 100% Combined rating' />
+                                           Text='Values are rounded up at the midpoint ie... 75% would become 80%. You cannot exceed a 100% combined rating' />
                                     <Label TextColor="Black" Padding="20,40,20,0" FontSize="16" FontAttributes="Bold"
                                            FontFamily="OpenSansRegular"
                                            Text='This method ensures higher ratings impact the total more, while lower ratings progressively affect less of the remaining "healthy" portion.' />
+                                </StackLayout>
+                            </DataTemplate>
+                        </SfPopup:SfPopup.ContentTemplate>
+                    </SfPopup:SfPopup>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Results Section -->
+            <Frame BorderColor="LightGray" CornerRadius="8" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="15">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+
+                        <!-- Results Label -->
+                        <Label Grid.Column="0" Text="Results" FontSize="20" FontAttributes="Bold"
+                               VerticalOptions="Center" />
+
+                        <!-- Small Disclaimer Button -->
+                        <buttons:SfButton Grid.Column="2" x:Name="DisclaimerPopupButton" CornerRadius="20"
+                                          Text="!"
+                                          FontAttributes="Bold"
+                                          FontAutoScalingEnabled="True"
+                                          VerticalOptions="Center"
+                                          Background="DarkGrey"
+                                          HeightRequest="30"
+                                          WidthRequest="30"
+                                          Clicked="VADisclaimerButton_OnClicked" />
+                    </Grid>
+
+                    <!-- Popup message for VA calculations -->
+                    <SfPopup:SfPopup x:Name="DisclaimerPopup" AutoSizeMode="Both" AcceptButtonText="Close"
+                                     ShowFooter="True">
+                        <SfPopup:SfPopup.HeaderTemplate>
+                            <DataTemplate>
+                                <Label Text="Disclaimer"
+                                       FontAttributes="Bold" TextColor="Black" FontFamily="OpenSansRegular"
+                                       FontSize="20"
+                                       HorizontalTextAlignment="Center"
+                                       Padding="20" VerticalTextAlignment="Center" />
+                            </DataTemplate>
+                        </SfPopup:SfPopup.HeaderTemplate>
+                        <SfPopup:SfPopup.ContentTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Label
+                                        Text="This application is not affiliated with or endorsed by the U.S. Department of Veterans Affairs (VA). The calculations provided are estimates only and should not be considered official or definitive. Actual VA combined disability ratings may differ from the calculated results. For accurate benefit information, consult the official VA.gov website or a VA-accredited representative."
+                                        FontSize="16"
+                                        TextColor="#6C757D"
+                                        FontAttributes="Italic, Bold"
+                                        
+                                        LineBreakMode="WordWrap"
+                                        HorizontalTextAlignment="Center"
+                                        MaximumWidthRequest="400" />
+                                    <buttons:SfButton
+                                        Text="Visit VA.gov for Official Information"
+                                        Style="{StaticResource SfButtonMain}"
+                                        Clicked="ButtonBase_OnClicked"
+                                        CornerRadius="8"
+                                        Margin="0,40,0,0"
+                                        HorizontalOptions="Center" />
                                 </StackLayout>
                             </DataTemplate>
                         </SfPopup:SfPopup.ContentTemplate>
@@ -371,6 +423,7 @@
                               HorizontalOptions="Center"
                               CornerRadius="8"
                               Margin="0,20,0,0" />
+            
 
         </VerticalStackLayout>
     </ScrollView>
