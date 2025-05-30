@@ -17,7 +17,6 @@ public partial class App : Application
     {
         try
         {
-            // Read from embedded resource
             var assembly = Assembly.GetExecutingAssembly();
             using var stream = assembly.GetManifestResourceStream("VACalculatorApp.secrets.json");
             using var reader = new StreamReader(stream);
@@ -29,7 +28,7 @@ public partial class App : Application
         catch (Exception ex)
         {
             Console.WriteLine($"Error loading license: {ex.Message}");
-            return null; // Handle this case appropriately
+            return null;
         }
     }
 }

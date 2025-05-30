@@ -119,7 +119,7 @@ public partial class KnightTourPage
             var current = _buttonGrid[kx, ky];
             current.BackgroundColor = Colors.DarkSlateGray;
             current.Text            = "♘";
-            current.FontSize        = 24;
+            current.FontSize        = 24; 
         }
     }
     
@@ -177,11 +177,13 @@ public partial class KnightTourPage
                 WidthRequest      = 24,
                 HeightRequest     = 24,
                 HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions   = LayoutOptions.Center
+                VerticalOptions   = LayoutOptions.Center,
+                InputTransparent  = true
             };
             ChessboardGrid.Add(moveIndicator, legalMoveColumn, legalMoveRow);
         }
     }
+
 
     private int ParseBoardSize(string pickerValue) //getting input from the SfPicker and converting it to an int for the board size
     {

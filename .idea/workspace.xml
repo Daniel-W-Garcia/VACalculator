@@ -6,17 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="15da1041-fea0-43b8-ba90-0dac4366ca4f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/59db6573-5c89-4fd8-9a5f-c636cc284750.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/9fd62db9-2e40-4489-be77-d3cefda3714c.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/ea44ff7a-5d0a-46ec-ae84-b537ff4df467.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.metadata.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.metadata.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.projects.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.projects.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.strings.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.strings.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/048af53f-c1c6-4965-8d7b-cd88c0ce13ae.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/1ae41ab3-23dd-478d-ae08-14da9b6bad82.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/e0c724cb-6b51-43b8-9baa-427b91c1b290.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/f1c04c21-4a3c-43a9-9f95-f4e3bd43916e.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/.futdcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.backup.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Folder.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Folder.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/AppIcon/appicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/AppIcon/appiconfg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Images/dotnet_bot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Images/splash.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Platforms/iOS/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Platforms/iOS/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj.user" afterDir="false" />
     </list>

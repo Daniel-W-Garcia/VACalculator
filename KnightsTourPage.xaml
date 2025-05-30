@@ -89,7 +89,7 @@
                               FontAttributes="Bold"
                               FontAutoScalingEnabled="True"
                               VerticalOptions="Center"
-                              Background="DarkGrey"
+                              Background="#8a8a8aa6"
                               HeightRequest="30"
                               WidthRequest="30"
                               Margin="0,20,0,0"
@@ -118,9 +118,9 @@
                         <Label TextColor="Black" Padding="20, 10" FontSize="16" FontAttributes="Bold"
                                FontFamily="sans-serif"
                                Text='Movement: The knight moves in an "L" shape:' />
-                        <Label TextColor="Black" HorizontalTextAlignment="Justify" FontSize="12" Padding="40,0"
+                        <Label TextColor="Black" HorizontalTextAlignment="Start" FontSize="12" Padding="40,0"
                                Text="2 squares in one direction, then 1 square perpendicular (e.g., 2 up + 1 left)." />
-                        <Label TextColor="Black" HorizontalTextAlignment="Justify" FontSize="12" Padding="40,0"
+                        <Label TextColor="Black" HorizontalTextAlignment="Start" FontSize="12" Padding="40,0"
                                Text="No diagonal or straight-line moves." />
                         <Label TextColor="Black" Padding="20, 30,20,10" FontSize="14" FontAttributes="Bold" FontFamily="sans-serif"
                                Text='No Revisits: Once a square is landed on, it cannot be revisited.' />
@@ -130,9 +130,9 @@
                         <Label TextColor="Black" Padding="20, 20,0,10" FontSize="18" FontAttributes="Bold, Italic"
                                FontFamily="sans-serif"
                                Text="How To Win:" />
-                        <Label TextColor="Black" Padding="40,0,0,20" HorizontalTextAlignment="Justify" FontSize="12"
+                        <Label TextColor="Black" Padding="40,0,0,20" HorizontalTextAlignment="Start" FontSize="12"
                                Text='Successfully land on all available squares without repeating any.' />
-                        <Label TextColor="Black" Padding="40,0" HorizontalTextAlignment="Justify" FontSize="12"
+                        <Label TextColor="Black" Padding="40,0" HorizontalTextAlignment="Start" FontSize="12"
                                Text='For an extra challenge, complete a closed tour (ending on a square one knights move away from the start).' />
                         <Label TextColor="Black" Padding="20,40,20,0" FontSize="16" FontAttributes="Bold"
                                FontFamily="sans-serif"
