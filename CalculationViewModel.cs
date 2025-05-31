@@ -198,38 +198,45 @@ public class CalculationViewModel : INotifyPropertyChanged
         SelectedNumberOfChildUnder18 = ChildUnder18Count?.FirstOrDefault();
         SelectedNumberOfChildrenOver18InSchool = ChildOver18InSchoolCount?.FirstOrDefault();
     }
-    public void UpdateCalculation()
+    public async void UpdateCalculation()
     {
-        if (Percents.Count > 0)
+        try
         {
-            List<int> percentages = Percents.Select(p => p.Value).ToList();
-            int combinedRating = CalculateRate.CombineDisabilityRatings(percentages);
-
-            int childrenUnder18 = SelectedNumberOfChildUnder18?.Value ?? 0;
-            int childrenOver18 = SelectedNumberOfChildrenOver18InSchool?.Value ?? 0;
-
-            int childrenBasic = childrenUnder18 > 0 || childrenOver18 > 0 ? 1 : 0;
-            int additionalChildrenUnder18 = childrenBasic > 0 ? childrenUnder18 - 1 : 0;
-            if (additionalChildrenUnder18 < 0) additionalChildrenUnder18 = 0;
-
-            var veteran = new Veteran
+            if (Percents.Count > 0)
             {
-                DisabilityPercentage = combinedRating,
-                IsMarried = IsMarried,
-                ParentCount = SelectedNumberOfParents?.Value ?? 0,
-                ChildrenUnder18Count = childrenBasic,
-                ChildrenOver18InSchoolCount = childrenOver18,
-                AdditionalChildrenUnder18Count = additionalChildrenUnder18,
-                SpouseReceivingAidAndAttendance = false
-            };
+                List<int> percentages = Percents.Select(p => p.Value).ToList();
+                int combinedRating = CalculateRate.CombineDisabilityRatings(percentages);
 
-            CombinedRating = combinedRating;
-            Compensation = CalculateRate.CalculateTotalCompensation(veteran);
+                int childrenUnder18 = SelectedNumberOfChildUnder18?.Value ?? 0;
+                int childrenOver18 = SelectedNumberOfChildrenOver18InSchool?.Value ?? 0;
+
+                int childrenBasic = childrenUnder18 > 0 || childrenOver18 > 0 ? 1 : 0;
+                int additionalChildrenUnder18 = childrenBasic > 0 ? childrenUnder18 - 1 : 0;
+                if (additionalChildrenUnder18 < 0) additionalChildrenUnder18 = 0;
+
+                var veteran = new Veteran
+                {
+                    DisabilityPercentage = combinedRating,
+                    IsMarried = IsMarried,
+                    ParentCount = SelectedNumberOfParents?.Value ?? 0,
+                    ChildrenUnder18Count = childrenBasic,
+                    ChildrenOver18InSchoolCount = childrenOver18,
+                    AdditionalChildrenUnder18Count = additionalChildrenUnder18,
+                    SpouseReceivingAidAndAttendance = false
+                };
+
+                CombinedRating = combinedRating;
+                Compensation = await CalculateRate.CalculateTotalCompensation(veteran);
+            }
+            else
+            {
+                CombinedRating = null;
+                Compensation = 0;
+            }
         }
-        else
+        catch (Exception e)
         {
-            CombinedRating = null;
-            Compensation = 0;
+            throw; // TODO handle exception
         }
     }
 }

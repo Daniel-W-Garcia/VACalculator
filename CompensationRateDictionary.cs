@@ -1,4 +1,4 @@
-﻿namespace VACalculatorApp;
+﻿/*namespace VACalculatorApp;
 
 
 public static class CompensationRateDictionary
@@ -211,4 +211,4 @@ public static class CompensationRateDictionary
         int key = GetRateKey(disabilityPercentage);
         return SpouseAidAttendanceRates.TryGetValue(key, out float rate) ? rate : 0;
     }
-}
+}*/

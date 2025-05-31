@@ -19,30 +19,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8761dc37-d06b-424a-b12b-242aa7dd07d7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DatabaseCreator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DataBaseModels.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/CompensationDatabaseService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.metadata.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.metadata.v9.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.projects.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.projects.v9.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.strings.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.strings.v9.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/048af53f-c1c6-4965-8d7b-cd88c0ce13ae.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/1ae41ab3-23dd-478d-ae08-14da9b6bad82.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/e0c724cb-6b51-43b8-9baa-427b91c1b290.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/f1c04c21-4a3c-43a9-9f95-f4e3bd43916e.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/.futdcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.backup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculateRate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculateRate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculationViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompensationRateDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompensationRateDictionary.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Folder.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Folder.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KnightsTourPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/MainPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Platforms/iOS/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Platforms/iOS/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MauiProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MauiProgram.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +47,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/28f4000d791f414ba8c2892581ffe01e1e3a00/14/aec41cb8/SfVisuals.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/28f4000d791f414ba8c2892581ffe01e1e3a00/81/0a177725/SyncfusionThemeResourceDictionary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/2c8d0c3c25904f34a83c250a4fe015291c6048/ea/c7cafb90/Shell.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/6a392f01ef414eb08a1720d0a56427ee3c020/77/a572bc59/AppAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/6dbbcc67a3334318abea70c6b76fcef6bb420/92/50676718/HorizontalStackLayoutManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/85f56040e2af448c9099eafe5b31a2e11e3220/82/d0af892f/ResourceDictionary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/977c0289f60648998397577e0c82037135200/da/3733ae62/SfPicker.cs" root0="SKIP_HIGHLIGHTING" />
@@ -76,9 +64,16 @@
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/7d92efdcd30b132cd9f585e722ba95d657f2b7f/MainPage.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/a12169ba5b35f9663fe5e6c71b2367df47ff841/MainPage.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../KTSolver/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/App.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/C# Learning/MSSA Course/Assignments/VACalculator/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AppShell.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AppShell.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CalculateRate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/C# Learning/MSSA Course/Assignments/VACalculator/CalculationViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CalculationViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://F:/C# Learning/MSSA Course/Assignments/VACalculator/CompensationRateDictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CompensationRateDictionary.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DatabaseCreator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DependentOption.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GameBoardConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/KnightTourSolver.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,6 +83,8 @@
     <setting file="file://$PROJECT_DIR$/KnightsTourViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MainPage.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MainPage.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MauiProgram.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/DataBaseModels.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Percentages.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Android/MainActivity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/Android/MainApplication.cs" root0="SKIP_HIGHLIGHTING" />
@@ -96,6 +93,7 @@
     <setting file="file://$PROJECT_DIR$/Platforms/Windows/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/iOS/AppDelegate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Platforms/iOS/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Services/CompensationDatabaseService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Veteran.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
@@ -109,7 +107,7 @@
 }</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -131,7 +129,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "UWP.VACalculatorApp.executor": "Debug",
-    "com.google.cloudcode.ide_session_index": "20250530_0007",
+    "com.google.cloudcode.ide_session_index": "20250531_0003",
     "git-widget-placeholder": "main",
     "iOS.VACalculatorApp.executor": "Run",
     "ignore.virus.scanning.warn.message": "true",
@@ -147,7 +145,7 @@
   <component name="RiderProblemsViewState">
     <option name="proportion" value="0.3062954" />
   </component>
-  <component name="RunManager" selected="iOS.VACalculatorApp">
+  <component name="RunManager" selected="Android.VACalculatorApp">
     <configuration name="VACalculatorApp" type="UwpProject" factoryName="UWP">
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/VACalculatorApp.csproj" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -230,7 +228,8 @@
       <workItem from="1748614994792" duration="517000" />
       <workItem from="1748616020791" duration="6948000" />
       <workItem from="1748634995221" duration="1021000" />
-      <workItem from="1748641850337" duration="638000" />
+      <workItem from="1748641850337" duration="7432000" />
+      <workItem from="1748706066887" duration="16547000" />
     </task>
     <task id="LOCAL-00001" summary="Minor Fixes&#10;&#10;Fixed a few typos&#10;Fixed and issue where not all text was visible in Knight's Tour rules was visible.&#10;Updated splash screen and AppIcon">
       <option name="closed" value="true" />

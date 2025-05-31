@@ -2,6 +2,7 @@
 using Syncfusion.Licensing;
 using Syncfusion.Maui.Core.Hosting;
 using Syncfusion.Maui.Toolkit.Hosting;
+using VACalculatorApp.Services;
 
 namespace VACalculatorApp;
 
@@ -23,6 +24,7 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
         builder.Services.AddSingleton<CalculationViewModel>();
+        builder.Services.AddSingleton<CompensationDatabaseService>();
 #endif
 
         return builder.Build();
