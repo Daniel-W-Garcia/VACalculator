@@ -19,17 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8761dc37-d06b-424a-b12b-242aa7dd07d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DatabaseCreator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/DataBaseModels.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/CompensationDatabaseService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculateRate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculateRate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculationViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculationViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompensationRateDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CompensationRateDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Folder.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Folder.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MauiProgram.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MauiProgram.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,8 +118,9 @@
     "Publish to folder.Publish VACalculatorApp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UWP.VACalculatorApp.executor": "Debug",
-    "com.google.cloudcode.ide_session_index": "20250531_0003",
+    "com.google.cloudcode.ide_session_index": "20250602_0001",
     "git-widget-placeholder": "main",
     "iOS.VACalculatorApp.executor": "Run",
     "ignore.virus.scanning.warn.message": "true",
@@ -229,7 +220,8 @@
       <workItem from="1748616020791" duration="6948000" />
       <workItem from="1748634995221" duration="1021000" />
       <workItem from="1748641850337" duration="7432000" />
-      <workItem from="1748706066887" duration="16547000" />
+      <workItem from="1748706066887" duration="20026000" />
+      <workItem from="1748907334594" duration="45000" />
     </task>
     <task id="LOCAL-00001" summary="Minor Fixes&#10;&#10;Fixed a few typos&#10;Fixed and issue where not all text was visible in Knight's Tour rules was visible.&#10;Updated splash screen and AppIcon">
       <option name="closed" value="true" />
