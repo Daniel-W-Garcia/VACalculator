@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\",
+  "WorkspaceRootPath": "C:\\Users\\jazmy\\source\\repos\\VACalculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|f:\\c# learning\\mssa course\\assignments\\vacalculator\\vacalculatorapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|solutionrelative:vacalculatorapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jazmy\\source\\repos\\VACalculator\\VACalculatorApp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:VACalculatorApp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|f:\\c# learning\\mssa course\\assignments\\vacalculator\\platforms\\ios\\info.plist||{4B819833-C3E7-40A8-B4AF-4F7F5E6B913F}",
-      "RelativeMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|solutionrelative:platforms\\ios\\info.plist||{4B819833-C3E7-40A8-B4AF-4F7F5E6B913F}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jazmy\\source\\repos\\VACalculator\\Models\\DataBaseModels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\DataBaseModels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|f:\\c# learning\\mssa course\\assignments\\vacalculator\\vacalculatorapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{201665A2-A392-4FDC-91B9-220F165604F2}|VACalculatorApp.csproj|solutionrelative:vacalculatorapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jazmy\\source\\repos\\VACalculator\\CalculationViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CalculationViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jazmy\\source\\repos\\VACalculator\\CalculateRate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CalculateRate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,37 +55,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Info.plist",
-              "DocumentMoniker": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\Platforms\\iOS\\Info.plist",
-              "RelativeDocumentMoniker": "Platforms\\iOS\\Info.plist",
-              "ToolTip": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\Platforms\\iOS\\Info.plist",
-              "RelativeToolTip": "Platforms\\iOS\\Info.plist",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-28T23:28:12.076Z"
+              "Title": "DataBaseModels.cs",
+              "DocumentMoniker": "C:\\Users\\jazmy\\source\\repos\\VACalculator\\Models\\DataBaseModels.cs",
+              "RelativeDocumentMoniker": "Models\\DataBaseModels.cs",
+              "ToolTip": "C:\\Users\\jazmy\\source\\repos\\VACalculator\\Models\\DataBaseModels.cs",
+              "RelativeToolTip": "Models\\DataBaseModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T23:03:19.569Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "VACalculatorApp",
-              "DocumentMoniker": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\VACalculatorApp.csproj",
+              "Title": "VACalculatorApp.csproj",
+              "DocumentMoniker": "C:\\Users\\jazmy\\source\\repos\\VACalculator\\VACalculatorApp.csproj",
               "RelativeDocumentMoniker": "VACalculatorApp.csproj",
-              "ToolTip": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\VACalculatorApp.csproj",
+              "ToolTip": "C:\\Users\\jazmy\\source\\repos\\VACalculator\\VACalculatorApp.csproj",
               "RelativeToolTip": "VACalculatorApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-28T22:19:48.016Z",
+              "WhenOpened": "2025-06-02T23:02:53.026Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "VACalculatorApp.csproj",
-              "DocumentMoniker": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\VACalculatorApp.csproj",
-              "RelativeDocumentMoniker": "VACalculatorApp.csproj",
-              "ToolTip": "F:\\C# Learning\\MSSA Course\\Assignments\\VACalculator\\VACalculatorApp.csproj",
-              "RelativeToolTip": "VACalculatorApp.csproj",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-28T22:10:55.115Z"
+              "Title": "CalculationViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\jazmy\\source\\repos\\VACalculator\\CalculationViewModel.cs",
+              "RelativeDocumentMoniker": "CalculationViewModel.cs",
+              "ToolTip": "C:\\Users\\jazmy\\source\\repos\\VACalculator\\CalculationViewModel.cs",
+              "RelativeToolTip": "CalculationViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T23:01:59.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CalculateRate.cs",
+              "DocumentMoniker": "C:\\Users\\jazmy\\source\\repos\\VACalculator\\CalculateRate.cs",
+              "RelativeDocumentMoniker": "CalculateRate.cs",
+              "ToolTip": "C:\\Users\\jazmy\\source\\repos\\VACalculator\\CalculateRate.cs",
+              "RelativeToolTip": "CalculateRate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T23:00:39.936Z"
             }
           ]
         },
