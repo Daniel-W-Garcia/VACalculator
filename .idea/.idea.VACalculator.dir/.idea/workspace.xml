@@ -19,7 +19,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8761dc37-d06b-424a-b12b-242aa7dd07d7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VACalculator.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.metadata.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.metadata.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.projects.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.projects.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.strings.v9.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/vacalculator.strings.v9.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/0e7817da-b3ca-409a-9b9a-5ef815882be5.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/412bd135-3a83-4147-8f7c-63d022ed6550.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/c743c59e-c28b-4f39-9f15-29060aa1564e.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/FileContentIndex/e7ac6f67-468c-4fa5-a45d-9cb7bfb50d3c.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/.futdcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.backup.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VACalculator/v17/DocumentLayout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculateRate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculateRate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VACalculatorApp.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/VACalculatorApp.csproj.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +51,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/.nuget/packages/microsoft.windowsappsdk/1.6.250228001/include/DeploymentManagerAutoInitializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/28f4000d791f414ba8c2892581ffe01e1e3a00/14/aec41cb8/SfVisuals.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/28f4000d791f414ba8c2892581ffe01e1e3a00/81/0a177725/SyncfusionThemeResourceDictionary.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,13 +86,10 @@
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/a12169ba5b35f9663fe5e6c71b2367df47ff841/MainPage.xaml.sg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../KTSolver/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/App.xaml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/C# Learning/MSSA Course/Assignments/VACalculator/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AppShell.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AppShell.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CalculateRate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/C# Learning/MSSA Course/Assignments/VACalculator/CalculationViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CalculationViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://F:/C# Learning/MSSA Course/Assignments/VACalculator/CompensationRateDictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CompensationRateDictionary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DatabaseCreator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DependentOption.cs" root0="FORCE_HIGHLIGHTING" />
@@ -109,7 +137,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Android.VACalculatorApp.executor": "Debug",
+    "Android.VACalculatorApp.executor": "Run",
     "Device#class com.jetbrains.rider.run.multiPlatform.ios.devices.IOSSimulatorKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider#iOS: VACalculatorApp": "iPhone 16 Pro (iOS 18.4)",
     "DeviceKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider": "Simulator",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -120,7 +148,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UWP.VACalculatorApp.executor": "Debug",
-    "com.google.cloudcode.ide_session_index": "20250602_0001",
+    "com.google.cloudcode.ide_session_index": "20250604_0000",
     "git-widget-placeholder": "main",
     "iOS.VACalculatorApp.executor": "Run",
     "ignore.virus.scanning.warn.message": "true",
@@ -222,6 +250,7 @@
       <workItem from="1748641850337" duration="7432000" />
       <workItem from="1748706066887" duration="20026000" />
       <workItem from="1748907334594" duration="45000" />
+      <workItem from="1749051179952" duration="2761000" />
     </task>
     <task id="LOCAL-00001" summary="Minor Fixes&#10;&#10;Fixed a few typos&#10;Fixed and issue where not all text was visible in Knight's Tour rules was visible.&#10;Updated splash screen and AppIcon">
       <option name="closed" value="true" />

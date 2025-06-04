@@ -92,7 +92,7 @@
 
     <PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
       <ProvisioningType>manual</ProvisioningType>
-      <CodesignKey>Apple Distribution: Daniel Garcia (2M56PVK25S)</CodesignKey>
+      <CodesignKey>Apple Development: Created via API (U9XVZVS4JH)</CodesignKey>
       <CodesignProvision>VA App Distribution</CodesignProvision>
     </PropertyGroup>
 
